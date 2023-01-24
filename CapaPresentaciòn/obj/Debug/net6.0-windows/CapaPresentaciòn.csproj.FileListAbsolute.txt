@@ -1,0 +1,87 @@
+C:\Users\panad\Downloads\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.csproj.AssemblyReference.cache
+C:\Users\panad\Downloads\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtControles.UserInicio.resources
+C:\Users\panad\Downloads\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtControles.UserNinnos.resources
+C:\Users\panad\Downloads\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtControles.UserPadres.resources
+C:\Users\panad\Downloads\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtControles.UserPagos.resources
+C:\Users\panad\Downloads\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\capaPresentación.frPadres.resources
+C:\Users\panad\Downloads\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.Properties.Resources.resources
+C:\Users\panad\Downloads\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.csproj.GenerateResource.cache
+C:\Users\panad\Downloads\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\panad\Downloads\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.AssemblyInfoInputs.cache
+C:\Users\panad\Downloads\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.AssemblyInfo.cs
+C:\Users\panad\Downloads\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.csproj.CoreCompileInputs.cache
+C:\Users\panad\Downloads\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\CapaPresentaciòn.exe
+C:\Users\panad\Downloads\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\CapaPresentaciòn.deps.json
+C:\Users\panad\Downloads\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\CapaPresentaciòn.runtimeconfig.json
+C:\Users\panad\Downloads\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\CapaPresentaciòn.dll
+C:\Users\panad\Downloads\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\CapaPresentaciòn.pdb
+C:\Users\panad\Downloads\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\Guna.UI2.dll
+C:\Users\panad\Downloads\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.csproj.CopyComplete
+C:\Users\panad\Downloads\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.dll
+C:\Users\panad\Downloads\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\refint\CapaPresentaciòn.dll
+C:\Users\panad\Downloads\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.pdb
+C:\Users\panad\Downloads\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.genruntimeconfig.cache
+C:\Users\panad\Downloads\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\ref\CapaPresentaciòn.dll
+C:\Users\XPC\Downloads\copia\Nuevo Episcopal\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\CapaPresentaciòn.exe
+C:\Users\XPC\Downloads\copia\Nuevo Episcopal\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\CapaPresentaciòn.deps.json
+C:\Users\XPC\Downloads\copia\Nuevo Episcopal\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\CapaPresentaciòn.runtimeconfig.json
+C:\Users\XPC\Downloads\copia\Nuevo Episcopal\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\CapaPresentaciòn.dll
+C:\Users\XPC\Downloads\copia\Nuevo Episcopal\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\CapaPresentaciòn.pdb
+C:\Users\XPC\Downloads\copia\Nuevo Episcopal\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\Guna.UI2.dll
+C:\Users\XPC\Downloads\copia\Nuevo Episcopal\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.csproj.AssemblyReference.cache
+C:\Users\XPC\Downloads\copia\Nuevo Episcopal\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtControles.UserInicio.resources
+C:\Users\XPC\Downloads\copia\Nuevo Episcopal\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtControles.UserNinnos.resources
+C:\Users\XPC\Downloads\copia\Nuevo Episcopal\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtControles.UserPadres.resources
+C:\Users\XPC\Downloads\copia\Nuevo Episcopal\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtControles.UserPagos.resources
+C:\Users\XPC\Downloads\copia\Nuevo Episcopal\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\capaPresentación.frPadres.resources
+C:\Users\XPC\Downloads\copia\Nuevo Episcopal\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.Properties.Resources.resources
+C:\Users\XPC\Downloads\copia\Nuevo Episcopal\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.csproj.GenerateResource.cache
+C:\Users\XPC\Downloads\copia\Nuevo Episcopal\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\XPC\Downloads\copia\Nuevo Episcopal\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.AssemblyInfoInputs.cache
+C:\Users\XPC\Downloads\copia\Nuevo Episcopal\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.AssemblyInfo.cs
+C:\Users\XPC\Downloads\copia\Nuevo Episcopal\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.csproj.CoreCompileInputs.cache
+C:\Users\XPC\Downloads\copia\Nuevo Episcopal\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.csproj.CopyComplete
+C:\Users\XPC\Downloads\copia\Nuevo Episcopal\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.dll
+C:\Users\XPC\Downloads\copia\Nuevo Episcopal\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\refint\CapaPresentaciòn.dll
+C:\Users\XPC\Downloads\copia\Nuevo Episcopal\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.pdb
+C:\Users\XPC\Downloads\copia\Nuevo Episcopal\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.genruntimeconfig.cache
+C:\Users\XPC\Downloads\copia\Nuevo Episcopal\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\ref\CapaPresentaciòn.dll
+C:\Users\XPC\Downloads\copia\Nuevo Episcopal\Nuevo Episcopal\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtControles.Bienvenida.resources
+E:\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\CapaPresentaciòn.exe
+E:\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\CapaPresentaciòn.deps.json
+E:\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\CapaPresentaciòn.runtimeconfig.json
+E:\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\CapaPresentaciòn.dll
+E:\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\CapaPresentaciòn.pdb
+E:\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\Guna.UI2.dll
+E:\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+E:\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+E:\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+E:\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+E:\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+E:\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\CapaDatos.dll
+E:\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\CapaEntidad.dll
+E:\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\CapaNegocio.dll
+E:\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\CapaEntidad.pdb
+E:\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\CapaNegocio.pdb
+E:\Hogar_Episcopal\CapaPresentaciòn\bin\Debug\net6.0-windows\CapaDatos.pdb
+E:\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.csproj.AssemblyReference.cache
+E:\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtControles.Bienvenida.resources
+E:\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtControles.UserInicio.resources
+E:\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtControles.UserNinnos.resources
+E:\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtControles.UserPadres.resources
+E:\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtControles.UserPagos.resources
+E:\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\capaPresentación.frPadres.resources
+E:\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.Properties.Resources.resources
+E:\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.csproj.GenerateResource.cache
+E:\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.GeneratedMSBuildEditorConfig.editorconfig
+E:\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.AssemblyInfoInputs.cache
+E:\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.AssemblyInfo.cs
+E:\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.csproj.CoreCompileInputs.cache
+E:\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.csproj.CopyComplete
+E:\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.dll
+E:\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\refint\CapaPresentaciòn.dll
+E:\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.pdb
+E:\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.genruntimeconfig.cache
+E:\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\ref\CapaPresentaciòn.dll
+E:\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtViewTablas.TablaPadre.resources

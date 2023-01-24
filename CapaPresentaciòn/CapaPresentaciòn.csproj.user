@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="BtControles\Bienvenida.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="BtControles\UserInicio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="BtControles\UserNinnos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="BtControles\UserPadres.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="BtControles\UserPagos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="BtViewTablas\TablaPadre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frPadres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,15 @@
+E:\Hogar_Episcopal\CapaDatos\bin\Debug\net6.0-windows\CapaDatos.deps.json
+E:\Hogar_Episcopal\CapaDatos\bin\Debug\net6.0-windows\CapaDatos.dll
+E:\Hogar_Episcopal\CapaDatos\bin\Debug\net6.0-windows\CapaDatos.pdb
+E:\Hogar_Episcopal\CapaDatos\bin\Debug\net6.0-windows\CapaEntidad.dll
+E:\Hogar_Episcopal\CapaDatos\bin\Debug\net6.0-windows\CapaEntidad.pdb
+E:\Hogar_Episcopal\CapaDatos\obj\Debug\net6.0-windows\CapaDatos.csproj.AssemblyReference.cache
+E:\Hogar_Episcopal\CapaDatos\obj\Debug\net6.0-windows\CapaDatos.GeneratedMSBuildEditorConfig.editorconfig
+E:\Hogar_Episcopal\CapaDatos\obj\Debug\net6.0-windows\CapaDatos.AssemblyInfoInputs.cache
+E:\Hogar_Episcopal\CapaDatos\obj\Debug\net6.0-windows\CapaDatos.AssemblyInfo.cs
+E:\Hogar_Episcopal\CapaDatos\obj\Debug\net6.0-windows\CapaDatos.csproj.CoreCompileInputs.cache
+E:\Hogar_Episcopal\CapaDatos\obj\Debug\net6.0-windows\CapaDatos.csproj.CopyComplete
+E:\Hogar_Episcopal\CapaDatos\obj\Debug\net6.0-windows\CapaDatos.dll
+E:\Hogar_Episcopal\CapaDatos\obj\Debug\net6.0-windows\refint\CapaDatos.dll
+E:\Hogar_Episcopal\CapaDatos\obj\Debug\net6.0-windows\CapaDatos.pdb
+E:\Hogar_Episcopal\CapaDatos\obj\Debug\net6.0-windows\ref\CapaDatos.dll

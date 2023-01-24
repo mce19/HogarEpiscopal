@@ -1,0 +1,12 @@
+E:\Hogar_Episcopal\CapaEntidad\bin\Debug\net6.0-windows\CapaEntidad.deps.json
+E:\Hogar_Episcopal\CapaEntidad\bin\Debug\net6.0-windows\CapaEntidad.dll
+E:\Hogar_Episcopal\CapaEntidad\bin\Debug\net6.0-windows\CapaEntidad.pdb
+E:\Hogar_Episcopal\CapaEntidad\obj\Debug\net6.0-windows\CapaEntidad.csproj.AssemblyReference.cache
+E:\Hogar_Episcopal\CapaEntidad\obj\Debug\net6.0-windows\CapaEntidad.GeneratedMSBuildEditorConfig.editorconfig
+E:\Hogar_Episcopal\CapaEntidad\obj\Debug\net6.0-windows\CapaEntidad.AssemblyInfoInputs.cache
+E:\Hogar_Episcopal\CapaEntidad\obj\Debug\net6.0-windows\CapaEntidad.AssemblyInfo.cs
+E:\Hogar_Episcopal\CapaEntidad\obj\Debug\net6.0-windows\CapaEntidad.csproj.CoreCompileInputs.cache
+E:\Hogar_Episcopal\CapaEntidad\obj\Debug\net6.0-windows\CapaEntidad.dll
+E:\Hogar_Episcopal\CapaEntidad\obj\Debug\net6.0-windows\refint\CapaEntidad.dll
+E:\Hogar_Episcopal\CapaEntidad\obj\Debug\net6.0-windows\CapaEntidad.pdb
+E:\Hogar_Episcopal\CapaEntidad\obj\Debug\net6.0-windows\ref\CapaEntidad.dll
