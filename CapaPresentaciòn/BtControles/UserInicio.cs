@@ -44,13 +44,23 @@ namespace CapaPresentaciòn.BtControles
 
         private void cmbTablas_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //cambie esta funcion por el de buscador necesito arrelarlo ya que funciona pero cuando seleciono otra tabla y busco se cae 
+            busquedaEnCurso = false;
+            lblTablaSeleccionada.Text = cmbTablas.SelectedItem.ToString().ToUpper();
+            tablasNegocio.CargarDatosTabla(cmbTablas.SelectedItem.ToString(), dataGridView1);
+            string[] titulos = tablasNegocio.ObtenerDiccionario(cmbTablas.SelectedItem.ToString());
+            for (int i = 0; i < titulos.Length; i++)
+            {
+                dataGridView1.Columns[i].HeaderText = titulos[i];
+            }
+            /*
             lblTablaSeleccionada.Text = cmbTablas.SelectedItem.ToString().ToUpper();
                 tablasNegocio.CargarDatosTabla(cmbTablas.SelectedItem.ToString(), dataGridView1);
             string[] titulos = tablasNegocio.ObtenerDiccionario(cmbTablas.SelectedItem.ToString());
             for (int i = 0; i < titulos.Length; i++)
             {
                 dataGridView1.Columns[i].HeaderText = titulos[i];
-            }
+            } */
         }
 
         private void buttonNuevo_Click(object sender, EventArgs e)
@@ -161,5 +171,13 @@ namespace CapaPresentaciòn.BtControles
             }
 
         }
+        private bool busquedaEnCurso = false;
+        private void textBoxBuscador_TextChanged(object sender, EventArgs e)
+        {
+            busquedaEnCurso = true;
+            CNTablasDatos tablasNegocio = new CNTablasDatos();
+            tablasNegocio.BuscarPorNombre(cmbTablas.SelectedItem.ToString(), textBoxBuscador.Text, dataGridView1);
+        }
+
     }
 }

@@ -12,7 +12,7 @@ namespace CapaDatos
     {
        public string connectionString = "Data Source=LOCAL;Initial Catalog=hogar_episcopal;Integrated Security=True;";
        // public string connectionString = "Data Source=DESKTOP-AP0JBJ6\\NUCLEUS;Initial Catalog=hogar_episcopal;Integrated Security=True;";
-        private List<string> tablasPermitidas = new List<string>() { "padres", "hijos", "docentes", "asistentes" };
+        private List<string> tablasPermitidas = new List<string>() { "padres", "hijos", "docentes", "asistentes", "grupos" };
 
         public DataTable ObtenerTablasPermitidas()
         {

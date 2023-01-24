@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ namespace CapaNegocio
 {
     public class CNTablasDatos
     {
+        public string connectionString = "Data Source=LOCAL;Initial Catalog=hogar_episcopal;Integrated Security=True;";
 
         private TablasDatos tablasDatos = new TablasDatos();
 
@@ -17,8 +19,9 @@ namespace CapaNegocio
     {
         {"padres", new[] {"Tipo de documento", "Número Documento", "Nombre Completo", "Dirección", "Teléfono" } },
         {"hijos", new[] { "Número Documento", "Nombre Completo", "Fecha Nacimiento", "Edad", "Género", "Según INEC", "Subsidio", "N. Documento del padre" } },
-        {"docentes", new[] { "Docente ID","Número Documento", "Nombre", "Apellido", "Direcciòn", "Tèlefono" } },
-        {"asistentes", new[] { "ID", "Número Documento", "Nombre", "Apellido", "Docente ID" } }
+        {"docentes", new[] { "Docente ID","Número Documento", "Nombre Completo", "Direcciòn", "Tèlefono", "Grugo asignado"} },
+        {"asistentes", new[] { "ID", "Número Documento", "Nombre Completo", "Docente ID" } },
+         {"grupos", new[] { "ID", "Nombre" } }
     };
 
       
@@ -45,6 +48,22 @@ namespace CapaNegocio
         public string[] ObtenerDiccionario(string tabla)
         {
             return _diccionarioTitulos[tabla];
+        }
+
+        public void BuscarPorNombre(string tabla, string nombre, DataGridView dataGridView)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT * FROM " + tabla + " WHERE nombre_completo LIKE @nombre";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+                dataGridView.DataSource = dt;
+                connection.Close();
+            }
         }
 
 
