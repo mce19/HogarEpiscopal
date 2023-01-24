@@ -69,7 +69,7 @@ namespace CapaPresentaciòn.BtControles
                 formPadre.Show();
                 formPadre.TituloTabla = "Editar Padre";
                 formPadre.NumeroDocumento = dataGridView1.SelectedRows[0].Cells["numero_documento"].Value.ToString();
-                // formPadre.TipoDocumento = dataGridView1.SelectedRows[0].Cells["tipo_documento"].Value.ToString();
+                formPadre.TipoDocumento = dataGridView1.SelectedRows[0].Cells["tipo_documento"].Value.ToString();
                 formPadre.Nombre = dataGridView1.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
                 formPadre.Direccion = dataGridView1.SelectedRows[0].Cells["direccion"].Value.ToString();
                 formPadre.Telefono = dataGridView1.SelectedRows[0].Cells["telefono"].Value.ToString();
@@ -104,14 +104,16 @@ namespace CapaPresentaciòn.BtControles
                     case "padres":
                         // Código para eliminar en la tabla padres
                         // Eliminar los registros de las tablas relacionadas (hijos, pagos, historial_pagos) antes de eliminar el padre
-                        using (SqlCommand command = new SqlCommand("DELETE FROM hijos WHERE padre_id = @padreId; DELETE FROM pagos WHERE padre_id = @padreId; DELETE FROM historial_pagos WHERE padre_id = @padreId; DELETE FROM padres WHERE numero_documento = @padreId", connection))
+                        using (SqlCommand command = new SqlCommand("BEGIN TRANSACTION; DELETE FROM matricula WHERE hijo_id IN (SELECT numero_documento FROM hijos WHERE padre_id = @padreId); DELETE FROM historial_pagos WHERE padre_id = @padreId; DELETE FROM pagos WHERE padre_id = @padreId; DELETE FROM hijos WHERE padre_id = @padreId; DELETE FROM padres WHERE numero_documento = @padreId; COMMIT;", connection))
                         {
-                            command.Parameters.AddWithValue("@padreId", dataGridView1.SelectedRows[0].Cells["numero_documento"].Value);
+                            command.Parameters.AddWithValue("@padreId", dataGridView1.SelectedRows[0].Cells[1].Value);
                             command.ExecuteNonQuery();
                             connection.Close();
                             tablasNegocio.CargarDatosTabla(cmbTablas.SelectedItem.ToString(), dataGridView1);
+                            MessageBox.Show("Padre eliminado con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                       
+
+
                         break;
                     case "hijos":
                         // Código para eliminar en la tabla hijos
@@ -125,6 +127,7 @@ namespace CapaPresentaciòn.BtControles
                             }
                             connections.Close();
                             tablasNegocio.CargarDatosTabla(cmbTablas.SelectedItem.ToString(), dataGridView1);
+
                         }
                         break;
                     case "docentes":
@@ -137,6 +140,7 @@ namespace CapaPresentaciòn.BtControles
                             command.ExecuteNonQuery();
                             connection.Close();
                             tablasNegocio.CargarDatosTabla(cmbTablas.SelectedItem.ToString(), dataGridView1);
+                            MessageBox.Show("Docente eliminado con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         break;
          
@@ -148,6 +152,7 @@ namespace CapaPresentaciòn.BtControles
                             command.ExecuteNonQuery();
                             connection.Close();
                             tablasNegocio.CargarDatosTabla(cmbTablas.SelectedItem.ToString(), dataGridView1);
+                            MessageBox.Show("Asistente eliminado con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         break;
 

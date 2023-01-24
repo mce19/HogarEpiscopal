@@ -24,14 +24,14 @@ namespace CapaPresentaciòn.BtViewTablas
                 TxtTitTablaPadre.Text = _tituloTabla;
             }
         }
-/*
+
         private string _tipoDocumento;
         public string TipoDocumento
         {
             get { return _tipoDocumento; }
             set { _tipoDocumento = value; textBoxTipoDucumento.Text = value; }
         }
-*/
+
         private string _numeroDocumento;
         public string NumeroDocumento
         {
@@ -103,7 +103,7 @@ namespace CapaPresentaciòn.BtViewTablas
         private void buttonGuardarPadre_Click(object sender, EventArgs e)
         {
             // Validar datos de entrada
-            if (!string.IsNullOrEmpty(textBoxNunDocumento.Text) && !string.IsNullOrEmpty(textBoxNombre.Text) && !string.IsNullOrEmpty(maskedTextBoxDireccion.Text) && !string.IsNullOrEmpty(textBoxTelefono.Text))
+            if (!string.IsNullOrEmpty(textBoxTipoDucumento.Text) && !string.IsNullOrEmpty(textBoxNunDocumento.Text) && !string.IsNullOrEmpty(textBoxNombre.Text) && !string.IsNullOrEmpty(maskedTextBoxDireccion.Text) && !string.IsNullOrEmpty(textBoxTelefono.Text))
             {
                 // Crear objeto padre
                 int numeroDocumento;
@@ -114,7 +114,7 @@ namespace CapaPresentaciòn.BtViewTablas
                 }
                 Padres padre = new Padres
                 {
-                    //TipoDocumento = textBoxTipoDucumento.Text,  
+                    TipoDocumento = textBoxTipoDucumento.Text,  
                     NumeroDocumento = numeroDocumento,
                     NombreCompleto = textBoxNombre.Text,
                     Direccion = maskedTextBoxDireccion.Text,

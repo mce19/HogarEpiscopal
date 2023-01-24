@@ -10,8 +10,8 @@ namespace CapaDatos
 {
     public class TablasDatos
     {
-       // public string connectionString = "Data Source=LOCAL;Initial Catalog=hogar_episcopal;Integrated Security=True;";
-        public string connectionString = "Data Source=DESKTOP-AP0JBJ6\\NUCLEUS;Initial Catalog=hogar_episcopal;Integrated Security=True;";
+       public string connectionString = "Data Source=LOCAL;Initial Catalog=hogar_episcopal;Integrated Security=True;";
+       // public string connectionString = "Data Source=DESKTOP-AP0JBJ6\\NUCLEUS;Initial Catalog=hogar_episcopal;Integrated Security=True;";
         private List<string> tablasPermitidas = new List<string>() { "padres", "hijos", "docentes", "asistentes" };
 
         public DataTable ObtenerTablasPermitidas()
@@ -45,9 +45,9 @@ namespace CapaDatos
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                using (SqlCommand command = new SqlCommand("INSERT INTO padres ( numero_documento, nombre, direccion, telefono) VALUES (@tipo_documento, @numeroDocumento, @nombre, @direccion, @telefono)", connection))
+                using (SqlCommand command = new SqlCommand("INSERT INTO padres (tipo_documento, numero_documento, nombre, direccion, telefono) VALUES (@tipo_documento, @numeroDocumento, @nombre, @direccion, @telefono)", connection))
                 {
-                    //command.Parameters.AddWithValue("@tipoDocumento", tipoDocumento);
+                    command.Parameters.AddWithValue("@tipoDocumento", tipoDocumento);
                     command.Parameters.AddWithValue("@numeroDocumento", numeroDocumento);
                     command.Parameters.AddWithValue("@nombre", nombre);
                     command.Parameters.AddWithValue("@direccion", direccion);
