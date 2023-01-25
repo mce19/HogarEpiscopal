@@ -16,6 +16,9 @@
     <Compile Update="BtControles\UserPagos.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="BtViewTablas\TablaHijocs.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="BtViewTablas\TablaPadre.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -102,9 +103,24 @@ namespace CapaPresentaciòn.BtViewTablas
 
         private void buttonGuardarPadre_Click(object sender, EventArgs e)
         {
+
             // Validar datos de entrada
             if (!string.IsNullOrEmpty(textBoxTipoDucumento.Text) && !string.IsNullOrEmpty(textBoxNunDocumento.Text) && !string.IsNullOrEmpty(textBoxNombre.Text) && !string.IsNullOrEmpty(maskedTextBoxDireccion.Text) && !string.IsNullOrEmpty(textBoxTelefono.Text))
             {
+                // Validar que el tipo de documento solo contenga letras
+                if (!Regex.IsMatch(textBoxTipoDucumento.Text, @"^[a-zA-Z]+$"))
+                {
+                    MessageBox.Show("El tipo de documento solo debe contener letras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Validar que el teléfono solo contenga números
+                if (!Regex.IsMatch(textBoxTelefono.Text, @"^[0-9]+$"))
+                {
+                    MessageBox.Show("El teléfono solo debe contener números", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 // Crear objeto padre
                 int numeroDocumento;
                 if (!int.TryParse(textBoxNunDocumento.Text, out numeroDocumento))
@@ -114,12 +130,18 @@ namespace CapaPresentaciòn.BtViewTablas
                 }
                 Padres padre = new Padres
                 {
-                    TipoDocumento = textBoxTipoDucumento.Text,  
+                    TipoDocumento = textBoxTipoDucumento.Text,
                     NumeroDocumento = numeroDocumento,
                     NombreCompleto = textBoxNombre.Text,
                     Direccion = maskedTextBoxDireccion.Text,
                     Telefono = textBoxTelefono.Text
                 };
+                // Validar inyección SQL
+                if (padre.TipoDocumento.Contains("'") || padre.TipoDocumento.Contains("--") || padre.NombreCompleto.Contains("'") || padre.NombreCompleto.Contains("--") || padre.Direccion.Contains("'") || padre.Direccion.Contains("--") || padre.Telefono.Contains("'") || padre.Telefono.Contains("--"))
+                {
+                    MessageBox.Show("No se permiten caracteres especiales", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
 
                 // Guardar datos en la base de datos
                 CNPadres objeto = new CNPadres();
@@ -143,9 +165,10 @@ namespace CapaPresentaciòn.BtViewTablas
                 // Mostrar mensaje de error
                 MessageBox.Show("Por favor, ingresa todos los datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
-        public void textBoxTelefono_TextChanged(object sender, EventArgs e)
+                public void textBoxTelefono_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -65,8 +65,36 @@ namespace CapaPresentaciòn.BtControles
 
         private void buttonNuevo_Click(object sender, EventArgs e)
         {
-            TablaPadre formPadre = new TablaPadre();
-            formPadre.Show();
+            /* TablaPadre formPadre = new TablaPadre();
+             formPadre.Show();*/
+
+            switch (cmbTablas.SelectedItem.ToString())
+            {
+                case "padres":
+                    TablaPadre formPadre = new TablaPadre();
+                    formPadre.Show();
+                    formPadre.TituloTabla = "Agregar un nuevo padre";
+                    break;
+                case "hijos":
+                    TablaHijocs formHijos = new TablaHijocs();
+                    formHijos.Show();
+                    formHijos.TituloTabla = "Agregar un nuevo hijo";
+                    break;
+              /*  case "doncentes":
+                    TablaMatriculas formMatriculas = new TablaMatriculas();
+                    formMatriculas.Show();
+                    break;
+                case "asistentes":
+                    TablaDocentes formDocentes = new TablaDocentes();
+                    formDocentes.Show();
+                    break;
+                case "tabPageGrupos":
+                    TablaGrupos formGrupos = new TablaGrupos();
+                    formGrupos.Show();
+                    break;
+                default:
+                    break;*/
+            }
 
         }
 
