@@ -10,8 +10,16 @@ namespace CapaDatos
 {
     public class TablasDatos
     {
-      // public string connectionString = "Data Source=LOCAL;Initial Catalog=hogar_episcopal;Integrated Security=True;";
-       public string connectionString = "Data Source=DESKTOP-AP0JBJ6\\NUCLEUS;Initial Catalog=hogar_episcopal;Integrated Security=True;";
+
+        //PARA LA CONEXION A LA BASE DATOS y public ya que tiene que ser accedida por capapresentacion
+        public string connectionString;
+
+        public TablasDatos()
+        {
+            conexiònBD conexionBD = new conexiònBD();
+            connectionString = conexionBD.connectionString;
+        }
+                        
         private List<string> tablasPermitidas = new List<string>() { "padres", "hijos", "docentes", "asistentes", "grupos" };
 
         public DataTable ObtenerTablasPermitidas()

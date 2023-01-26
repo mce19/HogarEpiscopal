@@ -13,41 +13,46 @@ namespace CapaDatos
 
     public class CDPadres
     {
-        
-       //private string connectionString = "Data Source=LOCAL;Initial Catalog=hogar_episcopal;Integrated Security=True;";
-       private string connectionString = "Data Source=DESKTOP-AP0JBJ6\\NUCLEUS;Initial Catalog=hogar_episcopal;Integrated Security=True;";
+        private string connectionString;
 
-        public List<Padres> ObtenerTodosPadres()
+        public CDPadres()
         {
-            var padres = new List<Padres>();
-
-
-            using (var connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                //usamos un proceso de almancenamiento echo en slq y lo llamomos aqui
-                var query = "MostrarPadres";
-                var command = new SqlCommand(query, connection);
-
-                using (var reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        var padre = new Padres();
-                        padre.TipoDocumento = reader.GetString("tipo_documento");
-                        padre.NumeroDocumento = reader.GetInt32("numero_documento");
-                        padre.NombreCompleto = reader.GetString("nombre_completo");
-                        padre.Direccion = reader.GetString("direccion");
-                        padre.Telefono = reader.GetString("telefono");
-                        padres.Add(padre);
-                    }
-                }
-            }
-
-            return padres;
+            conexiònBD conexionBD = new conexiònBD();
+            connectionString = conexionBD.connectionString;
         }
+ 
+        /*
+                public List<Padres> ObtenerTodosPadres()
+                {
+                    var padres = new List<Padres>();
 
+
+                    using (var connection = new SqlConnection(connectionString))
+                    {
+                        connection.Open();
+
+                        //usamos un proceso de almancenamiento echo en slq y lo llamomos aqui
+                        var query = "MostrarPadres";
+                        var command = new SqlCommand(query, connection);
+
+                        using (var reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                var padre = new Padres();
+                                padre.TipoDocumento = reader.GetString("tipo_documento");
+                                padre.NumeroDocumento = reader.GetInt32("numero_documento");
+                                padre.NombreCompleto = reader.GetString("nombre_completo");
+                                padre.Direccion = reader.GetString("direccion");
+                                padre.Telefono = reader.GetString("telefono");
+                                padres.Add(padre);
+                            }
+                        }
+                    }
+
+                    return padres;
+                }
+        */
 
         public void AgregarPadre(Padres padre)
         {

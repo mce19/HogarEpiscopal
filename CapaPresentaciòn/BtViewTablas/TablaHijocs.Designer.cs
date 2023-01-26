@@ -38,12 +38,14 @@
             this.textBoxNumDocuHijo = new System.Windows.Forms.TextBox();
             this.textBoxnNombCompletoHijo = new System.Windows.Forms.TextBox();
             this.comboBoxGeneroHijo = new System.Windows.Forms.ComboBox();
-            this.comboBoxSegInicHijo = new System.Windows.Forms.ComboBox();
             this.comboBoxSubsidHijos = new System.Windows.Forms.ComboBox();
             this.textBoxEdadHijo = new System.Windows.Forms.TextBox();
             this.dateTimePickerHijo = new System.Windows.Forms.DateTimePicker();
             this.labelnombreHijos = new System.Windows.Forms.Label();
             this.buttonGuardarHijo = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxPadreId = new System.Windows.Forms.TextBox();
+            this.comboBoxSegInicHijo = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -127,6 +129,7 @@
             this.textBoxNumDocuHijo.Name = "textBoxNumDocuHijo";
             this.textBoxNumDocuHijo.Size = new System.Drawing.Size(252, 23);
             this.textBoxNumDocuHijo.TabIndex = 7;
+            this.textBoxNumDocuHijo.TextChanged += new System.EventHandler(this.textBoxNumDocuHijo_TextChanged);
             // 
             // textBoxnNombCompletoHijo
             // 
@@ -142,14 +145,6 @@
             this.comboBoxGeneroHijo.Name = "comboBoxGeneroHijo";
             this.comboBoxGeneroHijo.Size = new System.Drawing.Size(252, 23);
             this.comboBoxGeneroHijo.TabIndex = 9;
-            // 
-            // comboBoxSegInicHijo
-            // 
-            this.comboBoxSegInicHijo.FormattingEnabled = true;
-            this.comboBoxSegInicHijo.Location = new System.Drawing.Point(426, 202);
-            this.comboBoxSegInicHijo.Name = "comboBoxSegInicHijo";
-            this.comboBoxSegInicHijo.Size = new System.Drawing.Size(252, 23);
-            this.comboBoxSegInicHijo.TabIndex = 10;
             // 
             // comboBoxSubsidHijos
             // 
@@ -190,24 +185,54 @@
             this.buttonGuardarHijo.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.buttonGuardarHijo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonGuardarHijo.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonGuardarHijo.Location = new System.Drawing.Point(607, 391);
+            this.buttonGuardarHijo.Location = new System.Drawing.Point(552, 417);
             this.buttonGuardarHijo.Name = "buttonGuardarHijo";
             this.buttonGuardarHijo.Size = new System.Drawing.Size(126, 47);
             this.buttonGuardarHijo.TabIndex = 15;
             this.buttonGuardarHijo.Text = "Guardar";
             this.buttonGuardarHijo.UseVisualStyleBackColor = false;
+            this.buttonGuardarHijo.Click += new System.EventHandler(this.buttonGuardarHijo_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(426, 347);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(146, 19);
+            this.label8.TabIndex = 16;
+            this.label8.Text = "Cédula del Padre";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // textBoxPadreId
+            // 
+            this.textBoxPadreId.Location = new System.Drawing.Point(426, 369);
+            this.textBoxPadreId.Name = "textBoxPadreId";
+            this.textBoxPadreId.Size = new System.Drawing.Size(252, 23);
+            this.textBoxPadreId.TabIndex = 17;
+            this.textBoxPadreId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // comboBoxSegInicHijo
+            // 
+            this.comboBoxSegInicHijo.FormattingEnabled = true;
+            this.comboBoxSegInicHijo.Location = new System.Drawing.Point(426, 202);
+            this.comboBoxSegInicHijo.Name = "comboBoxSegInicHijo";
+            this.comboBoxSegInicHijo.Size = new System.Drawing.Size(252, 23);
+            this.comboBoxSegInicHijo.TabIndex = 18;
             // 
             // TablaHijocs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(745, 450);
+            this.ClientSize = new System.Drawing.Size(740, 488);
+            this.Controls.Add(this.comboBoxSegInicHijo);
+            this.Controls.Add(this.textBoxPadreId);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.buttonGuardarHijo);
             this.Controls.Add(this.labelnombreHijos);
             this.Controls.Add(this.dateTimePickerHijo);
             this.Controls.Add(this.textBoxEdadHijo);
             this.Controls.Add(this.comboBoxSubsidHijos);
-            this.Controls.Add(this.comboBoxSegInicHijo);
             this.Controls.Add(this.comboBoxGeneroHijo);
             this.Controls.Add(this.textBoxnNombCompletoHijo);
             this.Controls.Add(this.textBoxNumDocuHijo);
@@ -238,11 +263,13 @@
         private TextBox textBoxNumDocuHijo;
         private TextBox textBoxnNombCompletoHijo;
         private ComboBox comboBoxGeneroHijo;
-        private ComboBox comboBoxSegInicHijo;
         private ComboBox comboBoxSubsidHijos;
         private TextBox textBoxEdadHijo;
         private DateTimePicker dateTimePickerHijo;
         private Label labelnombreHijos;
         private Button buttonGuardarHijo;
+        private Label label8;
+        private TextBox textBoxPadreId;
+        private ComboBox comboBoxSegInicHijo;
     }
 }

@@ -11,9 +11,14 @@ namespace CapaNegocio
 {
     public class CNTablasDatos
     {
-        public string connectionString = "Data Source=DESKTOP-AP0JBJ6\\NUCLEUS;Initial Catalog=hogar_episcopal;Integrated Security=True;";
+      //PARA LA CONEXION A LA BASE DATOS
+        private string connectionString;
 
-        //   public string connectionString = "Data Source=LOCAL;Initial Catalog=hogar_episcopal;Integrated Security=True;";
+        public CNTablasDatos()
+        {
+            conexiònBD conexionBD = new conexiònBD();
+            connectionString = conexionBD.connectionString;
+        }
 
         private TablasDatos tablasDatos = new TablasDatos();
 
