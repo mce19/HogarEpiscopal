@@ -168,6 +168,7 @@
             this.dateTimePickerHijo.Name = "dateTimePickerHijo";
             this.dateTimePickerHijo.Size = new System.Drawing.Size(252, 23);
             this.dateTimePickerHijo.TabIndex = 13;
+            this.dateTimePickerHijo.ValueChanged += new System.EventHandler(this.dateTimePickerHijo_ValueChanged);
             // 
             // labelnombreHijos
             // 

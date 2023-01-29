@@ -22,14 +22,22 @@ namespace CapaDatos
 
         public void AgregarHijo(Hijos hijo)
         {
+
             try
             {
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
 
-                    SqlCommand command = new SqlCommand("INSERT INTO hijos (numero_documento, nombre_completo, fecha_nacimiento, edad, genero, segun_inec, subsidio, padre_id) VALUES (@numero_documento, @nombre_completo, @fecha_nacimiento, @edad, @genero, @segun_inec, @subsidio, @padre_id)", connection);
-                    
+                    // Consultar si el padre existe en la base de datos
+                    SqlCommand commandPadre = new SqlCommand("SELECT COUNT(*) FROM padres WHERE numero_documento = @padre_id", connection);
+                    commandPadre.Parameters.AddWithValue("@padre_id", hijo.PadreId);
+                    int padreExiste = (int)commandPadre.ExecuteScalar();
+
+                    // Si el padre existe en la base de datos, agregar el hijo
+                    if (padreExiste > 0)
+                    {
+                        SqlCommand command = new SqlCommand("INSERT INTO hijos (numero_documento, nombre_completo, fecha_nacimiento, edad, genero, segun_inec, subsidio, padre_id) VALUES (@numero_documento, @nombre_completo, @fecha_nacimiento, @edad, @genero, @segun_inec, @subsidio, @padre_id)", connection);
                         command.Parameters.AddWithValue("@numero_documento", hijo.NumeroDocumento);
                         command.Parameters.AddWithValue("@nombre_completo", hijo.NombreCompleto);
                         command.Parameters.AddWithValue("@fecha_nacimiento", hijo.FechaNacimiento);
@@ -40,46 +48,72 @@ namespace CapaDatos
                         command.Parameters.AddWithValue("@padre_id", hijo.PadreId);
                         command.ExecuteNonQuery();
                     }
+                    else
+                    {
+                        throw new Exception("El padre con ID " + hijo.PadreId + " no existe en la base de datos.");
+                    }
                 }
-            
+            }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
         }
-    
-        /*  private string connectionString = "Data Source=DESKTOP-AP0JBJ6\\NUCLEUS;Initial Catalog=hogar_episcopal;Integrated Security=True;";
-          public List<Hijos> ObtenerTodosHijos()
-          {
-              var hijos = new List<Hijos>();
 
-              using (var connection = new SqlConnection(connectionString))
-              {
-                  connection.Open();
 
-                  var query = "ListarHijos";
-                  var command = new SqlCommand(query, connection);
-                  command.CommandType = CommandType.StoredProcedure;
 
-                  using (var reader = command.ExecuteReader())
-                  {
-                      while (reader.Read())
-                      {
-                          var hijo = new Hijos();
-                          hijo.NumeroDocumento = reader.GetInt32("numero_documento");
-                          hijo.NombreCompleto = reader.GetString("nombre_completo");
-                          hijo.FechaNacimiento = reader.GetDateTime("fecha_nacimiento");
-                          hijo.Edad = reader.GetString("edad");
-                          hijo.Genero = reader.GetString("genero");
-                          hijo.SegunInec = reader.GetString("segun_inec");
-                          hijo.Subsidio = reader.GetString("subsidio");
-                          hijo.PadreId = reader.GetInt32("padre_id");
-                          hijos.Add(hijo);
-                      }
-                  }
-              }
-              return hijos; 
-          }
-        */
+        public void EditarHijo(Hijos hijo)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(hijo.NumeroDocumento.ToString()))
+                    throw new Exception("El número de documento es requerido");
+
+                if (string.IsNullOrEmpty(hijo.NombreCompleto))
+                    throw new Exception("El nombre es requerido");
+
+                if (string.IsNullOrEmpty(hijo.FechaNacimiento.ToString()))
+                    throw new Exception("La fecha de nacimiento es requerida");
+
+                if (string.IsNullOrEmpty(hijo.Edad))
+                    throw new Exception("La edad es requerida");
+
+                if (string.IsNullOrEmpty(hijo.Genero))
+                    throw new Exception("El género es requerido");
+
+                if (string.IsNullOrEmpty(hijo.SegunInec))
+                    throw new Exception("La clasificación según INEC es requerida");
+
+                if (string.IsNullOrEmpty(hijo.Subsidio))
+                    throw new Exception("El subsidio es requerido");
+
+                if (string.IsNullOrEmpty(hijo.PadreId.ToString()))
+                    throw new Exception("El ID del padre es requerido");
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    SqlCommand command = new SqlCommand("UPDATE hijos SET nombre_completo = @nombre, fecha_nacimiento = @fechaNacimiento, edad = @edad, genero = @genero, segun_inec = @segunInec, subsidio = @subsidio, padre_id = @padreId WHERE numero_documento = @numeroDocumento", connection);
+                    command.Parameters.AddWithValue("@numeroDocumento", hijo.NumeroDocumento);
+                    command.Parameters.AddWithValue("@nombre", hijo.NombreCompleto);
+                    command.Parameters.AddWithValue("@fechaNacimiento", hijo.FechaNacimiento);
+                    command.Parameters.AddWithValue("@edad", hijo.Edad);
+                    command.Parameters.AddWithValue("@genero", hijo.Genero);
+                    command.Parameters.AddWithValue("@segunInec", hijo.SegunInec);
+                    command.Parameters.AddWithValue("@subsidio", hijo.Subsidio);
+                    command.Parameters.AddWithValue("@padre_id", hijo.PadreId);
+
+                    // Ejecutar el comando
+                    command.ExecuteNonQuery();
+
+                    // Cerrar la conexión
+                    connection.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
-}
+ }

@@ -11,6 +11,8 @@ using System.Windows.Forms;
 using CapaNegocio;
 using CapaDatos;
 using CapaPresentaciòn.BtViewTablas;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using CapaEntidad;
 
 namespace CapaPresentaciòn.BtControles
 {
@@ -100,22 +102,60 @@ namespace CapaPresentaciòn.BtControles
 
         private void buttonEditar_Click(object sender, EventArgs e)
         {
-        
             if (dataGridView1.SelectedRows.Count > 0)
             {
-                TablaPadre formPadre = new TablaPadre();
-                formPadre.Show();
-                formPadre.TituloTabla = "Editar Padre";
-                formPadre.NumeroDocumento = dataGridView1.SelectedRows[0].Cells["numero_documento"].Value.ToString();
-                formPadre.TipoDocumento = dataGridView1.SelectedRows[0].Cells["tipo_documento"].Value.ToString();
-                formPadre.Nombre = dataGridView1.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
-                formPadre.Direccion = dataGridView1.SelectedRows[0].Cells["direccion"].Value.ToString();
-                formPadre.Telefono = dataGridView1.SelectedRows[0].Cells["telefono"].Value.ToString();
+
+                switch (cmbTablas.SelectedItem.ToString())
+                {
+                    case "padres":
+                        //Editar Padre
+                        TablaPadre formPadre = new TablaPadre();
+                        formPadre.Show();
+                        formPadre.TituloTabla = "Editar Padre";
+                        formPadre.NumeroDocumento = dataGridView1.SelectedRows[0].Cells["numero_documento"].Value.ToString();
+                        formPadre.TipoDocumento = dataGridView1.SelectedRows[0].Cells["tipo_documento"].Value.ToString();
+                        formPadre.Nombre = dataGridView1.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
+                        formPadre.Direccion = dataGridView1.SelectedRows[0].Cells["direccion"].Value.ToString();
+                        formPadre.Telefono = dataGridView1.SelectedRows[0].Cells["telefono"].Value.ToString();
+                        break;
+
+                    case "hijos":
+                       
+                            TablaHijocs formHijo = new TablaHijocs();
+                            formHijo.Show();
+                            formHijo.TituloTabla = "Editar Hijo";
+                            formHijo.NumeroDocumento = dataGridView1.SelectedRows[0].Cells["numero_documento"].Value.ToString();
+                            formHijo.NombreCompleto = dataGridView1.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
+                            formHijo.FechaNacimiento = (DateTime)dataGridView1.SelectedRows[0].Cells["fecha_nacimiento"].Value;
+                            formHijo.Edad = dataGridView1.SelectedRows[0].Cells["edad"].Value.ToString();
+                            formHijo.Genero = dataGridView1.SelectedRows[0].Cells["genero"].Value.ToString();
+                            formHijo.SegúnInec = dataGridView1.SelectedRows[0].Cells["segun_inec"].Value.ToString();
+                            formHijo.Subsidio = dataGridView1.SelectedRows[0].Cells["subsidio"].Value.ToString();
+                            formHijo.PadreId = (int)dataGridView1.SelectedRows[0].Cells["padre_id"].Value;
+                       
+                            MessageBox.Show("Por favor seleccione una fila antes de continuar con el proceso de edición");
+                        
+                        break;
+
+                        /*
+                                        if (dataGridView1.SelectedRows.Count > 0)
+                                    {
+                                        TablaPadre formPadre = new TablaPadre();
+                                        formPadre.Show();
+                                        formPadre.TituloTabla = "Editar Padre";
+                                        formPadre.NumeroDocumento = dataGridView1.SelectedRows[0].Cells["numero_documento"].Value.ToString();
+                                        formPadre.TipoDocumento = dataGridView1.SelectedRows[0].Cells["tipo_documento"].Value.ToString();
+                                        formPadre.Nombre = dataGridView1.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
+                                        formPadre.Direccion = dataGridView1.SelectedRows[0].Cells["direccion"].Value.ToString();
+                                        formPadre.Telefono = dataGridView1.SelectedRows[0].Cells["telefono"].Value.ToString();
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("Por favor seleccione una fila antes de continuar con el proceso de edición");
+                                    } */
+                }
             }
-            else
-            {
-                MessageBox.Show("Por favor seleccione una fila antes de continuar con el proceso de edición");
-            }
+
         }
 
         private void buttonEliminar_Click(object sender, EventArgs e)

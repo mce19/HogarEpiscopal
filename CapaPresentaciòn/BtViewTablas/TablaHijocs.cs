@@ -1,8 +1,10 @@
 ﻿using CapaEntidad;
 using CapaNegocio;
+using Microsoft.VisualBasic.Logging;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -26,9 +28,66 @@ namespace CapaPresentaciòn.BtViewTablas
                 labelnombreHijos.Text = _labelnombreHijos;
             }
         }
+
+        private string _numeroDocumento;
+        public string NumeroDocumento
+        {
+            get { return _numeroDocumento; }
+            set { _numeroDocumento = value; textBoxNumDocuHijo.Text = value; }
+        }
+
+        private string _nombreCompleto;
+        public string NombreCompleto
+        {
+            get { return _nombreCompleto; }
+            set { _nombreCompleto = value; textBoxnNombCompletoHijo.Text = _nombreCompleto; }
+        }
+
+        private DateTime _fechaNacimiento;
+        public DateTime FechaNacimiento
+        {
+            get { return _fechaNacimiento; }
+            set { _fechaNacimiento = value; dateTimePickerHijo.Value = _fechaNacimiento; }
+        }
+
+        private string _edad;
+        public string Edad
+        {
+            get { return _edad; }
+            set { _edad = value; textBoxEdadHijo.Text = value; }
+        }
+
+        private string _genero;
+        public string Genero
+        {
+            get { return _genero; }
+            set { _genero = value; comboBoxGeneroHijo.Text = _genero; }
+        }
+
+        private string _segunInec;
+        public string SegúnInec
+        {
+            get { return _segunInec; }
+            set { _segunInec = value; comboBoxSegInicHijo.Text = _segunInec; }
+        }
+
+        private string _subsidio;
+        public string Subsidio
+        {
+            get { return _subsidio; }
+            set { _subsidio = value; comboBoxSubsidHijos.Text = _subsidio; }
+        }
+
+        private int _padreId;
+        public int PadreId
+        {
+            get { return _padreId; }
+            set { _padreId = value; textBoxPadreId.Text = _padreId.ToString(); }
+        }
         public TablaHijocs()
         {
             InitializeComponent();
+            dateTimePickerHijo.ValueChanged += new EventHandler(dateTimePickerHijo_ValueChanged);
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -74,51 +133,27 @@ namespace CapaPresentaciòn.BtViewTablas
         private void buttonGuardarHijo_Click(object sender, EventArgs e)
         {
             // Validar datos de entrada
-            if (!string.IsNullOrEmpty(textBoxNumDocuHijo.Text) && !string.IsNullOrEmpty(textBoxnNombCompletoHijo.Text) && !string.IsNullOrEmpty(dateTimePickerHijo.Text) && !string.IsNullOrEmpty(textBoxEdadHijo.Text) && !string.IsNullOrEmpty(comboBoxGeneroHijo.Text) && !string.IsNullOrEmpty(comboBoxSegInicHijo.Text) && !string.IsNullOrEmpty(comboBoxSubsidHijos.Text) && !string.IsNullOrEmpty(textBoxPadreId.Text))
+            if (!string.IsNullOrEmpty(textBoxnNombCompletoHijo.Text) && !string.IsNullOrEmpty(dateTimePickerHijo.Text) && !string.IsNullOrEmpty(textBoxEdadHijo.Text))
             {
-              
-                // Crear objeto padre
-                int numeroDocumento;
-                if (!int.TryParse(textBoxNumDocuHijo.Text, out numeroDocumento))
-                {
-                    MessageBox.Show("El número de documento debe ser un valor numérico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                // Crear objeto hijo
                 Hijos hijo = new Hijos
                 {
-
-                    NumeroDocumento = numeroDocumento,
                     NombreCompleto = textBoxnNombCompletoHijo.Text,
                     FechaNacimiento = dateTimePickerHijo.Value,
-                    Edad = textBoxEdadHijo.Text,
-                    Genero = comboBoxGeneroHijo.Text,
-                    SegunInec = comboBoxSegInicHijo.Text,
-                    Subsidio = comboBoxSubsidHijos.Text,
-                    PadreId = textBoxPadreId.TabIndex,
+                    Edad = textBoxEdadHijo.Text
                 };
-
-                //utilizando la función Regex.IsMatch() para buscar cualquier caracter que no sea una letra o un número en cada uno de los campos del formulario. 
-                if (Regex.IsMatch(hijo.NumeroDocumento.ToString(), @"[^0-9]") || Regex.IsMatch(hijo.NombreCompleto, @"[^a-zA-Z\s]")
-     || Regex.IsMatch(hijo.Edad, @"[^0-9]")
-     || Regex.IsMatch(hijo.Genero, @"[^a-zA-Z\s]") || Regex.IsMatch(hijo.SegunInec, @"[^a-zA-Z\s]")
-     || Regex.IsMatch(hijo.Subsidio, @"[^a-zA-Z\s]") || Regex.IsMatch(hijo.PadreId.ToString(), @"[^0-9]"))
+                // Validar inyección SQL
+                if (hijo.NombreCompleto.Contains("'") || hijo.NombreCompleto.Contains("--"))
                 {
                     MessageBox.Show("No se permiten caracteres especiales", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                /* Validar inyección SQL
-                if (hijo.NumeroDocumento.ToString().Contains("'") || hijo.NombreCompleto.Contains("--") || hijo.NombreCompleto.Contains("'") || hijo.NombreCompleto.Contains("--") || hijo.Direccion.Contains("'") || hijo.Direccion.Contains("--") || hijo.Telefono.Contains("'") || hijo.Telefono.Contains("--"))
-                {
-                    MessageBox.Show("No se permiten caracteres especiales", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                */
                 // Guardar datos en la base de datos
                 CNHijos objeto = new CNHijos();
                 if (labelnombreHijos.Text == "Editar Hijo")
                 {
-                    //objeto.EditarHijos(hijo);
+                    objeto.EditarHijo(hijo);
                 }
                 else
                 {
@@ -151,6 +186,15 @@ namespace CapaPresentaciòn.BtViewTablas
         private void textBoxNumDocuHijo_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dateTimePickerHijo_ValueChanged(object sender, EventArgs e)
+        {
+            var fechaNacimiento = dateTimePickerHijo.Value;
+            var hoy = DateTime.Today;
+            var edad = hoy.Year - fechaNacimiento.Year;
+            if (fechaNacimiento > hoy.AddYears(-edad)) edad--;
+            textBoxEdadHijo.Text = edad.ToString();
         }
     }
 }
