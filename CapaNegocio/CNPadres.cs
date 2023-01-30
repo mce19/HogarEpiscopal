@@ -100,5 +100,24 @@ namespace CapaNegocio
 
         }
 
+        public bool ExistePadre(int numeroDocumento)
+        {
+            using (SqlConnection conexion = new SqlConnection(connectionString))
+            {
+                conexion.Open();
+
+                string sql = "SELECT COUNT(*) FROM Padres WHERE numero_documento = @NumeroDocumento";
+
+                using (SqlCommand comando = new SqlCommand(sql, conexion))
+                {
+                    comando.Parameters.AddWithValue("@NumeroDocumento", numeroDocumento);
+                    int resultado = (int)comando.ExecuteScalar();
+
+                    return resultado > 0;
+                }
+            }
+        }
+
+
     }
 }

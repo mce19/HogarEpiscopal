@@ -108,15 +108,21 @@ namespace CapaPresentaciòn.BtControles
                 switch (cmbTablas.SelectedItem.ToString())
                 {
                     case "padres":
-                        //Editar Padre
-                        TablaPadre formPadre = new TablaPadre();
-                        formPadre.Show();
-                        formPadre.TituloTabla = "Editar Padre";
-                        formPadre.NumeroDocumento = dataGridView1.SelectedRows[0].Cells["numero_documento"].Value.ToString();
-                        formPadre.TipoDocumento = dataGridView1.SelectedRows[0].Cells["tipo_documento"].Value.ToString();
-                        formPadre.Nombre = dataGridView1.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
-                        formPadre.Direccion = dataGridView1.SelectedRows[0].Cells["direccion"].Value.ToString();
-                        formPadre.Telefono = dataGridView1.SelectedRows[0].Cells["telefono"].Value.ToString();
+                        if (dataGridView1.SelectedRows.Count > 0)
+                        {
+                            TablaPadre formPadre = new TablaPadre();
+                            formPadre.Show();
+                            formPadre.TituloTabla = "Editar Padre";
+                            formPadre.NumeroDocumento = dataGridView1.SelectedRows[0].Cells["numero_documento"].Value.ToString();
+                            formPadre.TipoDocumento = dataGridView1.SelectedRows[0].Cells["tipo_documento"].Value.ToString();
+                            formPadre.Nombre = dataGridView1.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
+                            formPadre.Direccion = dataGridView1.SelectedRows[0].Cells["direccion"].Value.ToString();
+                            formPadre.Telefono = dataGridView1.SelectedRows[0].Cells["telefono"].Value.ToString();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Por favor seleccione una fila antes de continuar con el proceso de edición");
+                        }
                         break;
 
                     case "hijos":
@@ -133,8 +139,7 @@ namespace CapaPresentaciòn.BtControles
                             formHijo.Subsidio = dataGridView1.SelectedRows[0].Cells["subsidio"].Value.ToString();
                             formHijo.PadreId = (int)dataGridView1.SelectedRows[0].Cells["padre_id"].Value;
                        
-                            MessageBox.Show("Por favor seleccione una fila antes de continuar con el proceso de edición");
-                        
+                   
                         break;
 
                         /*
@@ -154,6 +159,11 @@ namespace CapaPresentaciòn.BtControles
                                         MessageBox.Show("Por favor seleccione una fila antes de continuar con el proceso de edición");
                                     } */
                 }
+            }
+
+            else
+            {
+                MessageBox.Show("Por favor seleccione una fila antes de continuar con el proceso de edición");
             }
 
         }

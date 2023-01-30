@@ -29,14 +29,7 @@ namespace CapaDatos
                 {
                     connection.Open();
 
-                    // Consultar si el padre existe en la base de datos
-                    SqlCommand commandPadre = new SqlCommand("SELECT COUNT(*) FROM padres WHERE numero_documento = @padre_id", connection);
-                    commandPadre.Parameters.AddWithValue("@padre_id", hijo.PadreId);
-                    int padreExiste = (int)commandPadre.ExecuteScalar();
-
-                    // Si el padre existe en la base de datos, agregar el hijo
-                    if (padreExiste > 0)
-                    {
+                    
                         SqlCommand command = new SqlCommand("INSERT INTO hijos (numero_documento, nombre_completo, fecha_nacimiento, edad, genero, segun_inec, subsidio, padre_id) VALUES (@numero_documento, @nombre_completo, @fecha_nacimiento, @edad, @genero, @segun_inec, @subsidio, @padre_id)", connection);
                         command.Parameters.AddWithValue("@numero_documento", hijo.NumeroDocumento);
                         command.Parameters.AddWithValue("@nombre_completo", hijo.NombreCompleto);
@@ -48,12 +41,9 @@ namespace CapaDatos
                         command.Parameters.AddWithValue("@padre_id", hijo.PadreId);
                         command.ExecuteNonQuery();
                     }
-                    else
-                    {
-                        throw new Exception("El padre con ID " + hijo.PadreId + " no existe en la base de datos.");
-                    }
-                }
+                
             }
+
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
@@ -66,28 +56,25 @@ namespace CapaDatos
         {
             try
             {
-                if (string.IsNullOrEmpty(hijo.NumeroDocumento.ToString()))
-                    throw new Exception("El número de documento es requerido");
-
-                if (string.IsNullOrEmpty(hijo.NombreCompleto))
+                if (string.IsNullOrWhiteSpace(hijo.NombreCompleto))
                     throw new Exception("El nombre es requerido");
 
-                if (string.IsNullOrEmpty(hijo.FechaNacimiento.ToString()))
+                if (hijo.FechaNacimiento == default(DateTime))
                     throw new Exception("La fecha de nacimiento es requerida");
 
-                if (string.IsNullOrEmpty(hijo.Edad))
+                if (string.IsNullOrWhiteSpace(hijo.Edad))
                     throw new Exception("La edad es requerida");
 
-                if (string.IsNullOrEmpty(hijo.Genero))
+                if (string.IsNullOrWhiteSpace(hijo.Genero))
                     throw new Exception("El género es requerido");
 
-                if (string.IsNullOrEmpty(hijo.SegunInec))
+                if (string.IsNullOrWhiteSpace(hijo.SegunInec))
                     throw new Exception("La clasificación según INEC es requerida");
 
-                if (string.IsNullOrEmpty(hijo.Subsidio))
+                if (string.IsNullOrWhiteSpace(hijo.Subsidio))
                     throw new Exception("El subsidio es requerido");
 
-                if (string.IsNullOrEmpty(hijo.PadreId.ToString()))
+                if (hijo.PadreId <= 0)
                     throw new Exception("El ID del padre es requerido");
 
                 using (SqlConnection connection = new SqlConnection(connectionString))

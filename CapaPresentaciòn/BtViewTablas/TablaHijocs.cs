@@ -61,21 +61,21 @@ namespace CapaPresentaciòn.BtViewTablas
         public string Genero
         {
             get { return _genero; }
-            set { _genero = value; comboBoxGeneroHijo.Text = _genero; }
+            set { _genero = value; textBoxGeneroHijo.Text = _genero; }
         }
 
         private string _segunInec;
         public string SegúnInec
         {
             get { return _segunInec; }
-            set { _segunInec = value; comboBoxSegInicHijo.Text = _segunInec; }
+            set { _segunInec = value; textBoxSegInicHijo.Text = _segunInec; }
         }
 
         private string _subsidio;
         public string Subsidio
         {
             get { return _subsidio; }
-            set { _subsidio = value; comboBoxSubsidHijos.Text = _subsidio; }
+            set { _subsidio = value; textBoxSubsidio.Text = _subsidio; }
         }
 
         private int _padreId;
@@ -133,21 +133,67 @@ namespace CapaPresentaciòn.BtViewTablas
         private void buttonGuardarHijo_Click(object sender, EventArgs e)
         {
             // Validar datos de entrada
-            if (!string.IsNullOrEmpty(textBoxnNombCompletoHijo.Text) && !string.IsNullOrEmpty(dateTimePickerHijo.Text) && !string.IsNullOrEmpty(textBoxEdadHijo.Text))
+            if (!string.IsNullOrEmpty(textBoxNumDocuHijo.Text) && !string.IsNullOrEmpty(textBoxnNombCompletoHijo.Text) && !string.IsNullOrEmpty(dateTimePickerHijo.Text) && !string.IsNullOrEmpty(textBoxEdadHijo.Text)
+                && !string.IsNullOrEmpty(textBoxGeneroHijo.Text) && !string.IsNullOrEmpty(textBoxSegInicHijo.Text) && !string.IsNullOrEmpty(textBoxSubsidio.Text) && !string.IsNullOrEmpty(textBoxPadreId.Text))
             {
-                // Crear objeto hijo
-                Hijos hijo = new Hijos
+                int numeroDocumento;
+                if (!int.TryParse(textBoxNumDocuHijo.Text, out numeroDocumento))
                 {
-                    NombreCompleto = textBoxnNombCompletoHijo.Text,
-                    FechaNacimiento = dateTimePickerHijo.Value,
-                    Edad = textBoxEdadHijo.Text
-                };
+                    MessageBox.Show("El número de documento debe ser un valor numérico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                int documento;
+                if (!int.TryParse(textBoxPadreId.Text, out documento))
+                {
+                    MessageBox.Show("Ingrese el numero de documento del padre correcto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+
+
                 // Validar inyección SQL
-                if (hijo.NombreCompleto.Contains("'") || hijo.NombreCompleto.Contains("--"))
+                if (textBoxNumDocuHijo.Text.Contains("'") || textBoxNumDocuHijo.Text.Contains("--") ||
+                    textBoxnNombCompletoHijo.Text.Contains("'") || textBoxnNombCompletoHijo.Text.Contains("--") ||
+                    textBoxGeneroHijo.Text.Contains("'") || textBoxGeneroHijo.Text.Contains("--") ||
+                    textBoxSegInicHijo.Text.Contains("'") || textBoxSegInicHijo.Text.Contains("--") ||
+                    textBoxSubsidio.Text.Contains("'") || textBoxSubsidio.Text.Contains("--"))
                 {
                     MessageBox.Show("No se permiten caracteres especiales", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+
+                CNHijos hijos = new CNHijos();
+                if (!hijos.ExisteHijo(textBoxNumDocuHijo.Text.Trim()))
+                {
+                    MessageBox.Show("No se encontró el padre con el número de documento especificado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+
+                // Verificar si el padre existe
+                CNPadres padres = new CNPadres();
+                if (!padres.ExistePadre(documento))
+                {
+                    MessageBox.Show("No se encontró el padre con el número de documento especificado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+
+
+
+                // Crear objeto hijo
+                Hijos hijo = new Hijos
+                {
+                    NumeroDocumento = numeroDocumento,
+                    NombreCompleto = textBoxnNombCompletoHijo.Text,
+                    FechaNacimiento = dateTimePickerHijo.Value,
+                    Edad = textBoxEdadHijo.Text,
+                    Genero = textBoxGeneroHijo.Text,
+                    SegunInec = textBoxSegInicHijo.Text,
+                    Subsidio = textBoxSubsidio.Text,
+                    PadreId = documento
+                };
 
                 // Guardar datos en la base de datos
                 CNHijos objeto = new CNHijos();

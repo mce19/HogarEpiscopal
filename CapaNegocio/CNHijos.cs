@@ -12,23 +12,16 @@ namespace CapaNegocio
     public class CNHijos
     {
 
-        /*
-                private string connectionString;
+        private CDHijos cdHijos;
+        private string connectionString;
 
                 public CNHijos()
                 {
                     conexiònBD conexionBD = new conexiònBD();
                     connectionString = conexionBD.connectionString;
-                }
-        */
-        private CDHijos cdHijos;
-
-        public CNHijos()
-        {
-            cdHijos = new CDHijos();
+                     cdHijos = new CDHijos();
         }
-
-
+        
         public void AgregarHijos(Hijos hijo)
         {
 
@@ -58,30 +51,16 @@ namespace CapaNegocio
                 if (string.IsNullOrEmpty(hijo.PadreId.ToString()))
                     throw new Exception("El numero del documento del padre es requerido");
 
-                /* using (SqlConnection connection = new SqlConnection(connectionString))
-                  {
-                      connection.Open();
 
-                      SqlCommand command = new SqlCommand("INSERT INTO hijos (numero_documento, nombre_completo, fecha_nacimiento, edad, genero, segun_inec, subsidio, padre_id) VALUES (@numero_documento, @nombre_completo, @fecha_nacimiento, @edad, @genero, @segun_inec, @subsidio, @padre_id)", connection);
-
-                      command.Parameters.AddWithValue("@numero_documento", hijo.NumeroDocumento);
-                      command.Parameters.AddWithValue("@nombre_completo", hijo.NombreCompleto);
-                      command.Parameters.AddWithValue("@fecha_nacimiento", hijo.FechaNacimiento);
-                      command.Parameters.AddWithValue("@edad", hijo.Edad);
-                      command.Parameters.AddWithValue("@genero", hijo.Genero);
-                      command.Parameters.AddWithValue("@segun_inec", hijo.SegunInec);
-                      command.Parameters.AddWithValue("@subsidio", hijo.Subsidio);
-                      command.Parameters.AddWithValue("@padre_id", hijo.PadreId);
-                      command.ExecuteNonQuery();
-                  }*/
-              }
+                cdHijos.AgregarHijo(hijo);
+            }
               catch (Exception ex)
               {
                   throw new Exception(ex.Message);
               }
 
                 // Si todos los datos del hijo son válidos, agregarlo a la base de datos
-                cdHijos.AgregarHijo(hijo);
+                
             }
 
         public void EditarHijo(Hijos hijo)
@@ -112,9 +91,25 @@ namespace CapaNegocio
 
                 if (string.IsNullOrEmpty(hijo.PadreId.ToString()))
                     throw new Exception("El ID del padre es requerido");
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
 
-                // Si todos los datos del hijo son válidos, editarlo en la base de datos
-                cdHijos.EditarHijo(hijo);
+                    connection.Open();
+                    SqlCommand command = new SqlCommand("UPDATE hijos SET numero_documento = @numero_documento, nombre_completo = @nombre_completo, fecha_nacimiento = @fecha_nacimiento, edad = @edad, genero = @genero, segun_inec = @segun_inec, subsidio = @subsidio, padre_id = @padre_id WHERE numero_documento = @padre_id", connection);
+                    command.Parameters.AddWithValue("@numero_documento", hijo.NumeroDocumento);
+                    command.Parameters.AddWithValue("@nombre_completo", hijo.NombreCompleto);
+                    command.Parameters.AddWithValue("@fecha_nacimiento", hijo.FechaNacimiento);
+                    command.Parameters.AddWithValue("@edad", hijo.Edad);
+                    command.Parameters.AddWithValue("@genero", hijo.Genero);
+                    command.Parameters.AddWithValue("@segun_inec", hijo.SegunInec);
+                    command.Parameters.AddWithValue("@subsidio", hijo.Subsidio);
+                    command.Parameters.AddWithValue("@padre_id", hijo.PadreId);
+
+
+                    // Ejecutar el comando
+                    command.ExecuteNonQuery();
+
+                }
             }
             catch (Exception ex)
             {
@@ -122,6 +117,20 @@ namespace CapaNegocio
             }
         }
 
+        public bool ExisteHijo(string numeroDocumento)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = "SELECT COUNT(*) FROM Hijos WHERE NumeroDocumento = @numeroDocumento";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@numeroDocumento", numeroDocumento);
+                    int count = (int)command.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+        }
 
     }
 

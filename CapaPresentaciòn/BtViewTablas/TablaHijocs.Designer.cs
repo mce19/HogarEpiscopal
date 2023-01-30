@@ -37,15 +37,15 @@
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxNumDocuHijo = new System.Windows.Forms.TextBox();
             this.textBoxnNombCompletoHijo = new System.Windows.Forms.TextBox();
-            this.comboBoxGeneroHijo = new System.Windows.Forms.ComboBox();
-            this.comboBoxSubsidHijos = new System.Windows.Forms.ComboBox();
             this.textBoxEdadHijo = new System.Windows.Forms.TextBox();
             this.dateTimePickerHijo = new System.Windows.Forms.DateTimePicker();
             this.labelnombreHijos = new System.Windows.Forms.Label();
             this.buttonGuardarHijo = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxPadreId = new System.Windows.Forms.TextBox();
-            this.comboBoxSegInicHijo = new System.Windows.Forms.ComboBox();
+            this.textBoxGeneroHijo = new System.Windows.Forms.TextBox();
+            this.textBoxSegInicHijo = new System.Windows.Forms.TextBox();
+            this.textBoxSubsidio = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -138,22 +138,6 @@
             this.textBoxnNombCompletoHijo.Size = new System.Drawing.Size(252, 23);
             this.textBoxnNombCompletoHijo.TabIndex = 8;
             // 
-            // comboBoxGeneroHijo
-            // 
-            this.comboBoxGeneroHijo.FormattingEnabled = true;
-            this.comboBoxGeneroHijo.Location = new System.Drawing.Point(426, 123);
-            this.comboBoxGeneroHijo.Name = "comboBoxGeneroHijo";
-            this.comboBoxGeneroHijo.Size = new System.Drawing.Size(252, 23);
-            this.comboBoxGeneroHijo.TabIndex = 9;
-            // 
-            // comboBoxSubsidHijos
-            // 
-            this.comboBoxSubsidHijos.FormattingEnabled = true;
-            this.comboBoxSubsidHijos.Location = new System.Drawing.Point(426, 287);
-            this.comboBoxSubsidHijos.Name = "comboBoxSubsidHijos";
-            this.comboBoxSubsidHijos.Size = new System.Drawing.Size(252, 23);
-            this.comboBoxSubsidHijos.TabIndex = 11;
-            // 
             // textBoxEdadHijo
             // 
             this.textBoxEdadHijo.Location = new System.Drawing.Point(63, 369);
@@ -213,28 +197,41 @@
             this.textBoxPadreId.TabIndex = 17;
             this.textBoxPadreId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // comboBoxSegInicHijo
+            // textBoxGeneroHijo
             // 
-            this.comboBoxSegInicHijo.FormattingEnabled = true;
-            this.comboBoxSegInicHijo.Location = new System.Drawing.Point(426, 202);
-            this.comboBoxSegInicHijo.Name = "comboBoxSegInicHijo";
-            this.comboBoxSegInicHijo.Size = new System.Drawing.Size(252, 23);
-            this.comboBoxSegInicHijo.TabIndex = 18;
+            this.textBoxGeneroHijo.Location = new System.Drawing.Point(426, 123);
+            this.textBoxGeneroHijo.Name = "textBoxGeneroHijo";
+            this.textBoxGeneroHijo.Size = new System.Drawing.Size(252, 23);
+            this.textBoxGeneroHijo.TabIndex = 19;
+            // 
+            // textBoxSegInicHijo
+            // 
+            this.textBoxSegInicHijo.Location = new System.Drawing.Point(426, 202);
+            this.textBoxSegInicHijo.Name = "textBoxSegInicHijo";
+            this.textBoxSegInicHijo.Size = new System.Drawing.Size(252, 23);
+            this.textBoxSegInicHijo.TabIndex = 20;
+            // 
+            // textBoxSubsidio
+            // 
+            this.textBoxSubsidio.Location = new System.Drawing.Point(426, 287);
+            this.textBoxSubsidio.Name = "textBoxSubsidio";
+            this.textBoxSubsidio.Size = new System.Drawing.Size(252, 23);
+            this.textBoxSubsidio.TabIndex = 21;
             // 
             // TablaHijocs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(740, 488);
-            this.Controls.Add(this.comboBoxSegInicHijo);
+            this.Controls.Add(this.textBoxSubsidio);
+            this.Controls.Add(this.textBoxSegInicHijo);
+            this.Controls.Add(this.textBoxGeneroHijo);
             this.Controls.Add(this.textBoxPadreId);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.buttonGuardarHijo);
             this.Controls.Add(this.labelnombreHijos);
             this.Controls.Add(this.dateTimePickerHijo);
             this.Controls.Add(this.textBoxEdadHijo);
-            this.Controls.Add(this.comboBoxSubsidHijos);
-            this.Controls.Add(this.comboBoxGeneroHijo);
             this.Controls.Add(this.textBoxnNombCompletoHijo);
             this.Controls.Add(this.textBoxNumDocuHijo);
             this.Controls.Add(this.label7);
@@ -263,14 +260,14 @@
         private Label label7;
         private TextBox textBoxNumDocuHijo;
         private TextBox textBoxnNombCompletoHijo;
-        private ComboBox comboBoxGeneroHijo;
-        private ComboBox comboBoxSubsidHijos;
         private TextBox textBoxEdadHijo;
         private DateTimePicker dateTimePickerHijo;
         private Label labelnombreHijos;
         private Button buttonGuardarHijo;
         private Label label8;
         private TextBox textBoxPadreId;
-        private ComboBox comboBoxSegInicHijo;
+        private TextBox textBoxGeneroHijo;
+        private TextBox textBoxSegInicHijo;
+        private TextBox textBoxSubsidio;
     }
 }
