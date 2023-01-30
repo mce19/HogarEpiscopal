@@ -67,9 +67,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(85, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 19);
+            this.label1.Size = new System.Drawing.Size(136, 19);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Horgar Episcopal";
+            this.label1.Text = "Hogar Episcopal";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1

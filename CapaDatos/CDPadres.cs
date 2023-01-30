@@ -35,7 +35,7 @@ namespace CapaDatos
                         var query = "MostrarPadres";
                         var command = new SqlCommand(query, connection);
 
-                        using (var reader = command.ExecuteReader())
+                        using (var reader  = command.ExecuteReader())
                         {
                             while (reader.Read())
                             {
@@ -57,7 +57,7 @@ namespace CapaDatos
         public void AgregarPadre(Padres padre)
         {
             try
-            {
+            { 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();

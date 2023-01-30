@@ -91,25 +91,9 @@ namespace CapaNegocio
 
                 if (string.IsNullOrEmpty(hijo.PadreId.ToString()))
                     throw new Exception("El ID del padre es requerido");
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
 
-                    connection.Open();
-                    SqlCommand command = new SqlCommand("UPDATE hijos SET numero_documento = @numero_documento, nombre_completo = @nombre_completo, fecha_nacimiento = @fecha_nacimiento, edad = @edad, genero = @genero, segun_inec = @segun_inec, subsidio = @subsidio, padre_id = @padre_id WHERE numero_documento = @padre_id", connection);
-                    command.Parameters.AddWithValue("@numero_documento", hijo.NumeroDocumento);
-                    command.Parameters.AddWithValue("@nombre_completo", hijo.NombreCompleto);
-                    command.Parameters.AddWithValue("@fecha_nacimiento", hijo.FechaNacimiento);
-                    command.Parameters.AddWithValue("@edad", hijo.Edad);
-                    command.Parameters.AddWithValue("@genero", hijo.Genero);
-                    command.Parameters.AddWithValue("@segun_inec", hijo.SegunInec);
-                    command.Parameters.AddWithValue("@subsidio", hijo.Subsidio);
-                    command.Parameters.AddWithValue("@padre_id", hijo.PadreId);
+                cdHijos.EditarHijo(hijo);
 
-
-                    // Ejecutar el comando
-                    command.ExecuteNonQuery();
-
-                }
             }
             catch (Exception ex)
             {
@@ -117,12 +101,15 @@ namespace CapaNegocio
             }
         }
 
+
+
+
         public bool ExisteHijo(string numeroDocumento)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "SELECT COUNT(*) FROM Hijos WHERE NumeroDocumento = @numeroDocumento";
+                string query = "SELECT COUNT(*) FROM hijos WHERE numero_documento = @numeroDocumento";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@numeroDocumento", numeroDocumento);

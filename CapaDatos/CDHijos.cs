@@ -56,26 +56,6 @@ namespace CapaDatos
         {
             try
             {
-                if (string.IsNullOrWhiteSpace(hijo.NombreCompleto))
-                    throw new Exception("El nombre es requerido");
-
-                if (hijo.FechaNacimiento == default(DateTime))
-                    throw new Exception("La fecha de nacimiento es requerida");
-
-                if (string.IsNullOrWhiteSpace(hijo.Edad))
-                    throw new Exception("La edad es requerida");
-
-                if (string.IsNullOrWhiteSpace(hijo.Genero))
-                    throw new Exception("El género es requerido");
-
-                if (string.IsNullOrWhiteSpace(hijo.SegunInec))
-                    throw new Exception("La clasificación según INEC es requerida");
-
-                if (string.IsNullOrWhiteSpace(hijo.Subsidio))
-                    throw new Exception("El subsidio es requerido");
-
-                if (hijo.PadreId <= 0)
-                    throw new Exception("El ID del padre es requerido");
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
@@ -88,7 +68,7 @@ namespace CapaDatos
                     command.Parameters.AddWithValue("@genero", hijo.Genero);
                     command.Parameters.AddWithValue("@segunInec", hijo.SegunInec);
                     command.Parameters.AddWithValue("@subsidio", hijo.Subsidio);
-                    command.Parameters.AddWithValue("@padre_id", hijo.PadreId);
+                    command.Parameters.AddWithValue("@padreId", hijo.PadreId);
 
                     // Ejecutar el comando
                     command.ExecuteNonQuery();

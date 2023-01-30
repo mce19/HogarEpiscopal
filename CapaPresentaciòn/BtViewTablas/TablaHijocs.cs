@@ -163,22 +163,9 @@ namespace CapaPresentaciòn.BtViewTablas
                     return;
                 }
 
-                CNHijos hijos = new CNHijos();
-                if (!hijos.ExisteHijo(textBoxNumDocuHijo.Text.Trim()))
-                {
-                    MessageBox.Show("No se encontró el padre con el número de documento especificado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+               
 
-
-                // Verificar si el padre existe
-                CNPadres padres = new CNPadres();
-                if (!padres.ExistePadre(documento))
-                {
-                    MessageBox.Show("No se encontró el padre con el número de documento especificado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
+            
 
 
 
@@ -199,10 +186,29 @@ namespace CapaPresentaciòn.BtViewTablas
                 CNHijos objeto = new CNHijos();
                 if (labelnombreHijos.Text == "Editar Hijo")
                 {
+
                     objeto.EditarHijo(hijo);
+
                 }
                 else
                 {
+
+                    CNHijos hijos = new CNHijos();
+                    if (hijos.ExisteHijo(textBoxNumDocuHijo.Text.Trim()))
+                    {
+                        MessageBox.Show("Un niño ya se encuentra registrado con el número de documento especificado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    // Verificar si el padre existe
+                    CNPadres padres = new CNPadres();
+                    if (!padres.ExistePadre(documento))
+                    {
+                        MessageBox.Show("No se encontró el padre con el número de documento especificado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+
                     objeto.AgregarHijos(hijo);
                 }
 
