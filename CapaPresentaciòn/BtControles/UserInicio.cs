@@ -244,6 +244,19 @@ namespace CapaPresentaciòn.BtControles
                         }
                         break;
 
+                    case "grupos":
+                        // Código para eliminar en la tabla asistentes
+                        using (SqlCommand command = new SqlCommand("DELETE FROM grupos WHERE id = @idGrupos", connection))
+                        {
+                            command.Parameters.AddWithValue("@idGrupos", dataGridView1.SelectedRows[0].Cells["id"].Value);
+                            command.ExecuteNonQuery();
+                            connection.Close();
+                            tablasNegocio.CargarDatosTabla(cmbTablas.SelectedItem.ToString(), dataGridView1);
+                            MessageBox.Show("Grupo eliminado con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                        break;
+
                 }
 
             }

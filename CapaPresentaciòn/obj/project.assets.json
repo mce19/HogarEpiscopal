@@ -27,14 +27,10 @@
           "System.Security.Principal.Windows": "4.7.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard2.0/_._": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/Microsoft.Win32.Registry.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard2.0/Microsoft.Win32.Registry.dll": {
@@ -90,14 +86,10 @@
           "runtime.native.System.Data.SqlClient.sni": "4.7.0"
         },
         "compile": {
-          "ref/netcoreapp2.1/System.Data.SqlClient.dll": {
-            "related": ".xml"
-          }
+          "ref/netcoreapp2.1/System.Data.SqlClient.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp2.1/System.Data.SqlClient.dll": {
-            "related": ".xml"
-          }
+          "lib/netcoreapp2.1/System.Data.SqlClient.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netcoreapp2.1/System.Data.SqlClient.dll": {
@@ -117,14 +109,10 @@
           "System.Security.Principal.Windows": "4.7.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard2.0/_._": {}
         },
         "runtime": {
-          "lib/netstandard2.0/System.Security.AccessControl.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/System.Security.AccessControl.dll": {}
         },
         "runtimeTargets": {
           "runtimes/win/lib/netcoreapp2.0/System.Security.AccessControl.dll": {
@@ -136,14 +124,10 @@
       "System.Security.Principal.Windows/4.7.0": {
         "type": "package",
         "compile": {
-          "ref/netcoreapp3.0/_._": {
-            "related": ".xml"
-          }
+          "ref/netcoreapp3.0/_._": {}
         },
         "runtime": {
-          "lib/netstandard2.0/System.Security.Principal.Windows.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/System.Security.Principal.Windows.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netcoreapp2.1/System.Security.Principal.Windows.dll": {
@@ -557,23 +541,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\panad\\.nuget\\packages\\": {}
+    "C:\\Users\\XPC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaPresentaciòn\\CapaPresentaciòn.csproj",
+      "projectUniqueName": "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaPresentaciòn\\CapaPresentaciòn.csproj",
       "projectName": "CapaPresentaciòn",
-      "projectPath": "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaPresentaciòn\\CapaPresentaciòn.csproj",
-      "packagesPath": "C:\\Users\\panad\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaPresentaciòn\\obj\\",
+      "projectPath": "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaPresentaciòn\\CapaPresentaciòn.csproj",
+      "packagesPath": "C:\\Users\\XPC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaPresentaciòn\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\panad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\XPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows"
+        "net6.0-windows7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -583,11 +567,11 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaEntidad\\CapaEntidad.csproj": {
-              "projectPath": "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaEntidad\\CapaEntidad.csproj"
+            "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaEntidad\\CapaEntidad.csproj": {
+              "projectPath": "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaEntidad\\CapaEntidad.csproj"
             },
-            "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaNegocio\\CapaNegocio.csproj": {
-              "projectPath": "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaNegocio\\CapaNegocio.csproj"
+            "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaNegocio\\CapaNegocio.csproj": {
+              "projectPath": "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaNegocio\\CapaNegocio.csproj"
             }
           }
         }
@@ -613,8 +597,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -626,7 +609,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -635,7 +618,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "El paquete \"Guna.UI2.WinForms 2.0.3.5\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net6.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "message": "El paquete \"Guna.UI2.WinForms 2.0.3.5\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \"net6.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
       "libraryId": "Guna.UI2.WinForms",
       "targetGraphs": [
         "net6.0-windows7.0"

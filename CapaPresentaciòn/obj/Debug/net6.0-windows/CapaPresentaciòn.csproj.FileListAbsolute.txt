@@ -162,3 +162,4 @@ C:\Users\panad\Downloads\ASP.NET\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6
 C:\Users\panad\Downloads\ASP.NET\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.genruntimeconfig.cache
 C:\Users\panad\Downloads\ASP.NET\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\ref\CapaPresentaciòn.dll
 C:\Users\panad\Downloads\ASP.NET\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtViewTablas.TablaHijocs.resources
+C:\Users\XPC\Downloads\proyecto hogar\Hogar_Episcopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtViewTablas.TablaHijocs.resources

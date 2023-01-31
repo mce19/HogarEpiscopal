@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaPresentaciòn\\CapaPresentaciòn.csproj": {}
+    "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaPresentaciòn\\CapaPresentaciòn.csproj": {}
   },
   "projects": {
-    "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaDatos\\CapaDatos.csproj": {
+    "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaDatos\\CapaDatos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaDatos\\CapaDatos.csproj",
+        "projectUniqueName": "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaDatos\\CapaDatos.csproj",
         "projectName": "CapaDatos",
-        "projectPath": "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaDatos\\CapaDatos.csproj",
-        "packagesPath": "C:\\Users\\panad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaDatos\\obj\\",
+        "projectPath": "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaDatos\\CapaDatos.csproj",
+        "packagesPath": "C:\\Users\\XPC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaDatos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\panad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\XPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -28,8 +28,8 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaEntidad\\CapaEntidad.csproj": {
-                "projectPath": "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaEntidad\\CapaEntidad.csproj"
+              "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaEntidad\\CapaEntidad.csproj": {
+                "projectPath": "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaEntidad\\CapaEntidad.csproj"
               }
             }
           }
@@ -55,8 +55,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -68,25 +67,25 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaEntidad\\CapaEntidad.csproj": {
+    "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaEntidad\\CapaEntidad.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaEntidad\\CapaEntidad.csproj",
+        "projectUniqueName": "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaEntidad\\CapaEntidad.csproj",
         "projectName": "CapaEntidad",
-        "projectPath": "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaEntidad\\CapaEntidad.csproj",
-        "packagesPath": "C:\\Users\\panad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaEntidad\\obj\\",
+        "projectPath": "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaEntidad\\CapaEntidad.csproj",
+        "packagesPath": "C:\\Users\\XPC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaEntidad\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\panad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\XPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -113,8 +112,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -126,25 +124,25 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaNegocio\\CapaNegocio.csproj": {
+    "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaNegocio\\CapaNegocio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaNegocio\\CapaNegocio.csproj",
+        "projectUniqueName": "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaNegocio\\CapaNegocio.csproj",
         "projectName": "CapaNegocio",
-        "projectPath": "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaNegocio\\CapaNegocio.csproj",
-        "packagesPath": "C:\\Users\\panad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaNegocio\\obj\\",
+        "projectPath": "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaNegocio\\CapaNegocio.csproj",
+        "packagesPath": "C:\\Users\\XPC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaNegocio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\panad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\XPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -154,11 +152,11 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaDatos\\CapaDatos.csproj": {
-                "projectPath": "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaDatos\\CapaDatos.csproj"
+              "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaDatos\\CapaDatos.csproj": {
+                "projectPath": "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaDatos\\CapaDatos.csproj"
               },
-              "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaEntidad\\CapaEntidad.csproj": {
-                "projectPath": "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaEntidad\\CapaEntidad.csproj"
+              "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaEntidad\\CapaEntidad.csproj": {
+                "projectPath": "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaEntidad\\CapaEntidad.csproj"
               }
             }
           }
@@ -178,8 +176,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -191,25 +188,25 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaPresentaciòn\\CapaPresentaciòn.csproj": {
+    "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaPresentaciòn\\CapaPresentaciòn.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaPresentaciòn\\CapaPresentaciòn.csproj",
+        "projectUniqueName": "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaPresentaciòn\\CapaPresentaciòn.csproj",
         "projectName": "CapaPresentaciòn",
-        "projectPath": "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaPresentaciòn\\CapaPresentaciòn.csproj",
-        "packagesPath": "C:\\Users\\panad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaPresentaciòn\\obj\\",
+        "projectPath": "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaPresentaciòn\\CapaPresentaciòn.csproj",
+        "packagesPath": "C:\\Users\\XPC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaPresentaciòn\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\panad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\XPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net6.0-windows"
+          "net6.0-windows7.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -219,11 +216,11 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaEntidad\\CapaEntidad.csproj": {
-                "projectPath": "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaEntidad\\CapaEntidad.csproj"
+              "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaEntidad\\CapaEntidad.csproj": {
+                "projectPath": "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaEntidad\\CapaEntidad.csproj"
               },
-              "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaNegocio\\CapaNegocio.csproj": {
-                "projectPath": "C:\\Users\\panad\\Downloads\\ASP.NET\\HogarEpiscopal\\CapaNegocio\\CapaNegocio.csproj"
+              "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaNegocio\\CapaNegocio.csproj": {
+                "projectPath": "C:\\Users\\XPC\\Downloads\\proyecto hogar\\Hogar_Episcopal\\CapaNegocio\\CapaNegocio.csproj"
               }
             }
           }
@@ -249,8 +246,7 @@
             "net47",
             "net471",
             "net472",
-            "net48",
-            "net481"
+            "net48"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -262,7 +258,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

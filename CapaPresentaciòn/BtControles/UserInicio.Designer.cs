@@ -48,15 +48,16 @@
             this.lblTablaSeleccionada.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblTablaSeleccionada.Location = new System.Drawing.Point(640, 19);
             this.lblTablaSeleccionada.Name = "lblTablaSeleccionada";
-            this.lblTablaSeleccionada.Size = new System.Drawing.Size(116, 44);
+            this.lblTablaSeleccionada.Size = new System.Drawing.Size(130, 44);
             this.lblTablaSeleccionada.TabIndex = 2;
-            this.lblTablaSeleccionada.Text = "inicio";
+            this.lblTablaSeleccionada.Text = "Datos ";
             this.lblTablaSeleccionada.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lblTablaSeleccionada.Click += new System.EventHandler(this.label1_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -94,7 +95,7 @@
             // 
             this.cmbTablas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTablas.FormattingEnabled = true;
-            this.cmbTablas.Location = new System.Drawing.Point(204, 75);
+            this.cmbTablas.Location = new System.Drawing.Point(204, 84);
             this.cmbTablas.Name = "cmbTablas";
             this.cmbTablas.Size = new System.Drawing.Size(196, 28);
             this.cmbTablas.TabIndex = 4;
@@ -135,9 +136,9 @@
             // 
             // textBoxBuscador
             // 
-            this.textBoxBuscador.Location = new System.Drawing.Point(430, 77);
+            this.textBoxBuscador.Location = new System.Drawing.Point(430, 86);
             this.textBoxBuscador.Name = "textBoxBuscador";
-            this.textBoxBuscador.Size = new System.Drawing.Size(506, 26);
+            this.textBoxBuscador.Size = new System.Drawing.Size(824, 26);
             this.textBoxBuscador.TabIndex = 8;
             this.textBoxBuscador.TextChanged += new System.EventHandler(this.textBoxBuscador_TextChanged);
             // 

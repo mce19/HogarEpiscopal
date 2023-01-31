@@ -25,7 +25,7 @@ namespace CapaNegocio
         private readonly Dictionary<string, string[]> _diccionarioTitulos = new Dictionary<string, string[]>
     {
         {"padres", new[] {"Tipo de documento", "Número Documento", "Nombre Completo", "Dirección", "Teléfono" } },
-        {"hijos", new[] { "Número Documento", "Nombre Completo", "Fecha Nacimiento", "Edad", "Género", "Según INEC", "Subsidio", "N. Documento del padre" } },
+        {"hijos", new[] { "Número Documento", "Nombre Completo", "Fecha Nacimiento", "Edad", "Género", "Según INEC", "Subsidio", "N. Documento del padre", "Registrado" } },
         {"docentes", new[] { "Docente ID","Número Documento", "Nombre Completo", "Direcciòn", "Tèlefono", "Grugo asignado"} },
         {"asistentes", new[] { "ID", "Número Documento", "Nombre Completo", "Docente ID" } },
          {"grupos", new[] { "ID", "Nombre" } }

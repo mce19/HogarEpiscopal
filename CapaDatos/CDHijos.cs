@@ -30,7 +30,7 @@ namespace CapaDatos
                     connection.Open();
 
                     
-                        SqlCommand command = new SqlCommand("INSERT INTO hijos (numero_documento, nombre_completo, fecha_nacimiento, edad, genero, segun_inec, subsidio, padre_id) VALUES (@numero_documento, @nombre_completo, @fecha_nacimiento, @edad, @genero, @segun_inec, @subsidio, @padre_id)", connection);
+                        SqlCommand command = new SqlCommand("INSERT INTO hijos (numero_documento, nombre_completo, fecha_nacimiento, edad, genero, segun_inec, subsidio, padre_id, fecha_registro) VALUES (@numero_documento, @nombre_completo, @fecha_nacimiento, @edad, @genero, @segun_inec, @subsidio, @padre_id, @fecha_registro)", connection);
                         command.Parameters.AddWithValue("@numero_documento", hijo.NumeroDocumento);
                         command.Parameters.AddWithValue("@nombre_completo", hijo.NombreCompleto);
                         command.Parameters.AddWithValue("@fecha_nacimiento", hijo.FechaNacimiento);
@@ -39,7 +39,8 @@ namespace CapaDatos
                         command.Parameters.AddWithValue("@segun_inec", hijo.SegunInec);
                         command.Parameters.AddWithValue("@subsidio", hijo.Subsidio);
                         command.Parameters.AddWithValue("@padre_id", hijo.PadreId);
-                        command.ExecuteNonQuery();
+                        command.Parameters.AddWithValue("@fecha_registro", DateTime.Now);
+                    command.ExecuteNonQuery();
                     }
                 
             }

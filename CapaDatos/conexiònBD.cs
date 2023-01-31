@@ -10,7 +10,8 @@ namespace CapaDatos
     public class conexiònBD
 
     {
-        public string connectionString = "Data Source=DESKTOP-AP0JBJ6\\NUCLEUS;Initial Catalog=hogar_episcopal;Integrated Security=True;";
+        //public string connectionString = "Data Source=DESKTOP-AP0JBJ6\\NUCLEUS;Initial Catalog=hogar_episcopal;Integrated Security=True;";
+        public string connectionString = "Data Source=LOCAL;Initial Catalog=hogar_episcopal;Integrated Security=True;";
         private SqlConnection connection;
 
         public conexiònBD()
@@ -30,3 +31,14 @@ namespace CapaDatos
 
     }
 }
+
+
+
+/*RECORDATORIO
+ 
+- VALIDAR EL CAMPO DE LA EDAD PAR QUE SOLO PERMITA NUMEROS Y NO SE CAIGA
+ - CONFIGURAR EL BOTON ELIMINAR PARA LA TABLA GRUPOS POR FILA
+ 
+ 
+ 
+ */
