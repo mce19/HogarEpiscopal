@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CapaDatos;
+using CapaNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,13 +26,7 @@ namespace CapaPresentaciòn.BtControles
 
         private void dataGridViewPadresMatricula_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                textBoxNumPadre.Text = dataGridViewPadresMatricula.Rows[e.RowIndex].Cells["numero_documento"].Value.ToString();
-                textBoxNumHijo.Text = dataGridViewPadresMatricula.Rows[e.RowIndex].Cells["nombre_completo"].Value.ToString();
-                textBoxNombPadre.Text = dataGridViewPadresMatricula.Rows[e.RowIndex].Cells["nombre_completo"].Value.ToString();
-                textBoxNombHijo.Text = dataGridViewPadresMatricula.Rows[e.RowIndex].Cells["nombre_completo"].Value.ToString();
-            }
+
         }
 
         private void buttonCargarDatos_Click(object sender, EventArgs e)
@@ -62,6 +58,54 @@ namespace CapaPresentaciòn.BtControles
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBoxNombDocente_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonMatricular_Click(object sender, EventArgs e)
+        {
+            // Verificar que se haya seleccionado una fila en el dataGridView
+            if (dataGridViewPadresMatricula.SelectedRows.Count == 1)
+            {
+                DataGridViewRow filaSeleccionada = dataGridViewPadresMatricula.SelectedRows[0];
+
+                // Asignar los valores de la fila seleccionada a los textBox correspondientes
+                textBoxNumPadre.Text = filaSeleccionada.Cells["Ced. Padre"].Value.ToString();
+                textBoxNombPadre.Text = filaSeleccionada.Cells["Nombre Padre"].Value.ToString();
+                textBoxNombHijo.Text = filaSeleccionada.Cells["Nombre Hijo"].Value.ToString();
+                textBoxNumHijo.Text = filaSeleccionada.Cells["Ced. Hijo"].Value.ToString();
+
+            }
+            else
+            {
+                // Mostrar un mensaje de error si no se seleccionó ninguna fila
+                MessageBox.Show("Por favor seleccione una fila.");
+            }
+        }
+
+        private void comboBoxGrupos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxGrupos.SelectedIndex >= 0)
+            {
+                CNGrupos cnGrupos = new CNGrupos();
+                var dataTable = cnGrupos.MostrarDocentePorGrupo(idGrupo);
+
+                if (dataTable != null && dataTable.Rows.Count > 0)
+                {
+                    textBoxNumDocente.Text = dataTable.Rows[0]["numero_documento"].ToString();
+                    textBoxNombDocente.Text = dataTable.Rows[0]["nombre_completo"].ToString();
+                }
+
+            }
 
         }
     }
