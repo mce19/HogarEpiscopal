@@ -40,9 +40,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonGuardarMatricula = new System.Windows.Forms.Button();
-            this.textBoxNombDocente = new System.Windows.Forms.TextBox();
-            this.textBoxNumDocente = new System.Windows.Forms.TextBox();
-            this.comboBoxGrupos = new System.Windows.Forms.ComboBox();
+            this.textBoxNombGrupo = new System.Windows.Forms.TextBox();
+            this.textBoxNumGrupo = new System.Windows.Forms.TextBox();
+            this.comboBoxDocentes = new System.Windows.Forms.ComboBox();
             this.textBoxNombHijo = new System.Windows.Forms.TextBox();
             this.textBoxNombPadre = new System.Windows.Forms.TextBox();
             this.textBoxNumHijo = new System.Windows.Forms.TextBox();
@@ -91,9 +91,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.buttonGuardarMatricula);
-            this.panel1.Controls.Add(this.textBoxNombDocente);
-            this.panel1.Controls.Add(this.textBoxNumDocente);
-            this.panel1.Controls.Add(this.comboBoxGrupos);
+            this.panel1.Controls.Add(this.textBoxNombGrupo);
+            this.panel1.Controls.Add(this.textBoxNumGrupo);
+            this.panel1.Controls.Add(this.comboBoxDocentes);
             this.panel1.Controls.Add(this.textBoxNombHijo);
             this.panel1.Controls.Add(this.textBoxNombPadre);
             this.panel1.Controls.Add(this.textBoxNumHijo);
@@ -186,32 +186,33 @@
             this.buttonGuardarMatricula.TabIndex = 7;
             this.buttonGuardarMatricula.Text = "Guardar";
             this.buttonGuardarMatricula.UseVisualStyleBackColor = true;
+            this.buttonGuardarMatricula.Click += new System.EventHandler(this.buttonGuardarMatricula_Click);
             // 
-            // textBoxNombDocente
+            // textBoxNombGrupo
             // 
-            this.textBoxNombDocente.Location = new System.Drawing.Point(167, 224);
-            this.textBoxNombDocente.Name = "textBoxNombDocente";
-            this.textBoxNombDocente.Size = new System.Drawing.Size(204, 23);
-            this.textBoxNombDocente.TabIndex = 6;
-            this.textBoxNombDocente.TextChanged += new System.EventHandler(this.textBoxNombDocente_TextChanged);
+            this.textBoxNombGrupo.Location = new System.Drawing.Point(167, 224);
+            this.textBoxNombGrupo.Name = "textBoxNombGrupo";
+            this.textBoxNombGrupo.Size = new System.Drawing.Size(204, 23);
+            this.textBoxNombGrupo.TabIndex = 6;
+            this.textBoxNombGrupo.TextChanged += new System.EventHandler(this.textBoxNombDocente_TextChanged);
             // 
-            // textBoxNumDocente
+            // textBoxNumGrupo
             // 
-            this.textBoxNumDocente.Location = new System.Drawing.Point(17, 224);
-            this.textBoxNumDocente.Name = "textBoxNumDocente";
-            this.textBoxNumDocente.Size = new System.Drawing.Size(127, 23);
-            this.textBoxNumDocente.TabIndex = 5;
+            this.textBoxNumGrupo.Location = new System.Drawing.Point(17, 224);
+            this.textBoxNumGrupo.Name = "textBoxNumGrupo";
+            this.textBoxNumGrupo.Size = new System.Drawing.Size(127, 23);
+            this.textBoxNumGrupo.TabIndex = 5;
             // 
-            // comboBoxGrupos
+            // comboBoxDocentes
             // 
-            this.comboBoxGrupos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxGrupos.FormattingEnabled = true;
-            this.comboBoxGrupos.Location = new System.Drawing.Point(17, 278);
-            this.comboBoxGrupos.MaxDropDownItems = 10;
-            this.comboBoxGrupos.Name = "comboBoxGrupos";
-            this.comboBoxGrupos.Size = new System.Drawing.Size(354, 23);
-            this.comboBoxGrupos.TabIndex = 4;
-            this.comboBoxGrupos.SelectedIndexChanged += new System.EventHandler(this.comboBoxGrupos_SelectedIndexChanged);
+            this.comboBoxDocentes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDocentes.FormattingEnabled = true;
+            this.comboBoxDocentes.Location = new System.Drawing.Point(17, 278);
+            this.comboBoxDocentes.MaxDropDownItems = 10;
+            this.comboBoxDocentes.Name = "comboBoxDocentes";
+            this.comboBoxDocentes.Size = new System.Drawing.Size(354, 23);
+            this.comboBoxDocentes.TabIndex = 4;
+            this.comboBoxDocentes.SelectedIndexChanged += new System.EventHandler(this.comboBoxDocentes_SelectedIndexChanged);
             // 
             // textBoxNombHijo
             // 
@@ -291,15 +292,15 @@
         private DataGridView dataGridViewPadresMatricula;
         private Panel panel1;
         private Button buttonCargarDatos;
-        private ComboBox comboBoxGrupos;
+        private ComboBox comboBoxDocentes;
         private TextBox textBoxNombHijo;
         private TextBox textBoxNombPadre;
         private TextBox textBoxNumHijo;
         private TextBox textBoxNumPadre;
         private Label label2;
         private Button buttonGuardarMatricula;
-        private TextBox textBoxNombDocente;
-        private TextBox textBoxNumDocente;
+        private TextBox textBoxNombGrupo;
+        private TextBox textBoxNumGrupo;
         private Button buttonMatricular;
         private Label label9;
         private Label label8;

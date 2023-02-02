@@ -92,20 +92,24 @@ namespace CapaPresentaciòn.BtControles
             }
         }
 
-        private void comboBoxGrupos_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBoxDocentes_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBoxGrupos.SelectedIndex >= 0)
+            try
             {
-                CNGrupos cnGrupos = new CNGrupos();
-                var dataTable = cnGrupos.MostrarDocentePorGrupo(idGrupo);
-
-                if (dataTable != null && dataTable.Rows.Count > 0)
-                {
-                    textBoxNumDocente.Text = dataTable.Rows[0]["numero_documento"].ToString();
-                    textBoxNombDocente.Text = dataTable.Rows[0]["nombre_completo"].ToString();
-                }
-
+                CNDocente objDocentes = new CNDocente();
+               
+                comboBoxDocentes.DataSource = objDocentes;
+                comboBoxDocentes.DisplayMember = "NombreGrupo";
+                comboBoxDocentes.ValueMember = "IdGrupo";
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar los datos: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonGuardarMatricula_Click(object sender, EventArgs e)
+        {
 
         }
     }
