@@ -22,6 +22,11 @@ namespace CapaNegocio
         {
             return objCDMatricula.ListarMatriculados();
         }
+
+        public DataTable ListarDocenteGrupos()
+        {
+            return objCDMatricula.ListarDocenteGrupos();
+        }
     }
    
 }
