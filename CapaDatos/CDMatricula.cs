@@ -36,6 +36,9 @@ namespace CapaDatos
                     command.Parameters.AddWithValue("@docente_id", matricula.DocenteId);
                     command.Parameters.AddWithValue("@grupo_id", matricula.GrupoId);
                     command.ExecuteNonQuery();
+
+                    // Cerrar la conexión
+                    connection.Close();
                 }
 
             }

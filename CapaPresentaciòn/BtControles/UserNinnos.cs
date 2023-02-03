@@ -1,4 +1,5 @@
 ﻿using CapaDatos;
+using CapaEntidad;
 using CapaNegocio;
 using System;
 using System.Collections.Generic;
@@ -133,8 +134,76 @@ namespace CapaPresentaciòn.BtControles
 
         }
 
+        private void LimpiarTextBox()
+        {
+            textBoxIdMatricula.Clear();
+            textBoxNumPadre.Clear();
+            textBoxNombPadre.Clear();
+            textBoxNombHijo.Clear();
+            textBoxNombDocente.Clear();
+            textBoxGrupos.Clear();
+            textBoxNumHijo.Clear();
+            textBoxNumDocente.Clear();
+            textBoxIdGrupo.Clear();
+            
+        }
+
+
         private void buttonGuardarMatricula_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(textBoxIdMatricula.Text) ||
+        string.IsNullOrWhiteSpace(textBoxNumPadre.Text) ||
+        string.IsNullOrWhiteSpace(textBoxNumHijo.Text) ||
+        string.IsNullOrWhiteSpace(textBoxNumDocente.Text) ||
+        string.IsNullOrWhiteSpace(textBoxIdGrupo.Text))
+            {
+                MessageBox.Show("Por favor llene todos los campos antes de guardar la matrícula");
+                return;
+            }
+
+
+            // Validar inyección SQL
+            if (textBoxIdMatricula.Text.Contains("'") || textBoxIdMatricula.Text.Contains("--") ||
+                textBoxNumPadre.Text.Contains("'") || textBoxNumPadre.Text.Contains("--") ||
+                textBoxNumHijo.Text.Contains("'") || textBoxNumHijo.Text.Contains("--") ||
+                textBoxNumDocente.Text.Contains("'") || textBoxNumDocente.Text.Contains("--") ||
+                textBoxIdGrupo.Text.Contains("'") || textBoxIdGrupo.Text.Contains("--"))
+            {
+                MessageBox.Show("No se permiten caracteres especiales", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            int idMatricula, numPadre, numHijo, numDocente, idGrupo;
+            if (!int.TryParse(textBoxIdMatricula.Text.Trim(), out idMatricula) ||
+                !int.TryParse(textBoxNumPadre.Text, out numPadre) ||
+                !int.TryParse(textBoxNumHijo.Text, out numHijo) ||
+                !int.TryParse(textBoxNumDocente.Text, out numDocente) ||
+                !int.TryParse(textBoxIdGrupo.Text, out idGrupo))
+            {
+                MessageBox.Show("Por favor ingrese solo números en todos los campos");
+                return;
+            }
+
+            CNMatricula hijos = new CNMatricula();
+            if (hijos.ExisteMatricula(idMatricula))
+            {
+                MessageBox.Show("Ya se realizo una matricula con este código por favor ingrese un nuevo codigo para realizar la matricula", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Matriculas matricula = new Matriculas();
+            matricula.Id = idMatricula;
+            matricula.PadreId = numPadre;
+            matricula.HijoId = numHijo;
+            matricula.DocenteId = numDocente;
+            matricula.GrupoId = idGrupo;
+
+          
+            //Ya se realizo una matricula con este código por favor ingrese un nuevo codigo para realizar la matricula
+            CNMatricula capaDatos = new CNMatricula();
+            capaDatos.AgregarMatricula(matricula);
+            MessageBox.Show("La matrícula se guardó con éxito");
+            LimpiarTextBox();
 
         }
 
