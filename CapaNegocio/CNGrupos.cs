@@ -10,8 +10,24 @@ namespace CapaNegocio
 {
     public class CNGrupos
     {
-       CDGrupos datos = new CDGrupos();
+       CDGrupos datos = new CDGrupos(); 
+       CDGrupos oCDGrupos;
 
-       
-    } 
+        public CNGrupos()
+        {
+            oCDGrupos = new CDGrupos();
+        }
+
+        public DataTable ListarNombresGrupos()
+        {
+            return oCDGrupos.ListarNombresGrupos();
+        }
+
+        public DataTable ListarInformacionPorGrupo(string groupName)
+        {
+            return oCDGrupos.ListarInformacionPorGrupo(groupName);
+        }
+
+    }
+
 }

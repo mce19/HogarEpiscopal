@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewPadresMatricula = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxIdMatricula = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.textBoxGrupos = new System.Windows.Forms.TextBox();
             this.textBoxIdGrupo = new System.Windows.Forms.TextBox();
@@ -54,8 +58,6 @@
             this.dataGridViewGrupos = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.textBoxIdMatricula = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPadresMatricula)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGrupos)).BeginInit();
@@ -79,6 +81,14 @@
             this.dataGridViewPadresMatricula.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewPadresMatricula.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewPadresMatricula.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewPadresMatricula.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewPadresMatricula.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPadresMatricula.Location = new System.Drawing.Point(47, 120);
             this.dataGridViewPadresMatricula.Name = "dataGridViewPadresMatricula";
@@ -115,6 +125,24 @@
             this.panel1.Size = new System.Drawing.Size(403, 445);
             this.panel1.TabIndex = 5;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // textBoxIdMatricula
+            // 
+            this.textBoxIdMatricula.Location = new System.Drawing.Point(24, 89);
+            this.textBoxIdMatricula.Name = "textBoxIdMatricula";
+            this.textBoxIdMatricula.Size = new System.Drawing.Size(127, 23);
+            this.textBoxIdMatricula.TabIndex = 20;
+            this.textBoxIdMatricula.TextChanged += new System.EventHandler(this.textBoxIdMatricula_TextChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(24, 71);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(46, 15);
+            this.label13.TabIndex = 19;
+            this.label13.Text = "Codigo";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // label12
             // 
@@ -298,6 +326,14 @@
             this.dataGridViewGrupos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewGrupos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridViewGrupos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewGrupos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewGrupos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewGrupos.Location = new System.Drawing.Point(47, 362);
             this.dataGridViewGrupos.Name = "dataGridViewGrupos";
@@ -325,24 +361,6 @@
             this.label11.Size = new System.Drawing.Size(73, 23);
             this.label11.TabIndex = 10;
             this.label11.Text = "Padres";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(24, 71);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(46, 15);
-            this.label13.TabIndex = 19;
-            this.label13.Text = "Codigo";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
-            // 
-            // textBoxIdMatricula
-            // 
-            this.textBoxIdMatricula.Location = new System.Drawing.Point(24, 89);
-            this.textBoxIdMatricula.Name = "textBoxIdMatricula";
-            this.textBoxIdMatricula.Size = new System.Drawing.Size(127, 23);
-            this.textBoxIdMatricula.TabIndex = 20;
-            this.textBoxIdMatricula.TextChanged += new System.EventHandler(this.textBoxIdMatricula_TextChanged);
             // 
             // UserNinnos
             // 
