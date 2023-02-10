@@ -63,6 +63,15 @@ namespace CapaNegocio
             }
         }
 
+
+        public bool VerificarMatricula(int padreId, int hijoId)
+        {
+            bool existeMatricula = false;
+            existeMatricula = objCDMatricula.VerificarMatricula(padreId, hijoId);
+
+            return existeMatricula;
+        }
+
     }
 
 }

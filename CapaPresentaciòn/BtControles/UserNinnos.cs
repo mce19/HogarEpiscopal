@@ -185,6 +185,13 @@ namespace CapaPresentaciòn.BtControles
             }
 
             CNMatricula hijos = new CNMatricula();
+
+            if (hijos.VerificarMatricula(numPadre, numHijo))
+            {
+                MessageBox.Show("Ya se realizó una matrícula con este padre e hijo. Por favor ingrese nuevos datos para realizar la matrícula", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (hijos.ExisteMatricula(idMatricula))
             {
                 MessageBox.Show("Ya se realizo una matricula con este código por favor ingrese un nuevo codigo para realizar la matricula", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

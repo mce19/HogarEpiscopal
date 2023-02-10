@@ -20,7 +20,7 @@ namespace CapaDatos
             connectionString = conexionBD.connectionString;
         }
                         
-        private List<string> tablasPermitidas = new List<string>() { "padres", "hijos", "docentes", "asistentes", "grupos" };
+        private List<string> tablasPermitidas = new List<string>() { "padres", "hijos", "docentes", "asistentes", "grupos", "matricula" };
 
         public DataTable ObtenerTablasPermitidas()
         {

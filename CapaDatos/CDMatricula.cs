@@ -97,6 +97,8 @@ namespace CapaDatos
 
             return dt;
         }
+
+
         public DataTable ListarDocenteGrupos()
         {
             SqlConnection conexion = new SqlConnection(connectionString);
@@ -111,5 +113,34 @@ namespace CapaDatos
 
             return dt;
         }
+
+        // Método para verificar si un padre y su hijo ya han sido matriculados previamente
+        public bool VerificarMatricula(int padreId, int hijoId)
+        {
+
+            bool existeMatricula = false;
+
+            // Conectar a la base de datos
+            using (SqlConnection conexion = new SqlConnection(connectionString))
+            {
+                conexion.Open();
+
+                string query = "SELECT COUNT(*) FROM matricula WHERE padre_id = @padreId AND hijo_id = @hijoId";
+
+                SqlCommand comando = new SqlCommand(query, conexion);
+                comando.Parameters.AddWithValue("@padreId", padreId);
+                comando.Parameters.AddWithValue("@hijoId", hijoId);
+
+                int resultado = (int)comando.ExecuteScalar();
+
+                existeMatricula = resultado > 0;
+
+                conexion.Close();
+            }
+
+            return existeMatricula;
+        }
+
+
     }
 }

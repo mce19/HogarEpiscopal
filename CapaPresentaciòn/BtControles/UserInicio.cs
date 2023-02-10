@@ -257,6 +257,19 @@ namespace CapaPresentaciòn.BtControles
 
                         break;
 
+                    case "matricula":
+                        // Código para eliminar en la tabla asistentes
+                        using (SqlCommand command = new SqlCommand("DELETE FROM matricula WHERE id = @idMatricula", connection))
+                        {
+                            command.Parameters.AddWithValue("@idMatricula", dataGridView1.SelectedRows[0].Cells["id"].Value);
+                            command.ExecuteNonQuery();
+                            connection.Close();
+                            tablasNegocio.CargarDatosTabla(cmbTablas.SelectedItem.ToString(), dataGridView1);
+                            MessageBox.Show("Se elimino la matricula con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                        break;
+
                 }
 
             }
@@ -267,7 +280,7 @@ namespace CapaPresentaciòn.BtControles
         {
             busquedaEnCurso = true;
             CNTablasDatos tablasNegocio = new CNTablasDatos();
-            tablasNegocio.BuscarPorNombre(cmbTablas.SelectedItem.ToString(), textBoxBuscador.Text, dataGridView1);
+            tablasNegocio.BuscarPorNombre(cmbTablas.SelectedItem.ToString(), textBoxBuscador.Text, "", "", "", "", dataGridView1);
         }
 
     }

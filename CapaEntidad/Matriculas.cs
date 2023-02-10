@@ -14,5 +14,11 @@ namespace CapaEntidad
         public int DocenteId { get; set; }
         public int GrupoId { get; set; }
 
+
+        public string Tabla { get; set; }
+        public string Nombre { get; set; }
+        public string NumeroDocumento { get; set; }
+
+
     }
 }

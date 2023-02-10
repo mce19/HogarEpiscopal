@@ -92,27 +92,28 @@ namespace CapaPresentaciòn.BtControles
 
             foreach (DataRow row in dataTable.Rows)
             {
-                if (row["genero"].ToString() == "M")
+                if (row["genero"].ToString().ToUpper() == "M")
                 {
                     numHombres++;
                 }
-                else
+                else if (row["genero"].ToString().ToUpper() == "F")
                 {
                     numMujeres++;
                 }
 
-                if (row["Subsidio"].ToString() == "IMAS")
+                if (row["Subsidio"].ToString().ToUpper() == "IMAS")
                 {
                     numImas++;
                 }
-                else if (row["Subsidio"].ToString() == "PANI")
+                else if (row["Subsidio"].ToString().ToUpper() == "PANI")
                 {
                     numPani++;
                 }
-                else
+                else if (row["Subsidio"].ToString().ToUpper() == "PRIVADO")
                 {
                     numPrivados++;
                 }
+
             }
 
             NumHombres.Text = numHombres.ToString();
