@@ -2,6 +2,52 @@
   "version": 3,
   "targets": {
     "net6.0-windows7.0": {
+      "BouncyCastle/1.8.9": {
+        "type": "package",
+        "compile": {
+          "lib/BouncyCastle.Crypto.dll": {}
+        },
+        "runtime": {
+          "lib/BouncyCastle.Crypto.dll": {}
+        }
+      },
+      "HtmlToPdf/1.0.4": {
+        "type": "package",
+        "dependencies": {
+          "iTextSharp": "5.5.8",
+          "wkhtmltopdf.msvc.exe": "1.0.2"
+        },
+        "compile": {
+          "lib/Microsoft.OpenPublishing.Build.HtmlConverters.HtmlToPdf.dll": {}
+        },
+        "runtime": {
+          "lib/Microsoft.OpenPublishing.Build.HtmlConverters.HtmlToPdf.dll": {}
+        }
+      },
+      "iTextSharp/5.5.13.3": {
+        "type": "package",
+        "dependencies": {
+          "BouncyCastle": "1.8.9"
+        },
+        "compile": {
+          "lib/itextsharp.dll": {}
+        },
+        "runtime": {
+          "lib/itextsharp.dll": {}
+        }
+      },
+      "itextsharp.xmlworker/5.5.13.3": {
+        "type": "package",
+        "dependencies": {
+          "iTextSharp": "5.5.13.3"
+        },
+        "compile": {
+          "lib/itextsharp.xmlworker.dll": {}
+        },
+        "runtime": {
+          "lib/itextsharp.xmlworker.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/3.1.0": {
         "type": "package",
         "compile": {
@@ -131,12 +177,18 @@
           }
         }
       },
+      "wkhtmltopdf.msvc.exe/1.0.2": {
+        "type": "package"
+      },
       "CapaDatos/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "CapaEntidad": "1.0.0",
-          "System.Data.SqlClient": "4.8.5"
+          "HtmlToPdf": "1.0.4",
+          "System.Data.SqlClient": "4.8.5",
+          "iTextSharp": "5.5.13.3",
+          "itextsharp.xmlworker": "5.5.13.3"
         },
         "compile": {
           "bin/placeholder/CapaDatos.dll": {}
@@ -151,6 +203,11 @@
       "CapaEntidad/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "HtmlToPdf": "1.0.4",
+          "iTextSharp": "5.5.13.3",
+          "itextsharp.xmlworker": "5.5.13.3"
+        },
         "compile": {
           "bin/placeholder/CapaEntidad.dll": {}
         },
@@ -164,6 +221,61 @@
     }
   },
   "libraries": {
+    "BouncyCastle/1.8.9": {
+      "sha512": "axnBgvdD5n+FnEG6efk/tfKuMFru7R/EoISH9zjh319yb3HD24TEHSAbNN/lTRT2ulOGRxDgOsCjkuk08iwWPg==",
+      "type": "package",
+      "path": "bouncycastle/1.8.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "bouncycastle.1.8.9.nupkg.sha512",
+        "bouncycastle.nuspec",
+        "lib/BouncyCastle.Crypto.dll"
+      ]
+    },
+    "HtmlToPdf/1.0.4": {
+      "sha512": "I0SBPZbIx/gpzh8c3E1JPybTbUec/XLuFi2XXO5yODaXfVPvtD2d3SpTzz5cEZ8XmuWb8i89/JMAUjPikLthuA==",
+      "type": "package",
+      "path": "htmltopdf/1.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "htmltopdf.1.0.4.nupkg.sha512",
+        "htmltopdf.nuspec",
+        "lib/Microsoft.OpenPublishing.Build.HtmlConverters.HtmlToPdf.dll"
+      ]
+    },
+    "iTextSharp/5.5.13.3": {
+      "sha512": "vtnMhTEJdZFCkLqaQLjD8aqTBIVKHPrSFuSXnxbLEJlvE/j/l88fvG9wtsejXTmhtErMo0lA9T2LdfdfbwplYw==",
+      "type": "package",
+      "path": "itextsharp/5.5.13.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "gnu-agpl-v3.0.md",
+        "itextsharp.5.5.13.3.nupkg.sha512",
+        "itextsharp.nuspec",
+        "lib/iTextSharp.xml",
+        "lib/itextsharp.dll",
+        "notice.txt"
+      ]
+    },
+    "itextsharp.xmlworker/5.5.13.3": {
+      "sha512": "tRxeolUZl5863E/IHVb+5riZwsHw8uNiP0uku0gO1nktR2M9DCJS+U9EoLV3CFr0VuxoxQF/sLOffa8BP0hJzg==",
+      "type": "package",
+      "path": "itextsharp.xmlworker/5.5.13.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "gnu-agpl-v3.0.md",
+        "itextsharp.xmlworker.5.5.13.3.nupkg.sha512",
+        "itextsharp.xmlworker.nuspec",
+        "lib/itextsharp.xmlworker.dll"
+      ]
+    },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "sha512": "z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
       "type": "package",
@@ -477,6 +589,20 @@
         "version.txt"
       ]
     },
+    "wkhtmltopdf.msvc.exe/1.0.2": {
+      "sha512": "MNAGxeg8VmwkajqI3ozDG3fqH871lUUOo18Z1EJ1hCzx78nF637csTUekumt4WTNEfi+ZfF59tPCmoxfPMhm+w==",
+      "type": "package",
+      "path": "wkhtmltopdf.msvc.exe/1.0.2",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "tools/install.ps1",
+        "tools/wkhtmltopdf.exe",
+        "wkhtmltopdf.msvc.exe.1.0.2.nupkg.sha512",
+        "wkhtmltopdf.msvc.exe.nuspec"
+      ]
+    },
     "CapaDatos/1.0.0": {
       "type": "project",
       "path": "../CapaDatos/CapaDatos.csproj",
@@ -491,7 +617,10 @@
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
       "CapaDatos >= 1.0.0",
-      "CapaEntidad >= 1.0.0"
+      "CapaEntidad >= 1.0.0",
+      "HtmlToPdf >= 1.0.4",
+      "iTextSharp >= 5.5.13.3",
+      "itextsharp.xmlworker >= 5.5.13.3"
     ]
   },
   "packageFolders": {
@@ -539,6 +668,20 @@
     "frameworks": {
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
+        "dependencies": {
+          "HtmlToPdf": {
+            "target": "Package",
+            "version": "[1.0.4, )"
+          },
+          "iTextSharp": {
+            "target": "Package",
+            "version": "[5.5.13.3, )"
+          },
+          "itextsharp.xmlworker": {
+            "target": "Package",
+            "version": "[5.5.13.3, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -560,5 +703,47 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"BouncyCastle 1.8.9\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \"net6.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "BouncyCastle",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"HtmlToPdf 1.0.4\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \"net6.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "HtmlToPdf",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"iTextSharp 5.5.13.3\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \"net6.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "iTextSharp",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"itextsharp.xmlworker 5.5.13.3\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8\" en lugar de la plataforma de destino del proyecto \"net6.0-windows7.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "itextsharp.xmlworker",
+      "targetGraphs": [
+        "net6.0-windows7.0"
+      ]
+    }
+  ]
 }

@@ -12,4 +12,7 @@
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="C:\Users\XPC\.nuget\packages\" />
   </ItemGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Pkgwkhtmltopdf_msvc_exe Condition=" '$(Pkgwkhtmltopdf_msvc_exe)' == '' ">C:\Users\XPC\.nuget\packages\wkhtmltopdf.msvc.exe\1.0.2</Pkgwkhtmltopdf_msvc_exe>
+  </PropertyGroup>
 </Project>

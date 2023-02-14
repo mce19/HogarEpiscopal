@@ -93,6 +93,7 @@
             // 
             // cmbTablas
             // 
+            this.cmbTablas.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.cmbTablas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTablas.FormattingEnabled = true;
             this.cmbTablas.Location = new System.Drawing.Point(204, 84);
@@ -136,6 +137,7 @@
             // 
             // textBoxBuscador
             // 
+            this.textBoxBuscador.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.textBoxBuscador.Location = new System.Drawing.Point(430, 86);
             this.textBoxBuscador.Name = "textBoxBuscador";
             this.textBoxBuscador.Size = new System.Drawing.Size(824, 26);

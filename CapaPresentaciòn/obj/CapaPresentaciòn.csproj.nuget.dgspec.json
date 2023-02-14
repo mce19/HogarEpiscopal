@@ -44,9 +44,21 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
+            "HtmlToPdf": {
+              "target": "Package",
+              "version": "[1.0.4, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.5, )"
+            },
+            "iTextSharp": {
+              "target": "Package",
+              "version": "[5.5.13.3, )"
+            },
+            "itextsharp.xmlworker": {
+              "target": "Package",
+              "version": "[5.5.13.3, )"
             }
           },
           "imports": [
@@ -106,6 +118,20 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "HtmlToPdf": {
+              "target": "Package",
+              "version": "[1.0.4, )"
+            },
+            "iTextSharp": {
+              "target": "Package",
+              "version": "[5.5.13.3, )"
+            },
+            "itextsharp.xmlworker": {
+              "target": "Package",
+              "version": "[5.5.13.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -170,6 +196,20 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "HtmlToPdf": {
+              "target": "Package",
+              "version": "[1.0.4, )"
+            },
+            "iTextSharp": {
+              "target": "Package",
+              "version": "[5.5.13.3, )"
+            },
+            "itextsharp.xmlworker": {
+              "target": "Package",
+              "version": "[5.5.13.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -238,6 +278,18 @@
             "Guna.UI2.WinForms": {
               "target": "Package",
               "version": "[2.0.3.5, )"
+            },
+            "HtmlToPdf": {
+              "target": "Package",
+              "version": "[1.0.4, )"
+            },
+            "iTextSharp": {
+              "target": "Package",
+              "version": "[5.5.13.3, )"
+            },
+            "itextsharp.xmlworker": {
+              "target": "Package",
+              "version": "[5.5.13.3, )"
             }
           },
           "imports": [

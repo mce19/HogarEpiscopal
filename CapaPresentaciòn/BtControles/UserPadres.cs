@@ -9,6 +9,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.tool.xml;
+using System.IO;
+
+
 
 namespace CapaPresentaciòn.BtControles
 {
@@ -121,6 +127,102 @@ namespace CapaPresentaciòn.BtControles
             NumImas.Text = numImas.ToString();
             NumPani.Text = numPani.ToString();
             NumPrivados.Text = numPrivados.ToString();
+
+        }
+
+        private void buttonPdf_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog guardar = new SaveFileDialog();
+            guardar.FileName = DateTime.Now.ToString("dd-MM-yyyy-HH-mm-ss") + ".pdf";
+            guardar.ShowDialog();
+
+            // Obtener el nombre del grupo seleccionado
+            string nombreGrupo = comboBoxGrupos.Text;
+
+            if (guardar.ShowDialog() == DialogResult.OK)
+            {
+                using (FileStream stream = new FileStream(guardar.FileName, FileMode.Create))
+                {
+                    Document pdfDoc = new Document(PageSize.A4, 25, 25, 25, 25);
+
+                    PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
+                    pdfDoc.Open();
+                    // Agregar un encabezado con el nombre del grupo
+                    pdfDoc.Add(new Phrase("Nombre del grupo: " + nombreGrupo));
+                    pdfDoc.Add(new Paragraph("\n"));
+                    pdfDoc.Add(new Paragraph("\n"));
+
+                    PdfPTable table = new PdfPTable(dataGridViewGrupos.ColumnCount);
+                    for (int i = 0; i < dataGridViewGrupos.ColumnCount; i++)
+                    {
+                        table.AddCell(new Phrase(dataGridViewGrupos.Columns[i].HeaderText));
+                    }
+
+
+
+
+                    for (int i = 0; i < dataGridViewGrupos.RowCount; i++)
+                    {
+                        for (int j = 0; j < dataGridViewGrupos.ColumnCount; j++)
+                        {
+                            if (dataGridViewGrupos[j, i].Value != null)
+                            {
+                                table.AddCell(new Phrase(dataGridViewGrupos[j, i].Value.ToString()));
+                            }
+                        }
+                    }
+
+
+                    pdfDoc.Add(table);
+                    pdfDoc.Add(new Paragraph("\n"));
+                    pdfDoc.Add(new Paragraph("\n"));
+
+                    // Obtén los datos de los contadores
+                    string numHombres = NumHombres.Text;
+                    string numMujeres = NumMujeres.Text;
+                    string numImas = NumImas.Text;
+                    string numPani = NumPani.Text;
+                    string numPrivados = NumPrivados.Text;
+
+                    // Crea la tabla HTML
+                    string paginaHtml_texto = "<table>" +
+                        "<tr>" +
+                            "<td>Hombres</td>" +
+                            "<td>" + numHombres + "</td>" +
+                        "</tr>" +
+                        "<tr>" +
+                            "<td>Mujeres</td>" +
+                            "<td>" + numMujeres + "</td>" +
+                        "</tr>" +
+                        "<tr>" +
+                            "<td>Imas</td>" +
+                            "<td>" + numImas + "</td>" +
+                        "</tr>" +
+                        "<tr>" +
+                            "<td>Pani</td>" +
+                            "<td>" + numPani + "</td>" +
+                        "</tr>" +
+                        "<tr>" +
+                            "<td>Privados</td>" +
+                            "<td>" + numPrivados + "</td>" +
+                        "</tr>" +
+                    "</table>";
+
+
+                    // Agrega la tabla HTML al PDF
+                    using (StringReader sr = new StringReader(paginaHtml_texto))
+                    {
+                        XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);
+                    }
+
+
+
+
+                    
+                    pdfDoc.Close();
+                    stream.Close();
+                }
+            }
 
         }
     }

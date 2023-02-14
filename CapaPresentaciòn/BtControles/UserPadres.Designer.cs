@@ -47,6 +47,13 @@
             this.NumPrivados = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBoxGrupos = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.anno = new System.Windows.Forms.Label();
+            this.labelNameDocente = new System.Windows.Forms.Label();
+            this.labelNameAsistente = new System.Windows.Forms.Label();
+            this.buttonPdf = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGrupos)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -93,7 +100,7 @@
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel1.Controls.Add(this.NumMujeres);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(185, 540);
+            this.panel1.Location = new System.Drawing.Point(429, 540);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(178, 92);
             this.panel1.TabIndex = 6;
@@ -125,7 +132,7 @@
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel2.Controls.Add(this.NumHombres);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(410, 540);
+            this.panel2.Location = new System.Drawing.Point(647, 540);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(178, 92);
             this.panel2.TabIndex = 7;
@@ -156,7 +163,7 @@
             this.panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel3.Controls.Add(this.NumPani);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Location = new System.Drawing.Point(629, 540);
+            this.panel3.Location = new System.Drawing.Point(866, 540);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(178, 92);
             this.panel3.TabIndex = 8;
@@ -188,7 +195,7 @@
             this.panel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel4.Controls.Add(this.NumImas);
             this.panel4.Controls.Add(this.label7);
-            this.panel4.Location = new System.Drawing.Point(847, 540);
+            this.panel4.Location = new System.Drawing.Point(1082, 540);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(178, 92);
             this.panel4.TabIndex = 9;
@@ -219,7 +226,7 @@
             this.panel5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.panel5.Controls.Add(this.NumPrivados);
             this.panel5.Controls.Add(this.label9);
-            this.panel5.Location = new System.Drawing.Point(1070, 540);
+            this.panel5.Location = new System.Drawing.Point(1298, 540);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(178, 92);
             this.panel5.TabIndex = 10;
@@ -238,7 +245,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(31, 13);
+            this.label9.Location = new System.Drawing.Point(25, 13);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(130, 28);
             this.label9.TabIndex = 0;
@@ -254,11 +261,87 @@
             this.comboBoxGrupos.TabIndex = 11;
             this.comboBoxGrupos.SelectedIndexChanged += new System.EventHandler(this.comboBoxGrupos_SelectedIndexChanged);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(17, 539);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 15);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Año :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(17, 580);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(55, 15);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Maestra :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(17, 616);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(61, 15);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "Asistente :";
+            // 
+            // anno
+            // 
+            this.anno.AutoSize = true;
+            this.anno.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.anno.Location = new System.Drawing.Point(84, 539);
+            this.anno.Name = "anno";
+            this.anno.Size = new System.Drawing.Size(45, 19);
+            this.anno.TabIndex = 15;
+            this.anno.Text = "0000";
+            // 
+            // labelNameDocente
+            // 
+            this.labelNameDocente.AutoSize = true;
+            this.labelNameDocente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelNameDocente.Location = new System.Drawing.Point(84, 580);
+            this.labelNameDocente.Name = "labelNameDocente";
+            this.labelNameDocente.Size = new System.Drawing.Size(154, 19);
+            this.labelNameDocente.TabIndex = 16;
+            this.labelNameDocente.Text = "Nombre Completo";
+            // 
+            // labelNameAsistente
+            // 
+            this.labelNameAsistente.AutoSize = true;
+            this.labelNameAsistente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelNameAsistente.Location = new System.Drawing.Point(84, 617);
+            this.labelNameAsistente.Name = "labelNameAsistente";
+            this.labelNameAsistente.Size = new System.Drawing.Size(154, 19);
+            this.labelNameAsistente.TabIndex = 17;
+            this.labelNameAsistente.Text = "Nombre Completo";
+            // 
+            // buttonPdf
+            // 
+            this.buttonPdf.BackColor = System.Drawing.Color.IndianRed;
+            this.buttonPdf.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonPdf.Location = new System.Drawing.Point(1340, 90);
+            this.buttonPdf.Name = "buttonPdf";
+            this.buttonPdf.Size = new System.Drawing.Size(136, 36);
+            this.buttonPdf.TabIndex = 18;
+            this.buttonPdf.Text = "PDF";
+            this.buttonPdf.UseVisualStyleBackColor = false;
+            this.buttonPdf.Click += new System.EventHandler(this.buttonPdf_Click);
+            // 
             // UserPadres
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.Controls.Add(this.buttonPdf);
+            this.Controls.Add(this.labelNameAsistente);
+            this.Controls.Add(this.labelNameDocente);
+            this.Controls.Add(this.anno);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.comboBoxGrupos);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
@@ -307,5 +390,12 @@
         private Label NumPrivados;
         private Label label9;
         private ComboBox comboBoxGrupos;
+        private Label label2;
+        private Label label4;
+        private Label label6;
+        private Label anno;
+        private Label labelNameDocente;
+        private Label labelNameAsistente;
+        private Button buttonPdf;
     }
 }

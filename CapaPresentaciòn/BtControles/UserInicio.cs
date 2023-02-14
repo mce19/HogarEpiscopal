@@ -278,9 +278,22 @@ namespace CapaPresentaciòn.BtControles
         private bool busquedaEnCurso = false;
         private void textBoxBuscador_TextChanged(object sender, EventArgs e)
         {
-            busquedaEnCurso = true;
-            CNTablasDatos tablasNegocio = new CNTablasDatos();
-            tablasNegocio.BuscarPorNombre(cmbTablas.SelectedItem.ToString(), textBoxBuscador.Text, "", "", "", "", dataGridView1);
+            if (string.IsNullOrEmpty(textBoxBuscador.Text))
+            {
+                return;
+            }
+
+            if (!int.TryParse(textBoxBuscador.Text, out int _))
+            {
+                busquedaEnCurso = true;
+                CNTablasDatos tablasNegocio = new CNTablasDatos();
+                tablasNegocio.BuscarPorNombre(cmbTablas.SelectedItem.ToString(), textBoxBuscador.Text, dataGridView1);
+            }
+            else
+            {
+                MessageBox.Show("Solo puede buscar por Nombre", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBoxBuscador.Text = "";
+            }
         }
 
     }

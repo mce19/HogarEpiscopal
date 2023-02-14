@@ -11,7 +11,7 @@ namespace CapaNegocio
 {
     public class CNTablasDatos
     {
-      //PARA LA CONEXION A LA BASE DATOS
+        //PARA LA CONEXION A LA BASE DATOS
         private string connectionString;
 
         public CNTablasDatos()
@@ -30,10 +30,12 @@ namespace CapaNegocio
         {"asistentes", new[] { "Número Documento", "Nombre Completo", "N. Docente" } },
         {"grupos", new[] { "ID", "Nombre" } },
         {"matricula", new[] { "Código", "Ced. Hijo", "Ced. Padre", "Ced. Docénte", "ID Grupo" } },
+        {"pagos", new[] { "ID", "Número Documento", "Pago mensual", "Abono", "Monto restante", "Saldo actual", "Fecha", "Proximo pago", "Cancelado", "Concepto"} },
+        {"historial_pagos", new[] { "ID","Número Documento", "ID pagos", "Cancelado", "Se cancelo el" } },
 
     };
 
-      
+
         public void CargarTablasPermitidas(ComboBox cmbTablas)
         {
             DataTable dt = tablasDatos.ObtenerTablasPermitidas();
@@ -52,50 +54,28 @@ namespace CapaNegocio
             var columnasPermitidas = datosTabla.Columns.Cast<DataColumn>().Where(col => !columnasNoPermitidas.Contains(col.ColumnName)).Select(col => col.ColumnName).ToArray();
             DataTable dt = datosTabla.DefaultView.ToTable(false, columnasPermitidas);
             dataGridView.DataSource = dt;
-        } 
+        }
 
         public string[] ObtenerDiccionario(string tabla)
         {
             return _diccionarioTitulos[tabla];
         }
 
-        public void BuscarPorNombre(string tabla, string nombre, string numeroDoc, string padreId, string hijoId, string docenteId, DataGridView dataGridView)
+        public void BuscarPorNombre(string tabla, string nombre, DataGridView dataGridView)
         {
 
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                string query = "SELECT * FROM " + tabla + " WHERE nombre_completo LIKE @nombre OR numero_documento LIKE @numeroDoc OR padre_id LIKE @padreId OR hijo_id LIKE @hijoId OR docente_id LIKE @docenteId";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
-                command.Parameters.AddWithValue("@numeroDoc", "%" + numeroDoc + "%");
-                command.Parameters.AddWithValue("@padreId", "%" + padreId + "%");
-                command.Parameters.AddWithValue("@hijoId", "%" + hijoId + "%");
-                command.Parameters.AddWithValue("@docenteId", "%" + docenteId + "%");
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                dataGridView.DataSource = dt;
-                connection.Close();
-            }
-
-
-
-            /*using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                string query = "SELECT * FROM " + tabla + " WHERE nombre_completo LIKE @nombre";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
-                DataTable dt = new DataTable();
-                adapter.Fill(dt);
-                dataGridView.DataSource = dt;
-                connection.Close();
-            }*/
-        }
-
-
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                    string query = "SELECT * FROM " + tabla + " WHERE nombre_completo LIKE @nombre";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataTable dt = new DataTable();
+                    adapter.Fill(dt);
+                    dataGridView.DataSource = dt;
+                    connection.Close();
+                }
+         }
     }
 }
