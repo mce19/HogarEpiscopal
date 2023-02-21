@@ -22,6 +22,9 @@
     <Compile Update="BtViewTablas\TablaPadre.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="BtViewTablas\TablaPagos.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="frPadres.cs">
       <SubType>Form</SubType>
     </Compile>

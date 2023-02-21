@@ -245,3 +245,4 @@ C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\bin\
 C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\bin\Debug\net6.0-windows\itextsharp.dll
 C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\bin\Debug\net6.0-windows\itextsharp.xmlworker.dll
 C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\bin\Debug\net6.0-windows\Microsoft.OpenPublishing.Build.HtmlConverters.HtmlToPdf.dll
+C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtViewTablas.TablaPagos.resources

@@ -1,6 +1,7 @@
 ﻿using CapaDatos;
 using CapaEntidad;
 using CapaNegocio;
+using CapaPresentaciòn.BtViewTablas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -211,6 +212,15 @@ namespace CapaPresentaciòn.BtControles
             capaDatos.AgregarMatricula(matricula);
             MessageBox.Show("La matrícula se guardó con éxito");
             LimpiarTextBox();
+            //Abrir formulario TablaPagos
+            if (MessageBox.Show("¿Desea asignar un monto de pago para esta matrícula?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                TablaPagos frmPagos = new TablaPagos();
+                frmPagos.Id = idMatricula.ToString();
+                frmPagos.idPadre = numPadre.ToString();
+                frmPagos.Show();
+
+            }
 
         }
 

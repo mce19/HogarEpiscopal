@@ -163,12 +163,6 @@ namespace CapaPresentaciòn.BtViewTablas
                     return;
                 }
 
-               
-
-            
-
-
-
                 // Crear objeto hijo
                 Hijos hijo = new Hijos
                 {

@@ -46,6 +46,8 @@ namespace CapaPresentaciòn.BtControles
 
         private void cmbTablas_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+
             //cambie esta funcion por el de buscador necesito arrelarlo ya que funciona pero cuando seleciono otra tabla y busco se cae 
             busquedaEnCurso = false;
             lblTablaSeleccionada.Text = cmbTablas.SelectedItem.ToString().ToUpper();
@@ -55,6 +57,16 @@ namespace CapaPresentaciòn.BtControles
             {
                 dataGridView1.Columns[i].HeaderText = titulos[i];
             }
+
+            if (cmbTablas.SelectedItem.ToString() == "pagos")
+            {
+                buttonPagar.Visible = true;
+            }
+            else
+            {
+                buttonPagar.Visible = false;
+            }
+
             /*
             lblTablaSeleccionada.Text = cmbTablas.SelectedItem.ToString().ToUpper();
                 tablasNegocio.CargarDatosTabla(cmbTablas.SelectedItem.ToString(), dataGridView1);
@@ -296,5 +308,9 @@ namespace CapaPresentaciòn.BtControles
             }
         }
 
+        private void buttonPagar_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
