@@ -207,7 +207,11 @@ C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\bin\
 C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\bin\Debug\net6.0-windows\CapaPresentaciòn.runtimeconfig.json
 C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\bin\Debug\net6.0-windows\CapaPresentaciòn.dll
 C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\bin\Debug\net6.0-windows\CapaPresentaciòn.pdb
+C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
 C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\bin\Debug\net6.0-windows\Guna.UI2.dll
+C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\bin\Debug\net6.0-windows\Microsoft.OpenPublishing.Build.HtmlConverters.HtmlToPdf.dll
+C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\bin\Debug\net6.0-windows\itextsharp.dll
+C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\bin\Debug\net6.0-windows\itextsharp.xmlworker.dll
 C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
 C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
 C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
@@ -228,6 +232,7 @@ C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\obj\
 C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtControles.UserPagos.resources
 C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtViewTablas.TablaHijocs.resources
 C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtViewTablas.TablaPadre.resources
+C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtViewTablas.TablaPagos.resources
 C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\capaPresentación.frPadres.resources
 C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.Properties.Resources.resources
 C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.csproj.GenerateResource.cache
@@ -241,8 +246,4 @@ C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\obj\
 C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.pdb
 C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.genruntimeconfig.cache
 C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\ref\CapaPresentaciòn.dll
-C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\bin\Debug\net6.0-windows\BouncyCastle.Crypto.dll
-C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\bin\Debug\net6.0-windows\itextsharp.dll
-C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\bin\Debug\net6.0-windows\itextsharp.xmlworker.dll
-C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\bin\Debug\net6.0-windows\Microsoft.OpenPublishing.Build.HtmlConverters.HtmlToPdf.dll
-C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtViewTablas.TablaPagos.resources
+C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtViewTablas.TablaAbono.resources

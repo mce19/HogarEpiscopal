@@ -1,5 +1,4 @@
-﻿using CapaNegocio;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,10 +10,14 @@ using System.Windows.Forms;
 
 namespace CapaPresentaciòn.BtViewTablas
 {
-    public partial class TablaPagos : Form
+    public partial class TablaAbono : Form
     {
-
-        private CNPagos cnPagos = new CNPagos();
+        private string _nombrepa;
+        public string nombrepadre
+        {
+            get { return _nombrepa; }
+            set { _nombrepa = value; nombrepadres.Text = value; }
+        }
 
         private string _id;
         public string Id
@@ -23,11 +26,11 @@ namespace CapaPresentaciòn.BtViewTablas
             set { _id = value; textBoxId.Text = value; }
         }
 
-        private string _idPadre;
-        public string idPadre
+        private string _nombre;
+        public string nombre
         {
-            get { return _idPadre; }
-            set { _idPadre = value; textBoxPadre.Text = value; }
+            get { return _nombre; }
+            set { _nombre = value; textBoxnombre.Text = value; }
         }
 
         private string _montoMensual;
@@ -72,17 +75,17 @@ namespace CapaPresentaciòn.BtViewTablas
             set { _concepto = value; textBoxDetalles.Text = value; }
         }
 
-        public TablaPagos()
+        public TablaAbono()
         {
             InitializeComponent();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void label10_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void TablaPagos_Load(object sender, EventArgs e)
+        private void namepadre_Load(object sender, EventArgs e)
         {
 
         }
@@ -107,7 +110,7 @@ namespace CapaPresentaciòn.BtViewTablas
 
         }
 
-        public void textBoxSaldo_TextChanged(object sender, EventArgs e)
+        private void textBoxSaldo_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -117,73 +120,34 @@ namespace CapaPresentaciòn.BtViewTablas
 
         }
 
-        private void textBoxDetalles_TextChanged(object sender, EventArgs e)
+        private void dateTimeFecha_ValueChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void dateTimeFecha_ValueChanged(object sender, EventArgs e)
+        private void textBoxDetalles_TextChanged(object sender, EventArgs e)
         {
 
         }
 
         private void buttonGuardarPago_Click(object sender, EventArgs e)
         {
-            //tengo el problema de que si no ingreso un abono me sale un error de string  
 
-            try
-            {
-                int id = int.Parse(textBoxId.Text);
-                int padreId = int.Parse(textBoxPadre.Text);
-                decimal montoMensual = decimal.Parse(textBoxnMensual.Text);
-                decimal montoAbonado;
-                
-
-                if (!decimal.TryParse(textBoxAbono.Text, out montoAbonado))
-                {
-                    montoAbonado = 0;
-                }
-
-                decimal montoRestante = montoMensual - montoAbonado;
-                decimal saldoActual = 0;
-
-        
-                if (montoAbonado == 0)
-                {
-                    saldoActual = montoMensual;
-                }
-                else if (montoAbonado > 0 && montoAbonado < montoMensual)
-                {
-                    saldoActual = montoRestante;
-                }
-                else if (montoAbonado == montoMensual)
-                {
-                    saldoActual = 0;
-                }
-
-                DateTime fecha = dateTimeFecha.Value;
-                string detalles = textBoxDetalles.Text;
-
-                bool insertarPago = cnPagos.InsertarPago(id, padreId, montoMensual, montoAbonado, montoRestante, saldoActual, fecha, detalles);
-
-                if (insertarPago)
-                {
-                    MessageBox.Show("Pago ingresado correctamente.");
-                }
-                else
-
-                    MessageBox.Show("Error al ingresar el pago.");
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-
-            }
         }
 
         private void buttonCancelarPago_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void textBoxnombre_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void nombrepadres_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

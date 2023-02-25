@@ -48,5 +48,57 @@ namespace CapaDatos
             }
         }
 
+        public DataTable ObtenerPagos()
+        {
+            DataTable dtPagos = new DataTable();
+            try
+            {
+                using (SqlConnection con = new SqlConnection(connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("ObtenerPagosConNombresPadres", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+                    SqlDataReader rdr = cmd.ExecuteReader();
+                    dtPagos.Load(rdr);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener los pagos con los nombres de los padres.", ex);
+            }
+            return dtPagos;
+        }
+
+        public DataTable BuscarPorId(int id)
+        {
+            DataTable dt = new DataTable();
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    string query = "SELECT * FROM pagos WHERE id = @id";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    con.Open();
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    adapter.Fill(dt);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    con.Close();
+                }
+            }
+
+            return dt;
+        }
+
+
     }
 }
