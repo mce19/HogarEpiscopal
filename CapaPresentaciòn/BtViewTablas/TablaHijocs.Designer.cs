@@ -46,6 +46,7 @@
             this.textBoxGeneroHijo = new System.Windows.Forms.TextBox();
             this.textBoxSegInicHijo = new System.Windows.Forms.TextBox();
             this.textBoxSubsidio = new System.Windows.Forms.TextBox();
+            this.buttonCancelarPago = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -218,11 +219,26 @@
             this.textBoxSubsidio.Size = new System.Drawing.Size(252, 23);
             this.textBoxSubsidio.TabIndex = 21;
             // 
+            // buttonCancelarPago
+            // 
+            this.buttonCancelarPago.BackColor = System.Drawing.Color.Red;
+            this.buttonCancelarPago.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonCancelarPago.ForeColor = System.Drawing.Color.White;
+            this.buttonCancelarPago.Location = new System.Drawing.Point(426, 417);
+            this.buttonCancelarPago.Name = "buttonCancelarPago";
+            this.buttonCancelarPago.Size = new System.Drawing.Size(120, 47);
+            this.buttonCancelarPago.TabIndex = 51;
+            this.buttonCancelarPago.Text = "Cancelar";
+            this.buttonCancelarPago.UseVisualStyleBackColor = false;
+            this.buttonCancelarPago.Click += new System.EventHandler(this.buttonCancelarPago_Click);
+            // 
             // TablaHijocs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(740, 488);
+            this.ControlBox = false;
+            this.Controls.Add(this.buttonCancelarPago);
             this.Controls.Add(this.textBoxSubsidio);
             this.Controls.Add(this.textBoxSegInicHijo);
             this.Controls.Add(this.textBoxGeneroHijo);
@@ -242,7 +258,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "TablaHijocs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TablaHijocs";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.TablaHijocs_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -269,5 +287,6 @@
         private TextBox textBoxGeneroHijo;
         private TextBox textBoxSegInicHijo;
         private TextBox textBoxSubsidio;
+        private Button buttonCancelarPago;
     }
 }

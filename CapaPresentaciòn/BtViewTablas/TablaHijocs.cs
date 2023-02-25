@@ -242,5 +242,10 @@ namespace CapaPresentaciòn.BtViewTablas
             if (fechaNacimiento > hoy.AddYears(-edad)) edad--;
             textBoxEdadHijo.Text = edad.ToString();
         }
+
+        private void buttonCancelarPago_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

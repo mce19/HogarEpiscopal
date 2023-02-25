@@ -84,10 +84,10 @@ namespace CapaPresentaciòn.BtViewTablas
         {
 
         }
-
+        private static bool formularioAbierto = false; // creamos al varibale
         private void namepadre_Load(object sender, EventArgs e)
         {
-
+            formularioAbierto = true;//validamos que el formulario este abierto
         }
 
         private void textBoxId_TextChanged(object sender, EventArgs e)
@@ -149,5 +149,16 @@ namespace CapaPresentaciòn.BtViewTablas
         {
 
         }
+
+        private void TablaAbono_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            formularioAbierto = false;  //validamos si esta cerrado
+        }
+
+        public static bool FormularioAbierto()
+        {
+            return formularioAbierto;   //retornamos el formularioabierto
+        }
+
     }
 }

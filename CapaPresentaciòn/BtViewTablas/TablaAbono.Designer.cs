@@ -252,6 +252,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 497);
+            this.ControlBox = false;
             this.Controls.Add(this.nombrepadres);
             this.Controls.Add(this.textBoxnombre);
             this.Controls.Add(this.textBoxId);
@@ -273,7 +274,9 @@
             this.Controls.Add(this.buttonCancelarPago);
             this.Controls.Add(this.buttonGuardarPago);
             this.Name = "TablaAbono";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TablaAbono";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.namepadre_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -235,6 +235,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(740, 488);
+            this.ControlBox = false;
             this.Controls.Add(this.label8);
             this.Controls.Add(this.buttonCancelarPago);
             this.Controls.Add(this.textBoxId);
@@ -255,7 +256,9 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "TablaPagos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TablaPagos";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.TablaPagos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

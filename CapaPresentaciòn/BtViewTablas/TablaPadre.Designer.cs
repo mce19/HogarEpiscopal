@@ -40,6 +40,7 @@
             this.buttonGuardarPadre = new System.Windows.Forms.Button();
             this.textBoxTipoDucumento = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.buttonCancelarPago = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -159,11 +160,26 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Tipo de documento";
             // 
+            // buttonCancelarPago
+            // 
+            this.buttonCancelarPago.BackColor = System.Drawing.Color.Red;
+            this.buttonCancelarPago.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonCancelarPago.ForeColor = System.Drawing.Color.White;
+            this.buttonCancelarPago.Location = new System.Drawing.Point(462, 438);
+            this.buttonCancelarPago.Name = "buttonCancelarPago";
+            this.buttonCancelarPago.Size = new System.Drawing.Size(120, 47);
+            this.buttonCancelarPago.TabIndex = 51;
+            this.buttonCancelarPago.Text = "Cancelar";
+            this.buttonCancelarPago.UseVisualStyleBackColor = false;
+            this.buttonCancelarPago.Click += new System.EventHandler(this.buttonCancelarPago_Click);
+            // 
             // TablaPadre
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 497);
+            this.ControlBox = false;
+            this.Controls.Add(this.buttonCancelarPago);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBoxTipoDucumento);
             this.Controls.Add(this.buttonGuardarPadre);
@@ -182,7 +198,9 @@
             this.Name = "TablaPadre";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TablaPadre";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.TablaPadre_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -203,5 +221,6 @@
         private Button buttonGuardarPadre;
         private TextBox textBoxTipoDucumento;
         private Label label5;
+        private Button buttonCancelarPago;
     }
 }

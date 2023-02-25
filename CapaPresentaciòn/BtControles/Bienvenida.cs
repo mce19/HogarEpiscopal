@@ -16,6 +16,7 @@ namespace CapaPresentaciòn.BtControles
     public partial class Bienvenida : UserControl
     {
         private CNPagos cnPagos;
+      
 
         public Bienvenida()
         {
@@ -27,24 +28,36 @@ namespace CapaPresentaciòn.BtControles
         {
 
         }
-
+        private TablaAbono formPadre; //instancia para evitar multiples ventanas
         private void buttonNewAbono_Click(object sender, EventArgs e)
         {
+            if (TablaAbono.FormularioAbierto())
+            {
+                MessageBox.Show(formPadre, "Realice los cambios ó cierre el formulario actual antes de abrir uno nuevo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (formPadre == null || formPadre.IsDisposed)
+            {
+
+                formPadre = new TablaAbono();
+               
+            }
+
             if (dataGridViewPágos.SelectedRows.Count > 0)
             {
                 try
                 {
-                    TablaAbono formPadre = new TablaAbono();
-                    formPadre.Show();
+
                     formPadre.nombrepadre = dataGridViewPágos.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
                     formPadre.Id = dataGridViewPágos.SelectedRows[0].Cells["Id"].Value.ToString();
                     formPadre.nombre = dataGridViewPágos.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
                     formPadre.montoMensual = dataGridViewPágos.SelectedRows[0].Cells["monto_mensual"].Value.ToString();
-                    formPadre.montoAbonado = dataGridViewPágos.SelectedRows[0].Cells["monto_abonado"].Value.ToString();
                     formPadre.montoRestante = dataGridViewPágos.SelectedRows[0].Cells["monto_restante"].Value.ToString();
                     formPadre.saldoActual = dataGridViewPágos.SelectedRows[0].Cells["saldo_actual"].Value.ToString();
                     formPadre.fecha = DateTime.Now.ToString();
                     formPadre.concepto = dataGridViewPágos.SelectedRows[0].Cells["concepto"].Value.ToString();
+                    formPadre.Show();
                 }
                 catch (Exception ex)
                 {
