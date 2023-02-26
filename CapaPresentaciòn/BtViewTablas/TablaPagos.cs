@@ -44,13 +44,6 @@ namespace CapaPresentaciòn.BtViewTablas
             set { _montoAbonado = value; textBoxAbono.Text = value; }
         }
 
-        private string _montoRestante;
-        public string montoRestante
-        {
-            get { return _montoRestante; }
-            set { _montoRestante = value; textBoxPendiente.Text = value; }
-        }
-
         private string _saldoActual;
         public string saldoActual
         {
@@ -112,11 +105,6 @@ namespace CapaPresentaciòn.BtViewTablas
 
         }
 
-        private void textBoxPendiente_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBoxDetalles_TextChanged(object sender, EventArgs e)
         {
 
@@ -129,32 +117,24 @@ namespace CapaPresentaciòn.BtViewTablas
 
         private void buttonGuardarPago_Click(object sender, EventArgs e)
         {
-            //tengo el problema de que si no ingreso un abono me sale un error de string  
-
+            //tengo el problema de que si no ingreso un abono me sale un error de string
             try
             {
                 int id = int.Parse(textBoxId.Text);
                 int padreId = int.Parse(textBoxPadre.Text);
                 decimal montoMensual = decimal.Parse(textBoxnMensual.Text);
                 decimal montoAbonado;
-                
 
                 if (!decimal.TryParse(textBoxAbono.Text, out montoAbonado))
                 {
                     montoAbonado = 0;
                 }
 
-                decimal montoRestante = montoMensual - montoAbonado;
-                decimal saldoActual = 0;
+                decimal saldoActual = montoMensual - montoAbonado;
 
-        
                 if (montoAbonado == 0)
                 {
                     saldoActual = montoMensual;
-                }
-                else if (montoAbonado > 0 && montoAbonado < montoMensual)
-                {
-                    saldoActual = montoRestante;
                 }
                 else if (montoAbonado == montoMensual)
                 {
@@ -164,21 +144,23 @@ namespace CapaPresentaciòn.BtViewTablas
                 DateTime fecha = dateTimeFecha.Value;
                 string detalles = textBoxDetalles.Text;
 
-                bool insertarPago = cnPagos.InsertarPago(id, padreId, montoMensual, montoAbonado, montoRestante, saldoActual, fecha, detalles);
+                bool insertarPago = cnPagos.InsertarPago(id, padreId, montoMensual, montoAbonado, saldoActual, fecha, detalles);
 
                 if (insertarPago)
                 {
                     MessageBox.Show("Pago ingresado correctamente.");
+                    this.Close();
                 }
                 else
-
+                {
                     MessageBox.Show("Error al ingresar el pago.");
+                }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
-
             }
+
         }
 
         private void buttonCancelarPago_Click(object sender, EventArgs e)

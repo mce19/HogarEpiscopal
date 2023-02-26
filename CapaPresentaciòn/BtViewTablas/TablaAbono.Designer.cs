@@ -35,13 +35,11 @@
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxDetalles = new System.Windows.Forms.TextBox();
             this.textBoxSaldo = new System.Windows.Forms.TextBox();
-            this.textBoxPendiente = new System.Windows.Forms.TextBox();
             this.dateTimeFecha = new System.Windows.Forms.DateTimePicker();
             this.textBoxAbono = new System.Windows.Forms.TextBox();
             this.textBoxnMensual = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -108,7 +106,7 @@
             // 
             // textBoxDetalles
             // 
-            this.textBoxDetalles.Location = new System.Drawing.Point(421, 346);
+            this.textBoxDetalles.Location = new System.Drawing.Point(421, 261);
             this.textBoxDetalles.Name = "textBoxDetalles";
             this.textBoxDetalles.Size = new System.Drawing.Size(252, 23);
             this.textBoxDetalles.TabIndex = 65;
@@ -123,18 +121,9 @@
             this.textBoxSaldo.TabIndex = 64;
             this.textBoxSaldo.TextChanged += new System.EventHandler(this.textBoxSaldo_TextChanged);
             // 
-            // textBoxPendiente
-            // 
-            this.textBoxPendiente.Location = new System.Drawing.Point(421, 182);
-            this.textBoxPendiente.Name = "textBoxPendiente";
-            this.textBoxPendiente.ReadOnly = true;
-            this.textBoxPendiente.Size = new System.Drawing.Size(252, 23);
-            this.textBoxPendiente.TabIndex = 63;
-            this.textBoxPendiente.TextChanged += new System.EventHandler(this.textBoxPendiente_TextChanged);
-            // 
             // dateTimeFecha
             // 
-            this.dateTimeFecha.Location = new System.Drawing.Point(421, 261);
+            this.dateTimeFecha.Location = new System.Drawing.Point(421, 176);
             this.dateTimeFecha.Name = "dateTimeFecha";
             this.dateTimeFecha.Size = new System.Drawing.Size(252, 23);
             this.dateTimeFecha.TabIndex = 62;
@@ -161,7 +150,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(421, 320);
+            this.label7.Location = new System.Drawing.Point(421, 235);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 19);
             this.label7.TabIndex = 58;
@@ -177,16 +166,6 @@
             this.label6.TabIndex = 57;
             this.label6.Text = "Saldo Actual";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(421, 160);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(141, 19);
-            this.label5.TabIndex = 56;
-            this.label5.Text = "Monto pendiente";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -201,7 +180,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(421, 239);
+            this.label1.Location = new System.Drawing.Point(421, 154);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 19);
             this.label1.TabIndex = 54;
@@ -259,13 +238,11 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBoxDetalles);
             this.Controls.Add(this.textBoxSaldo);
-            this.Controls.Add(this.textBoxPendiente);
             this.Controls.Add(this.dateTimeFecha);
             this.Controls.Add(this.textBoxAbono);
             this.Controls.Add(this.textBoxnMensual);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
@@ -291,13 +268,11 @@
         private Label label9;
         private TextBox textBoxDetalles;
         private TextBox textBoxSaldo;
-        private TextBox textBoxPendiente;
         private DateTimePicker dateTimeFecha;
         private TextBox textBoxAbono;
         private TextBox textBoxnMensual;
         private Label label7;
         private Label label6;
-        private Label label5;
         private Label label4;
         private Label label1;
         private Label label2;

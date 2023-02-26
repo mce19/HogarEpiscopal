@@ -39,9 +39,8 @@ namespace CapaPresentaciòn.BtControles
 
             if (formPadre == null || formPadre.IsDisposed)
             {
-
                 formPadre = new TablaAbono();
-               
+                formPadre.FormClosed += (s, args) => formPadre = null; // establecer formPadre en null cuando se cierre el formulario
             }
 
             if (dataGridViewPágos.SelectedRows.Count > 0)
@@ -53,7 +52,6 @@ namespace CapaPresentaciòn.BtControles
                     formPadre.Id = dataGridViewPágos.SelectedRows[0].Cells["Id"].Value.ToString();
                     formPadre.nombre = dataGridViewPágos.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
                     formPadre.montoMensual = dataGridViewPágos.SelectedRows[0].Cells["monto_mensual"].Value.ToString();
-                    formPadre.montoRestante = dataGridViewPágos.SelectedRows[0].Cells["monto_restante"].Value.ToString();
                     formPadre.saldoActual = dataGridViewPágos.SelectedRows[0].Cells["saldo_actual"].Value.ToString();
                     formPadre.fecha = DateTime.Now.ToString();
                     formPadre.concepto = dataGridViewPágos.SelectedRows[0].Cells["concepto"].Value.ToString();
@@ -85,7 +83,6 @@ namespace CapaPresentaciòn.BtControles
                 dataGridViewPágos.Columns["nombre_completo"].HeaderText = "Nombre";
                 dataGridViewPágos.Columns["monto_mensual"].HeaderText = "Monto Mensual";
                 dataGridViewPágos.Columns["monto_abonado"].HeaderText = "Monto Abonado";
-                dataGridViewPágos.Columns["monto_restante"].HeaderText = "Monto Restante";
                 dataGridViewPágos.Columns["saldo_actual"].HeaderText = "Saldo Actual";
                 dataGridViewPágos.Columns["fecha"].HeaderText = "Fecha";
                 dataGridViewPágos.Columns["concepto"].HeaderText = "Detalles";

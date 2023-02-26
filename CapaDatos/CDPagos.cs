@@ -18,7 +18,7 @@ namespace CapaDatos
             connectionString = conexionBD.connectionString;
         }
 
-        public bool InsertarPago(int id, int padreId, decimal montoMensual, decimal montoAbonado, decimal montoRestante, decimal saldoActual, DateTime fecha, string detalles)
+        public bool InsertarPago(int id, int padreId, decimal montoMensual, decimal montoAbonado, decimal saldoActual, DateTime fecha, string detalles)
         {
             try
             {
@@ -32,7 +32,6 @@ namespace CapaDatos
                         command.Parameters.AddWithValue("@padre_id", padreId);
                         command.Parameters.AddWithValue("@monto_mensual", montoMensual);
                         command.Parameters.AddWithValue("@monto_abonado", montoAbonado);
-                        command.Parameters.AddWithValue("@monto_restante", montoRestante);
                         command.Parameters.AddWithValue("@saldo_actual", saldoActual);
                         command.Parameters.AddWithValue("@fecha", fecha);
                         command.Parameters.AddWithValue("@concepto", detalles);

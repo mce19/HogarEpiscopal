@@ -17,9 +17,9 @@ namespace CapaNegocio
             cdPagos = new CDPagos();
         }
 
-        public bool InsertarPago(int id, int padreId, decimal montoMensual, decimal montoAbonado, decimal montoRestante, decimal saldoActual, DateTime fecha, string detalles)
+        public bool InsertarPago(int id, int padreId, decimal montoMensual, decimal montoAbonado, decimal saldoActual, DateTime fecha, string detalles)
         {
-            return cdPagos.InsertarPago(id, padreId, montoMensual, montoAbonado, montoRestante, saldoActual, fecha, detalles);
+            return cdPagos.InsertarPago(id, padreId, montoMensual, montoAbonado, saldoActual, fecha, detalles);
         }
 
 

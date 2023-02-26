@@ -12,7 +12,6 @@ namespace CapaEntidad
         public int PadreId { get; set; }
         public decimal MontoMensual { get; set; }
         public decimal MontoAbonado { get; set; }
-        public decimal MontoRestante { get; set; }
         public decimal SaldoActual { get; set; }
         public DateTime Fecha { get; set; }
         public string Concepto { get; set; }

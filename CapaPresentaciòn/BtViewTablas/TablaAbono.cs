@@ -47,13 +47,6 @@ namespace CapaPresentaciòn.BtViewTablas
             set { _montoAbonado = value; textBoxAbono.Text = value; }
         }
 
-        private string _montoRestante;
-        public string montoRestante
-        {
-            get { return _montoRestante; }
-            set { _montoRestante = value; textBoxPendiente.Text = value; }
-        }
-
         private string _saldoActual;
         public string saldoActual
         {
@@ -152,7 +145,7 @@ namespace CapaPresentaciòn.BtViewTablas
 
         private void TablaAbono_FormClosing(object sender, FormClosingEventArgs e)
         {
-            formularioAbierto = false;  //validamos si esta cerrado
+            formularioAbierto = false;
         }
 
         public static bool FormularioAbierto()
