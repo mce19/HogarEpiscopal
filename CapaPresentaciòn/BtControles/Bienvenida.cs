@@ -31,11 +31,7 @@ namespace CapaPresentaciòn.BtControles
         private TablaAbono formPadre; //instancia para evitar multiples ventanas
         private void buttonNewAbono_Click(object sender, EventArgs e)
         {
-            if (TablaAbono.FormularioAbierto())
-            {
-                MessageBox.Show(formPadre, "Realice los cambios ó cierre el formulario actual antes de abrir uno nuevo.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+           
 
             if (formPadre == null || formPadre.IsDisposed)
             {
@@ -97,7 +93,6 @@ namespace CapaPresentaciòn.BtControles
         {
             CargarTablaPagos();
         }
-
 
 
     }

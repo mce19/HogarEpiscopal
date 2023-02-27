@@ -117,49 +117,78 @@ namespace CapaPresentaciòn.BtViewTablas
 
         private void buttonGuardarPago_Click(object sender, EventArgs e)
         {
-            //tengo el problema de que si no ingreso un abono me sale un error de string
             try
+    {
+        int id = int.Parse(textBoxId.Text);
+        int padreId = int.Parse(textBoxPadre.Text);
+        decimal montoMensual = decimal.Parse(textBoxnMensual.Text);
+        decimal montoAbonado;
+
+        if (!decimal.TryParse(textBoxAbono.Text, out montoAbonado))
+        {
+            montoAbonado = 0;
+        }
+
+        decimal saldoActual = montoMensual - montoAbonado;
+
+        if (montoAbonado == 0)
+        {
+            saldoActual = montoMensual;
+        }
+        else if (montoAbonado == montoMensual)
+        {
+            saldoActual = 0;
+        }
+
+        DateTime fecha = dateTimeFecha.Value;
+        string detalles = textBoxDetalles.Text;
+
+        // Si se cancela todo, se guarda el pago en ambas tablas
+        if (saldoActual == 0)
+        {
+                    DateTime siguienteMes = fecha.AddMonths(1);
+                    // Insertar pago en tabla Pagos
+                    bool insertarPago = cnPagos.InsertarPago(id, padreId, montoMensual, 0, 0, siguienteMes, detalles);
+            if (!insertarPago)
             {
-                int id = int.Parse(textBoxId.Text);
-                int padreId = int.Parse(textBoxPadre.Text);
-                decimal montoMensual = decimal.Parse(textBoxnMensual.Text);
-                decimal montoAbonado;
-
-                if (!decimal.TryParse(textBoxAbono.Text, out montoAbonado))
-                {
-                    montoAbonado = 0;
-                }
-
-                decimal saldoActual = montoMensual - montoAbonado;
-
-                if (montoAbonado == 0)
-                {
-                    saldoActual = montoMensual;
-                }
-                else if (montoAbonado == montoMensual)
-                {
-                    saldoActual = 0;
-                }
-
-                DateTime fecha = dateTimeFecha.Value;
-                string detalles = textBoxDetalles.Text;
-
-                bool insertarPago = cnPagos.InsertarPago(id, padreId, montoMensual, montoAbonado, saldoActual, fecha, detalles);
-
-                if (insertarPago)
-                {
-                    MessageBox.Show("Pago ingresado correctamente.");
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Error al ingresar el pago.");
-                }
+                MessageBox.Show("Error al ingresar el pago en la tabla Pagos.");
+                return;
             }
-            catch (Exception ex)
+
+                    // Insertar pago en tabla Historial_Pagos
+
+                    string nombreMes = fecha.ToString("MMMM");
+                    string mesSiguienteString = $"{nombreMes}";
+                    bool insertarPagoEnHistorial = cnPagos.InsertarPagoEnHistorial(id, padreId, montoMensual, fecha, mesSiguienteString);
+            if (!insertarPagoEnHistorial)
             {
-                MessageBox.Show("Error: " + ex.Message);
+                MessageBox.Show("Error al ingresar el pago en la tabla Historial_Pagos.");
+                return;
             }
+
+            MessageBox.Show("Pago ingresado correctamente.");
+            this.Close();
+        }
+        else // Si se abona, se guarda el pago solamente en tabla Pagos
+        {
+            decimal saldoPendiente = montoMensual - montoAbonado;
+            bool insertarPago = cnPagos.InsertarPago(id, padreId, montoMensual, montoAbonado, saldoPendiente, fecha, detalles);
+
+            if (insertarPago)
+            {
+                MessageBox.Show("Pago ingresado correctamente.");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Error al ingresar el pago.");
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show("Error: " + ex.Message);
+    }
 
         }
 

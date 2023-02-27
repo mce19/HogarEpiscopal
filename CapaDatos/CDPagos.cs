@@ -98,6 +98,43 @@ namespace CapaDatos
             return dt;
         }
 
+        public bool InsertarPagoEnHistorial(int id, int padreId, decimal monto, DateTime fecha, string mes)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("InsertarPagoEnHistorial", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@Id", id);
+                        cmd.Parameters.AddWithValue("@padre_id", padreId);
+                        cmd.Parameters.AddWithValue("@monto_cancelado", monto);
+                        cmd.Parameters.AddWithValue("@fecha_cancelacion", fecha);
+                        cmd.Parameters.AddWithValue("@mes_cancelacion", mes);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+                        if (rowsAffected > 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al insertar pago en historial: " + ex.Message);
+                return false;
+            }
+        }
+
+
+
 
     }
 }

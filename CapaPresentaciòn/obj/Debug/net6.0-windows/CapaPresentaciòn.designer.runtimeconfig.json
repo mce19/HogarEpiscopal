@@ -12,8 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\panad\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\panad\\.nuget\\packages"
+      "C:\\Users\\XPC\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\XPC\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
