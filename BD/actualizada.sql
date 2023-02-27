@@ -63,9 +63,8 @@ CREATE TABLE pagos (
     padre_id INT NOT NULL,
     monto_mensual DECIMAL(10,2) NOT NULL,
     monto_abonado DECIMAL(10,2) NOT NULL,
-    monto_restante DECIMAL(10,2) NOT NULL,
     saldo_actual DECIMAL(10,2) NOT NULL,
-    fecha DATE NOT NULL,
+    fecha DATE NOT NULL, 
     concepto VARCHAR (255) NULL,
     FOREIGN KEY (padre_id) REFERENCES padres(numero_documento)
 );
@@ -92,20 +91,31 @@ drop table abonos;
 drop table historial_pagos;
 DROP TABLE asistentes;
 
+
+CREATE PROCEDURE ObtenerPagosConNombresPadres
+AS
+BEGIN
+    SELECT p.id, pa.nombre_completo, p.monto_mensual, p.monto_abonado, p.saldo_actual, p.fecha, p.concepto
+    FROM pagos p
+    JOIN padres pa ON p.padre_id = pa.numero_documento
+END
+
+EXEC ObtenerPagosConNombresPadres
+
+
 --proceso para insertar en la tabla pagos ya esta ejecutada
 CREATE PROCEDURE sp_InsertarPago
     @id INT,
     @padre_id INT,
     @monto_mensual DECIMAL(10,2),
     @monto_abonado DECIMAL(10,2),
-    @monto_restante DECIMAL(10,2),
     @saldo_actual DECIMAL(10,2),
     @fecha DATE,
     @concepto VARCHAR(255)
 AS
 BEGIN
-    INSERT INTO pagos (id, padre_id, monto_mensual, monto_abonado, monto_restante, saldo_actual, fecha, concepto)
-    VALUES (@id, @padre_id, @monto_mensual, @monto_abonado, @monto_restante, @saldo_actual, @fecha, @concepto);
+    INSERT INTO pagos (id, padre_id, monto_mensual, monto_abonado, saldo_actual, fecha, concepto)
+    VALUES (@id, @padre_id, @monto_mensual, @monto_abonado, @saldo_actual, @fecha, @concepto);
 END
 
 DROP PROCEDURE InsertarPago;
@@ -155,10 +165,10 @@ VALUES (1, 11111111, 12345678, 222222222, 1),
        (2, 22222222, 98765432, 111111111, 2);
     
 
-INSERT INTO pagos(id, padre_id, monto_mensual, monto_abonado, monto_restante, saldo_actual, fecha, concepto) VALUES
-(1, 12345678, 250.00, 0.00, 250.00, 250.00, '2023-01-18', 'Pago mensual de enero'),
-(2, 98765432, 350.00, 0.00, 350.00, 350.00, '2023-01-18', 'Pago mensual de enero'),
-(3, 98765433, 400.00, 0.00, 400.00, 400.00, '2023-01-18', 'Pago mensual de enero');
+INSERT INTO pagos(id, padre_id, monto_mensual, monto_abonado, saldo_actual, fecha, concepto) VALUES
+(1, 12345678, 250.00, 0.00, 250.00, '2023-01-18', 'Pago mensual de enero'),
+(2, 98765432, 350.00, 0.00, 350.00, '2023-01-18', 'Pago mensual de enero'),
+(3, 98765433, 400.00, 0.00, 400.00, '2023-01-18', 'Pago mensual de enero');
 
 INSERT INTO historial_pagos(id, padre_id, monto_cancelado, fecha_cancelacion, mes_cancelacion) VALUES
 (1, 12345678, 250.00, '2023-01-18', 'enero'),
@@ -191,6 +201,21 @@ END;
 EXEC ConsultaRegistro;
 ---para eliminar procedure 
 DROP PROCEDURE ConsultaRegistro;
+
+--procedimiento para gaurdar el historial de pago
+CREATE PROCEDURE InsertarPagoEnHistorial
+    @id INT,
+    @padre_id INT,
+    @monto_cancelado DECIMAL(10,2),
+    @fecha_cancelacion DATE,
+    @mes_cancelacion VARCHAR(10)
+AS
+BEGIN
+    INSERT INTO historial_pagos (id, padre_id, monto_cancelado, fecha_cancelacion, mes_cancelacion)
+    VALUES (@id, @padre_id, @monto_cancelado, @fecha_cancelacion, @mes_cancelacion)
+END
+
+
 
 ---CONSULTADMOS LOS DOCECENTES CON SU GRUPO
 CREATE PROCEDURE ConsultarDocentesConGrupo
