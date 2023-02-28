@@ -1,4 +1,5 @@
-﻿using CapaPresentaciòn.BtControles;
+﻿using CapaNegocio;
+using CapaPresentaciòn.BtControles;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,12 +22,20 @@ namespace CapaPresentaciòn.BtViewTablas
             set { _nombrepa = value; nombrepadres.Text = value; }
         }
 
+        private string _padreId;
+        public string padreId
+        {
+            get { return _padreId; }
+            set { _padreId = value; textBoxPadreId.Text = value; }
+        }
+
         private string _id;
         public string Id
         {
             get { return _id; }
             set { _id = value; textBoxId.Text = value; }
         }
+
 
         private string _nombre;
         public string nombre
@@ -127,7 +136,64 @@ namespace CapaPresentaciòn.BtViewTablas
 
         private void buttonGuardarPago_Click(object sender, EventArgs e)
         {
-            //aqui 
+            CNPagos pagosNegocio = new CNPagos();
+            //HAY QUE ARRGE
+            try
+            {
+                int id = int.Parse(textBoxId.Text);
+                int padreId = int.Parse(textBoxPadreId.Text);
+                decimal montoMensual = decimal.Parse(textBoxnMensual.Text);
+                decimal montoAbonado = decimal.Parse(textBoxAbono.Text);
+                decimal saldoActual = decimal.Parse(textBoxSaldo.Text);
+                DateTime fecha = dateTimeFecha.Value;
+                string detalles = textBoxDetalles.Text;
+
+                // Validación de los datos para prevenir inyecciones SQL
+                if (detalles.Contains("'"))
+                {
+                    throw new Exception("El campo 'Detalles' no puede contener el carácter '");
+                }
+
+                if (montoAbonado < 0)
+                {
+                    throw new Exception("El monto abonado no puede ser negativo");
+                }
+
+                if (montoAbonado > saldoActual && montoAbonado != montoMensual)
+                {
+                    throw new Exception("El monto abonado no puede ser mayor al saldo actual, a menos que se abone el total del mes");
+                }
+
+                if (saldoActual - montoAbonado < 0 && montoAbonado != montoMensual)
+                {
+                    throw new Exception("El saldo actual no puede ser negativo, a menos que se abone el total del mes");
+                }
+
+                // Cálculo de los nuevos valores según si se abona el total o no
+                decimal saldoNuevo = saldoActual - montoAbonado;
+                string mesCancelacion = "";
+
+                if (saldoNuevo == 0)
+                {
+                    mesCancelacion = dateTimeFecha.Value.ToString("MMMM yyyy");
+                }
+
+                // Actualización de los datos en la base de datos
+                pagosNegocio.ActualizarPago(id, padreId, montoAbonado, saldoNuevo, dateTimeFecha.Value, detalles);
+
+                // Si se abona el total, guardar el pago en el historial
+                if (saldoNuevo == 0)
+                {
+                    pagosNegocio.InsertarPagoEnHistorial(id, padreId, montoMensual, dateTimeFecha.Value, mesCancelacion);
+                }
+
+                MessageBox.Show("Pago actualizado correctamente");
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar el pago: " + ex.Message);
+            }
         }
 
         private void buttonCancelarPago_Click(object sender, EventArgs e)
@@ -148,9 +214,11 @@ namespace CapaPresentaciòn.BtViewTablas
         private void TablaAbono_FormClosing(object sender, FormClosingEventArgs e)
         {
            
-      
-           
         }
 
+        private void textBoxPadreId_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

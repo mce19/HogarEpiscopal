@@ -46,6 +46,13 @@ namespace CapaNegocio
         }
 
 
+        public void ActualizarPago(int id, int padreId, decimal montoAbonado, decimal saldoActual, DateTime fecha, string concepto)
+        {
+            CDPagos capaDatos = new CDPagos();
+            capaDatos.ActualizarPago(id, montoAbonado, saldoActual, fecha, concepto);
+        }
+
+
 
     }
 

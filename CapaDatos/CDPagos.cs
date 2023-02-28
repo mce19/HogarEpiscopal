@@ -134,6 +134,26 @@ namespace CapaDatos
         }
 
 
+        public void ActualizarPago(int id, decimal montoAbonado, decimal saldoActual, DateTime fecha, string concepto)
+        {
+            using (SqlConnection conexion = new SqlConnection(connectionString))
+            {
+                SqlCommand comando = new SqlCommand("usp_ActualizarPago", conexion);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.AddWithValue("@id", id);
+                comando.Parameters.AddWithValue("@montoAbonado", montoAbonado);
+                comando.Parameters.AddWithValue("@saldoActual", saldoActual);
+                comando.Parameters.AddWithValue("@fecha", fecha);
+                comando.Parameters.AddWithValue("@concepto", concepto);
+
+                conexion.Open();
+                comando.ExecuteNonQuery();
+            }
+        }
+
+
+
 
 
     }

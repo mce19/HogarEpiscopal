@@ -46,6 +46,7 @@ namespace CapaPresentaciòn.BtControles
 
                     formPadre.nombrepadre = dataGridViewPágos.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
                     formPadre.Id = dataGridViewPágos.SelectedRows[0].Cells["Id"].Value.ToString();
+                    formPadre.padreId = dataGridViewPágos.SelectedRows[0].Cells["padre_id"].Value.ToString();
                     formPadre.nombre = dataGridViewPágos.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
                     formPadre.montoMensual = dataGridViewPágos.SelectedRows[0].Cells["monto_mensual"].Value.ToString();
                     formPadre.saldoActual = dataGridViewPágos.SelectedRows[0].Cells["saldo_actual"].Value.ToString();
@@ -76,6 +77,8 @@ namespace CapaPresentaciòn.BtControles
                 dataGridViewPágos.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 
                 // Personalizar la tabla para mostrar los datos de forma más presentable
+                dataGridViewPágos.Columns["id"].HeaderText = "ID";
+                dataGridViewPágos.Columns["padre_id"].HeaderText = "N. documento";
                 dataGridViewPágos.Columns["nombre_completo"].HeaderText = "Nombre";
                 dataGridViewPágos.Columns["monto_mensual"].HeaderText = "Monto Mensual";
                 dataGridViewPágos.Columns["monto_abonado"].HeaderText = "Monto Abonado";
