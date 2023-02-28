@@ -95,13 +95,13 @@ DROP TABLE asistentes;
 CREATE PROCEDURE ObtenerPagosConNombresPadres
 AS
 BEGIN
-    SELECT p.id, pa.nombre_completo, p.monto_mensual, p.monto_abonado, p.saldo_actual, p.fecha, p.concepto
+    SELECT p.id, p.padre_id, pa.nombre_completo, p.monto_mensual, p.monto_abonado, p.saldo_actual, p.fecha, p.concepto
     FROM pagos p
     JOIN padres pa ON p.padre_id = pa.numero_documento
 END
 
 EXEC ObtenerPagosConNombresPadres
-
+DROP PROCEDURE ObtenerPagosConNombresPadres;
 
 --proceso para insertar en la tabla pagos ya esta ejecutada
 CREATE PROCEDURE sp_InsertarPago
@@ -120,6 +120,24 @@ END
 
 DROP PROCEDURE InsertarPago;
 EXEC sp_InsertarPago
+
+
+CREATE PROCEDURE usp_ActualizarPago
+    @id INT,
+    @monto_abonado DECIMAL(10,2),
+    @saldo_actual DECIMAL(10,2),
+    @fecha DATE,
+    @concepto VARCHAR(255)
+AS
+BEGIN
+    UPDATE pagos
+    SET monto_abonado = @monto_abonado,
+        saldo_actual = @saldo_actual,
+        fecha = @fecha,
+        concepto = @concepto
+    WHERE id = @id;
+END
+
 
 
 
