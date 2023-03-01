@@ -18,6 +18,7 @@ namespace CapaPresentaciòn.BtControles
 {
     public partial class UserInicio : UserControl
     {
+        private bool busquedaEnCurso = false;
         private CapaNegocio.CNTablasDatos tablasNegocio = new CapaNegocio.CNTablasDatos();
 
         // CNPadres objeto = new CNPadres();
@@ -282,12 +283,39 @@ namespace CapaPresentaciòn.BtControles
 
                         break;
 
+
+                    case "pagos":
+                        // Código para eliminar en la tabla asistentes
+                        using (SqlCommand command = new SqlCommand("DELETE FROM pagos WHERE id = @idPagos", connection))
+                        {
+                            command.Parameters.AddWithValue("@idPagos", dataGridView1.SelectedRows[0].Cells["id"].Value);
+                            command.ExecuteNonQuery();
+                            connection.Close();
+                            tablasNegocio.CargarDatosTabla(cmbTablas.SelectedItem.ToString(), dataGridView1);
+                            MessageBox.Show("Se elimino el pago con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                        break;
+
+
+                    case "historial_pagos":
+                        // Código para eliminar en la tabla asistentes
+                        using (SqlCommand command = new SqlCommand("DELETE FROM historial_pagos WHERE id = @idHistorial", connection))
+                        {
+                            command.Parameters.AddWithValue("@idHistorial", dataGridView1.SelectedRows[0].Cells["id"].Value);
+                            command.ExecuteNonQuery();
+                            connection.Close();
+                            tablasNegocio.CargarDatosTabla(cmbTablas.SelectedItem.ToString(), dataGridView1);
+                            MessageBox.Show("Se elimino el historial con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                        break;
+
                 }
 
             }
 
         }
-        private bool busquedaEnCurso = false;
         private void textBoxBuscador_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBoxBuscador.Text))

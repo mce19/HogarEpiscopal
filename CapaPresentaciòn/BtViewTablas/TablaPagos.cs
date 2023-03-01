@@ -118,6 +118,7 @@ namespace CapaPresentaciòn.BtViewTablas
         private void buttonGuardarPago_Click(object sender, EventArgs e)
         {
             try
+
     {
         int id = int.Parse(textBoxId.Text);
         int padreId = int.Parse(textBoxPadre.Text);

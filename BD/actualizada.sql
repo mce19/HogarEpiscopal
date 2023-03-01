@@ -148,10 +148,10 @@ VALUES ('CC', 12345678, 'Juan Perez', 'Calle 123', '555-555'),
 	   ('CC', 98765434, 'karla Rodriguez', 'Calle 46', '555-557');
        
 INSERT INTO hijos (numero_documento, nombre_completo, fecha_nacimiento, edad, genero, segun_inec, subsidio, padre_id, fecha_registro)
-VALUES (11111111, 'Pedro Perez', '2010-01-01', '11', 'masculino', 'estudiante', 'si', 12345678,  GETDATE()),
-       (22222222, 'Ana Rodriguez', '2011-01-01', '10', 'femenino', 'estudiante', 'no', 98765432,  GETDATE()),
-       (22222223, 'Martin Rodriguez', '2011-01-01', '10', 'femenino', 'estudiante', 'no', 98765433,  GETDATE()),
-       (22222224, 'Darling Rodriguez', '2011-01-01', '10', 'femenino', 'estudiante', 'no', 98765434, GETDATE());
+VALUES (11111111, 'Pedro Perez', '2010-01-01', '11', ' M', 'estudiante', 'si', 12345678,  GETDATE()),
+       (22222222, 'Ana Rodriguez', '2011-01-01', '10', 'F', 'estudiante', 'no', 98765432,  GETDATE()),
+       (22222223, 'Martin Rodriguez', '2011-01-01', '10', 'F', 'estudiante', 'no', 98765433,  GETDATE()),
+       (22222224, 'Darling Rodriguez', '2011-01-01', '10', 'F', 'estudiante', 'no', 98765434, GETDATE());
 
        
 	   INSERT INTO grupos (id, nombre)
@@ -321,8 +321,8 @@ WHERE grupos.nombre = 'Grupo A';
 
 ---me muestra el total de niñosy niñas y de supsidios 
 SELECT 
-  COUNT(CASE WHEN genero = 'masculino' THEN 1 END) AS "Total de niños varones",
-  COUNT(CASE WHEN genero = 'femenino' THEN 1 END) AS "Total de niñas",
+  COUNT(CASE WHEN genero = ' M' THEN 1 END) AS "Total de niños varones",
+  COUNT(CASE WHEN genero = 'F' THEN 1 END) AS "Total de niñas",
   COUNT(CASE WHEN subsidio = 'si' THEN 1 END) AS "Total con subsidio",
   COUNT(CASE WHEN subsidio = 'no' THEN 1 END) AS "Total sin subsidio"
 FROM hijos

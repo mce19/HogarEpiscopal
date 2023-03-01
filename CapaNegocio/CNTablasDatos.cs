@@ -30,7 +30,7 @@ namespace CapaNegocio
         {"asistentes", new[] { "Número Documento", "Nombre Completo", "N. Docente" } },
         {"grupos", new[] { "ID", "Nombre" } },
         {"matricula", new[] { "Código", "Ced. Hijo", "Ced. Padre", "Ced. Docénte", "ID Grupo" } },
-        {"pagos", new[] { "ID", "Número Documento", "Pago mensual", "Abono", "Monto restante", "Saldo actual", "Fecha", "Concepto"} },
+        {"pagos", new[] { "ID", "Número Documento", "Pago mensual", "Abono", "Saldo actual", "Fecha", "Concepto"} },
         {"historial_pagos", new[] { "ID","Número Documento", "Monto cancelado", "Fecha", "Mes" } },
 
     };

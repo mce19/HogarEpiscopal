@@ -137,7 +137,7 @@ namespace CapaPresentaciòn.BtViewTablas
         private void buttonGuardarPago_Click(object sender, EventArgs e)
         {
             CNPagos pagosNegocio = new CNPagos();
-            //HAY QUE ARRGE
+
             try
             {
                 int id = int.Parse(textBoxId.Text);
@@ -171,20 +171,30 @@ namespace CapaPresentaciòn.BtViewTablas
 
                 // Cálculo de los nuevos valores según si se abona el total o no
                 decimal saldoNuevo = saldoActual - montoAbonado;
-                string mesCancelacion = "";
+               
+               
 
                 if (saldoNuevo == 0)
                 {
-                    mesCancelacion = dateTimeFecha.Value.ToString("MMMM yyyy");
+                    decimal saldo = montoMensual;
+                    montoAbonado = 0; // El monto abonado es cero cuando se cancela el total
+                    DateTime siguienteMes = fecha.AddMonths(1);
+                    pagosNegocio.ActualizarPago(id, padreId, montoAbonado, saldo, siguienteMes, detalles);
                 }
+                else {
 
-                // Actualización de los datos en la base de datos
-                pagosNegocio.ActualizarPago(id, padreId, montoAbonado, saldoNuevo, dateTimeFecha.Value, detalles);
+
+                    // Actualización de los datos en la base de datos
+                    pagosNegocio.ActualizarPago(id, padreId, montoAbonado, saldoNuevo, fecha, detalles);
+
+
+                }
 
                 // Si se abona el total, guardar el pago en el historial
                 if (saldoNuevo == 0)
                 {
-                    pagosNegocio.InsertarPagoEnHistorial(id, padreId, montoMensual, dateTimeFecha.Value, mesCancelacion);
+                    DateTime mes = fecha.AddMonths(0);
+                    pagosNegocio.InsertarPagoEnHistorial(id, padreId, montoMensual, fecha, mes.Month.ToString());
                 }
 
                 MessageBox.Show("Pago actualizado correctamente");

@@ -50,7 +50,7 @@ namespace CapaPresentaciòn.BtControles
                     formPadre.nombre = dataGridViewPágos.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
                     formPadre.montoMensual = dataGridViewPágos.SelectedRows[0].Cells["monto_mensual"].Value.ToString();
                     formPadre.saldoActual = dataGridViewPágos.SelectedRows[0].Cells["saldo_actual"].Value.ToString();
-                    formPadre.fecha = DateTime.Now.ToString();
+                    formPadre.fecha = dataGridViewPágos.SelectedRows[0].Cells["fecha"].Value.ToString();
                     formPadre.concepto = dataGridViewPágos.SelectedRows[0].Cells["concepto"].Value.ToString();
                     formPadre.Show();
                 }

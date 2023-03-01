@@ -142,8 +142,8 @@ namespace CapaDatos
                 comando.CommandType = CommandType.StoredProcedure;
 
                 comando.Parameters.AddWithValue("@id", id);
-                comando.Parameters.AddWithValue("@montoAbonado", montoAbonado);
-                comando.Parameters.AddWithValue("@saldoActual", saldoActual);
+                comando.Parameters.AddWithValue("@monto_abonado", montoAbonado);
+                comando.Parameters.AddWithValue("@saldo_actual", saldoActual);
                 comando.Parameters.AddWithValue("@fecha", fecha);
                 comando.Parameters.AddWithValue("@concepto", concepto);
 
