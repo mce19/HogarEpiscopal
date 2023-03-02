@@ -179,10 +179,11 @@ namespace CapaPresentaciòn.BtViewTablas
                     decimal saldo = montoMensual;
                     montoAbonado = 0; // El monto abonado es cero cuando se cancela el total
                     DateTime siguienteMes = fecha.AddMonths(1);
+                    DateTime mes = fecha.AddMonths(0);
                     pagosNegocio.ActualizarPago(id, padreId, montoAbonado, saldo, siguienteMes, detalles);
+                    pagosNegocio.InsertarPagoEnHistorial( padreId, montoMensual, fecha);
                 }
                 else {
-
 
                     // Actualización de los datos en la base de datos
                     pagosNegocio.ActualizarPago(id, padreId, montoAbonado, saldoNuevo, fecha, detalles);
@@ -190,12 +191,7 @@ namespace CapaPresentaciòn.BtViewTablas
 
                 }
 
-                // Si se abona el total, guardar el pago en el historial
-                if (saldoNuevo == 0)
-                {
-                    DateTime mes = fecha.AddMonths(0);
-                    pagosNegocio.InsertarPagoEnHistorial(id, padreId, montoMensual, fecha, mes.Month.ToString());
-                }
+              
 
                 MessageBox.Show("Pago actualizado correctamente");
                 this.Close();

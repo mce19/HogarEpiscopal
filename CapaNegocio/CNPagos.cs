@@ -40,9 +40,9 @@ namespace CapaNegocio
             return cdPagos.BuscarPorId(id);
         }
 
-        public bool InsertarPagoEnHistorial(int id, int padreId, decimal montoCancelado, DateTime fechaCancelacion, string mesCancelacion)
+        public bool InsertarPagoEnHistorial( int padreId, decimal montoCancelado, DateTime fechaCancelacion)
         {
-            return cdPagos.InsertarPagoEnHistorial(id, padreId, montoCancelado, fechaCancelacion, mesCancelacion);
+            return cdPagos.InsertarPagoEnHistorial( padreId, montoCancelado, fechaCancelacion);
         }
 
 

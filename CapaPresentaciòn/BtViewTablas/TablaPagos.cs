@@ -159,8 +159,7 @@ namespace CapaPresentaciòn.BtViewTablas
                     // Insertar pago en tabla Historial_Pagos
 
                     string nombreMes = fecha.ToString("MMMM");
-                    string mesSiguienteString = $"{nombreMes}";
-                    bool insertarPagoEnHistorial = cnPagos.InsertarPagoEnHistorial(id, padreId, montoMensual, fecha, mesSiguienteString);
+                    bool insertarPagoEnHistorial = cnPagos.InsertarPagoEnHistorial( padreId, montoMensual, fecha);
             if (!insertarPagoEnHistorial)
             {
                 MessageBox.Show("Error al ingresar el pago en la tabla Historial_Pagos.");
