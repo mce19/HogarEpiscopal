@@ -19,7 +19,19 @@
     <Compile Update="BtViewTablas\TablaAbono.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="BtViewTablas\TablaAsistentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="BtViewTablas\TablaDocentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="BtViewTablas\TablaGrupos.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="BtViewTablas\TablaHijocs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="BtViewTablas\TablaMatriculas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="BtViewTablas\TablaPadre.cs">

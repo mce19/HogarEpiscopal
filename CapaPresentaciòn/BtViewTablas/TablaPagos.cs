@@ -147,9 +147,10 @@ namespace CapaPresentaciòn.BtViewTablas
         // Si se cancela todo, se guarda el pago en ambas tablas
         if (saldoActual == 0)
         {
+                    decimal saldo = montoMensual;
                     DateTime siguienteMes = fecha.AddMonths(1);
                     // Insertar pago en tabla Pagos
-                    bool insertarPago = cnPagos.InsertarPago(id, padreId, montoMensual, 0, 0, siguienteMes, detalles);
+                    bool insertarPago = cnPagos.InsertarPago(id, padreId, montoMensual, 0, saldo, siguienteMes, detalles);
             if (!insertarPago)
             {
                 MessageBox.Show("Error al ingresar el pago en la tabla Pagos.");

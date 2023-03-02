@@ -70,13 +70,14 @@ CREATE TABLE pagos (
 );
 
 CREATE TABLE historial_pagos (
-    id INT PRIMARY KEY,
+    id INT IDENTITY(1,1) PRIMARY KEY,
     padre_id INT NOT NULL,
     monto_cancelado DECIMAL(10,2) NOT NULL,
     fecha_cancelacion DATE NOT NULL,
-    mes_cancelacion VARCHAR(10) NOT NULL,
     FOREIGN KEY (padre_id) REFERENCES padres(numero_documento)
 );
+
+
 
 
 DELETE FROM hijos;
@@ -84,7 +85,7 @@ DELETE FROM pagos;
 DELETE FROM matricula WHERE id = 2;
 DROP TABLE matricula;
 DROP TABLE hijos;
-DROP TABLE padres;
+DROP TABLE historial_pagos;
 
 DROP TABLE pagos;
 drop table abonos;
@@ -188,10 +189,10 @@ INSERT INTO pagos(id, padre_id, monto_mensual, monto_abonado, saldo_actual, fech
 (2, 98765432, 350.00, 0.00, 350.00, '2023-01-18', 'Pago mensual de enero'),
 (3, 98765433, 400.00, 0.00, 400.00, '2023-01-18', 'Pago mensual de enero');
 
-INSERT INTO historial_pagos(id, padre_id, monto_cancelado, fecha_cancelacion, mes_cancelacion) VALUES
-(1, 12345678, 250.00, '2023-01-18', 'enero'),
-(2, 98765432, 350.00, '2023-01-18', 'enero'),
-(3, 98765433, 400.00, '2023-01-18', 'enero');
+INSERT INTO historial_pagos( padre_id, monto_cancelado, fecha_cancelacion ) VALUES
+(12345678, 250.00, '2023-01-18'),
+(98765432, 350.00, '2023-01-18'),
+(98765433, 400.00, '2023-01-18');
 
 
 
@@ -215,6 +216,22 @@ BEGIN
   ORDER BY h.fecha_registro DESC
 END;
 
+
+CREATE FUNCTION ConsultaRegistro()
+RETURNS TABLE
+AS
+RETURN
+    SELECT TOP 10 p.numero_documento AS 'Ced. Padre', p.nombre_completo AS 'Nombre Padre', h.nombre_completo AS 'Nombre Hijo', h.numero_documento AS 'Ced. Hijo', h.fecha_registro
+    FROM padres p
+    INNER JOIN hijos h ON p.numero_documento = h.padre_id
+    WHERE NOT EXISTS (
+        SELECT 1 
+        FROM matricula m 
+        WHERE m.hijo_id = h.numero_documento AND m.padre_id = p.numero_documento
+    )
+    ORDER BY h.fecha_registro DESC;
+
+
 --consulta procedure
 EXEC ConsultaRegistro;
 ---para eliminar procedure 
@@ -222,16 +239,15 @@ DROP PROCEDURE ConsultaRegistro;
 
 --procedimiento para gaurdar el historial de pago
 CREATE PROCEDURE InsertarPagoEnHistorial
-    @id INT,
     @padre_id INT,
     @monto_cancelado DECIMAL(10,2),
-    @fecha_cancelacion DATE,
-    @mes_cancelacion VARCHAR(10)
+    @fecha_cancelacion DATE    
 AS
 BEGIN
-    INSERT INTO historial_pagos (id, padre_id, monto_cancelado, fecha_cancelacion, mes_cancelacion)
-    VALUES (@id, @padre_id, @monto_cancelado, @fecha_cancelacion, @mes_cancelacion)
+    INSERT INTO historial_pagos (padre_id, monto_cancelado, fecha_cancelacion)
+    VALUES (@padre_id, @monto_cancelado, @fecha_cancelacion)
 END
+
 
 
 

@@ -142,7 +142,7 @@
             this.guna2Button4.Name = "guna2Button4";
             this.guna2Button4.Size = new System.Drawing.Size(180, 58);
             this.guna2Button4.TabIndex = 0;
-            this.guna2Button4.Text = "Matricula";
+            this.guna2Button4.Text = "Grupos";
             this.guna2Button4.Click += new System.EventHandler(this.guna2Button3_Click);
             // 
             // guna2Button8
@@ -214,7 +214,7 @@
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(180, 58);
             this.guna2Button3.TabIndex = 0;
-            this.guna2Button3.Text = "Niños";
+            this.guna2Button3.Text = "Matricular";
             this.guna2Button3.Click += new System.EventHandler(this.guna2Button2_Click);
             // 
             // guna2Button7
@@ -237,7 +237,7 @@
             this.guna2Button7.Name = "guna2Button7";
             this.guna2Button7.Size = new System.Drawing.Size(176, 58);
             this.guna2Button7.TabIndex = 0;
-            this.guna2Button7.Text = "Inicio";
+            this.guna2Button7.Text = "Registros";
             this.guna2Button7.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // panelContainer
