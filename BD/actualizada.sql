@@ -207,20 +207,12 @@ SELECT * FROM grupos
 SELECT * FROM historial_pagos
 
 ---PROCESO DE LISTAR RECIEN MATRICULADOS 
+
+
+
 CREATE PROCEDURE ConsultaRegistro
 AS
 BEGIN
-  SELECT p.numero_documento AS 'Ced. Padre', p.nombre_completo AS 'Nombre Padre', h.nombre_completo AS 'Nombre Hijo', h.numero_documento AS 'Ced. Hijo'
-  FROM padres p
-  INNER JOIN hijos h ON p.numero_documento = h.padre_id
-  ORDER BY h.fecha_registro DESC
-END;
-
-
-CREATE FUNCTION ConsultaRegistro()
-RETURNS TABLE
-AS
-RETURN
     SELECT TOP 10 p.numero_documento AS 'Ced. Padre', p.nombre_completo AS 'Nombre Padre', h.nombre_completo AS 'Nombre Hijo', h.numero_documento AS 'Ced. Hijo', h.fecha_registro
     FROM padres p
     INNER JOIN hijos h ON p.numero_documento = h.padre_id
@@ -230,8 +222,10 @@ RETURN
         WHERE m.hijo_id = h.numero_documento AND m.padre_id = p.numero_documento
     )
     ORDER BY h.fecha_registro DESC;
+END;
 
 
+	DROP FUNCTION ConsultaRegistro;
 --consulta procedure
 EXEC ConsultaRegistro;
 ---para eliminar procedure 

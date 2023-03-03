@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -133,7 +134,6 @@ namespace CapaPresentaciòn.BtViewTablas
         {
 
         }
-
         private void buttonGuardarPago_Click(object sender, EventArgs e)
         {
             CNPagos pagosNegocio = new CNPagos();
@@ -182,6 +182,8 @@ namespace CapaPresentaciòn.BtViewTablas
                     DateTime mes = fecha.AddMonths(0);
                     pagosNegocio.ActualizarPago(id, padreId, montoAbonado, saldo, siguienteMes, detalles);
                     pagosNegocio.InsertarPagoEnHistorial( padreId, montoMensual, fecha);
+                    // Llamada al método para generar la factura
+                    GenerarFactura(id, padreId, montoMensual, montoAbonado, saldoNuevo, fecha, detalles);
                 }
                 else {
 
@@ -194,6 +196,8 @@ namespace CapaPresentaciòn.BtViewTablas
               
 
                 MessageBox.Show("Pago actualizado correctamente");
+
+              
                 this.Close();
             }
             catch (Exception ex)
@@ -205,6 +209,43 @@ namespace CapaPresentaciòn.BtViewTablas
         private void buttonCancelarPago_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+
+        private void ImprimirFactura(string factura)
+        {
+            // Aquí puedes implementar la lógica para imprimir la factura
+            // Puedes usar la clase PrinterSettings y PrintDocument de C# para imprimir
+
+            //Ejemplo de cómo imprimir en una impresora predeterminada:
+            PrinterSettings settings = new PrinterSettings();
+            PrintDocument doc = new PrintDocument();
+            doc.PrinterSettings = settings;
+            doc.PrintPage += (sender, e) => {
+                e.Graphics.DrawString(factura, new Font("Arial", 12), Brushes.Black, new PointF(0, 0));
+            };
+            doc.Print();
+        }
+
+
+        private void GenerarFactura(int id, int padreId, decimal montoMensual, decimal montoAbonado, decimal saldoActual, DateTime fecha, string detalles)
+        {
+            StringBuilder factura = new StringBuilder();
+            factura.AppendLine("FACTURA");
+            factura.AppendLine("------------------");
+            factura.AppendLine("ID del abonado: " + id.ToString());
+            factura.AppendLine("ID del padre: " + padreId.ToString());
+            factura.AppendLine("Monto mensual: " + montoMensual.ToString("F2"));
+            factura.AppendLine("Monto abonado: " + montoAbonado.ToString("F2"));
+            factura.AppendLine("Saldo actual: " + saldoActual.ToString("F2"));
+            factura.AppendLine("Fecha: " + fecha.ToString("dd/MM/yyyy"));
+            factura.AppendLine("Detalles: " + detalles);
+
+            // Mostrar la factura en un cuadro de diálogo antes de imprimir
+            MessageBox.Show(factura.ToString(), "Factura", MessageBoxButtons.OK);
+
+            // Llamada a un método para imprimir la factura
+            ImprimirFactura(factura.ToString());
         }
 
         private void textBoxnombre_TextChanged(object sender, EventArgs e)
