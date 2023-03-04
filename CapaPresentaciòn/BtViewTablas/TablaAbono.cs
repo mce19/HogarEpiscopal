@@ -134,6 +134,7 @@ namespace CapaPresentaciòn.BtViewTablas
         {
 
         }
+
         private void buttonGuardarPago_Click(object sender, EventArgs e)
         {
             CNPagos pagosNegocio = new CNPagos();
@@ -142,11 +143,21 @@ namespace CapaPresentaciòn.BtViewTablas
             {
                 int id = int.Parse(textBoxId.Text);
                 int padreId = int.Parse(textBoxPadreId.Text);
+                
                 decimal montoMensual = decimal.Parse(textBoxnMensual.Text);
                 decimal montoAbonado = decimal.Parse(textBoxAbono.Text);
                 decimal saldoActual = decimal.Parse(textBoxSaldo.Text);
                 DateTime fecha = dateTimeFecha.Value;
                 string detalles = textBoxDetalles.Text;
+
+                int ids = int.Parse(textBoxId.Text);
+                int padreIds = int.Parse(textBoxPadreId.Text);
+                string nombrePadres = textBoxnombre.Text;
+                decimal montoMensuals = decimal.Parse(textBoxnMensual.Text);
+                decimal montoAbonados = decimal.Parse(textBoxAbono.Text);
+                decimal saldoActuals = decimal.Parse(textBoxSaldo.Text);
+                DateTime fechas = dateTimeFecha.Value;
+                string detalless = textBoxDetalles.Text;
 
                 // Validación de los datos para prevenir inyecciones SQL
                 if (detalles.Contains("'"))
@@ -171,8 +182,10 @@ namespace CapaPresentaciòn.BtViewTablas
 
                 // Cálculo de los nuevos valores según si se abona el total o no
                 decimal saldoNuevo = saldoActual - montoAbonado;
-               
-               
+                decimal saldoNuevos = saldoActuals - montoAbonados;
+                decimal saldoabono = saldoActuals;
+
+
 
                 if (saldoNuevo == 0)
                 {
@@ -183,19 +196,19 @@ namespace CapaPresentaciòn.BtViewTablas
                     pagosNegocio.ActualizarPago(id, padreId, montoAbonado, saldo, siguienteMes, detalles);
                     pagosNegocio.InsertarPagoEnHistorial( padreId, montoMensual, fecha);
                     // Llamada al método para generar la factura
-                    GenerarFactura(id, padreId, montoMensual, montoAbonado, saldoNuevo, fecha, detalles);
+                    GenerarFactura(ids, padreIds, nombrePadres, montoMensuals, saldoabono, montoAbonados, fechas, detalless);
                 }
                 else {
 
                     // Actualización de los datos en la base de datos
                     pagosNegocio.ActualizarPago(id, padreId, montoAbonado, saldoNuevo, fecha, detalles);
-
+                    GenerarFacturaAbono(ids, padreIds, nombrePadres, montoMensuals, saldoabono, montoAbonados, saldoNuevos, fechas, detalless);
 
                 }
 
               
 
-                MessageBox.Show("Pago actualizado correctamente");
+                MessageBox.Show("Pago guardado correctamente");
 
               
                 this.Close();
@@ -228,18 +241,46 @@ namespace CapaPresentaciòn.BtViewTablas
         }
 
 
-        private void GenerarFactura(int id, int padreId, decimal montoMensual, decimal montoAbonado, decimal saldoActual, DateTime fecha, string detalles)
+        private void GenerarFactura(int ids, int padreIds, string nombrePadres, decimal montoMensuals, decimal saldoabono,  decimal montoAbonados, DateTime fechas, string detalless)
         {
             StringBuilder factura = new StringBuilder();
-            factura.AppendLine("FACTURA");
-            factura.AppendLine("------------------");
-            factura.AppendLine("ID del abonado: " + id.ToString());
-            factura.AppendLine("ID del padre: " + padreId.ToString());
-            factura.AppendLine("Monto mensual: " + montoMensual.ToString("F2"));
-            factura.AppendLine("Monto abonado: " + montoAbonado.ToString("F2"));
-            factura.AppendLine("Saldo actual: " + saldoActual.ToString("F2"));
-            factura.AppendLine("Fecha: " + fecha.ToString("dd/MM/yyyy"));
-            factura.AppendLine("Detalles: " + detalles);
+            factura.AppendLine("FACTURA\n");
+            factura.AppendLine("**HOGAR EPISCOPAL**\n");
+            factura.AppendLine("------------------\n");
+            factura.AppendLine("Codigo del abonado: " + ids.ToString() + "\n");
+            factura.AppendLine("N. documento del padre: " + padreIds.ToString() + "\n");
+            factura.AppendLine("Nombre del familiar: " + nombrePadres + "\n");
+            factura.AppendLine("Monto mensual: " + montoMensuals.ToString("F2") + "\n");
+            factura.AppendLine("Saldo actual pendiente: " + saldoabono.ToString("F2") + "\n");
+            factura.AppendLine("Monto abonado: " + montoAbonados.ToString("F2") + "\n");
+            factura.AppendLine("Cancélo la fecha de : " + fechas.ToString("dd/MM/yyyy") + "\n");
+            factura.AppendLine("Detalles: " + detalless + "\n");
+
+            // Mostrar la factura en un cuadro de diálogo antes de imprimir
+            MessageBox.Show(factura.ToString(), "Factura", MessageBoxButtons.OK);
+
+            // Llamada a un método para imprimir la factura
+            ImprimirFactura(factura.ToString());
+        }
+
+
+
+
+        private void GenerarFacturaAbono(int ids, int padreIds, string nombrePadres, decimal montoMensuals, decimal saldoabono,  decimal montoAbonados, decimal saldoActuals, DateTime fechas, string detalless)
+        {
+            StringBuilder factura = new StringBuilder();
+            factura.AppendLine("FACTURA\n");
+            factura.AppendLine("**HOGAR EPISCOPAL**\n");
+            factura.AppendLine("------------------\n");
+            factura.AppendLine("Codigo del abonado: " + ids.ToString() + "\n");
+            factura.AppendLine("N. documento del padre: " + padreIds.ToString() + "\n");
+            factura.AppendLine("Nombre del familiar: " + nombrePadres + "\n");
+            factura.AppendLine("Monto mensual: " + montoMensuals.ToString("F2") + "\n");
+            factura.AppendLine("Saldo actual pendiente: " + saldoabono.ToString("F2") + "\n");
+            factura.AppendLine("Monto abonado: " + montoAbonados.ToString("F2") + "\n");
+            factura.AppendLine("Saldo actual: " + saldoActuals.ToString("F2") + "\n");
+            factura.AppendLine("Abono en la fecha de : " + fechas.ToString("dd/MM/yyyy") + "\n");
+            factura.AppendLine("Detalles: " + detalless + "\n");
 
             // Mostrar la factura en un cuadro de diálogo antes de imprimir
             MessageBox.Show(factura.ToString(), "Factura", MessageBoxButtons.OK);

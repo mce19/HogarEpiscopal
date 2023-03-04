@@ -297,3 +297,6 @@ C:\Users\panad\Downloads\ultima version\HogarEpiscopal\CapaPresentaciòn\obj\Deb
 C:\Users\panad\Downloads\ultima version\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtViewTablas.TablaDocentes.resources
 C:\Users\panad\Downloads\ultima version\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtViewTablas.TablaGrupos.resources
 C:\Users\panad\Downloads\ultima version\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtViewTablas.TablaMatriculas.resources
+C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtViewTablas.TablaAsistentes.resources
+C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtViewTablas.TablaGrupos.resources
+C:\Users\XPC\Downloads\nueva version hogar\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtViewTablas.TablaMatriculas.resources
