@@ -30,6 +30,14 @@ namespace CapaPresentaciòn.BtViewTablas
             set { _idPadre = value; textBoxPadre.Text = value; }
         }
 
+        private string _Familia;
+        public string Familiar
+        {
+            get { return _Familia; }
+            set { _Familia = value; textBoxNombrePadre.Text = value; }
+        }
+
+
         private string _montoMensual;
         public string montoMensual
         {
@@ -196,6 +204,16 @@ namespace CapaPresentaciòn.BtViewTablas
         private void buttonCancelarPago_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxNombrePadre_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

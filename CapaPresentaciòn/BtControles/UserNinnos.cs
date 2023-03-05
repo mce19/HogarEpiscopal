@@ -156,7 +156,8 @@ namespace CapaPresentaciòn.BtControles
         string.IsNullOrWhiteSpace(textBoxNumPadre.Text) ||
         string.IsNullOrWhiteSpace(textBoxNumHijo.Text) ||
         string.IsNullOrWhiteSpace(textBoxNumDocente.Text) ||
-        string.IsNullOrWhiteSpace(textBoxIdGrupo.Text))
+        string.IsNullOrWhiteSpace(textBoxIdGrupo.Text) ||
+         string.IsNullOrWhiteSpace(textBoxNombPadre.Text))
             {
                 MessageBox.Show("Por favor llene todos los campos antes de guardar la matrícula");
                 return;
@@ -168,12 +169,13 @@ namespace CapaPresentaciòn.BtControles
                 textBoxNumPadre.Text.Contains("'") || textBoxNumPadre.Text.Contains("--") ||
                 textBoxNumHijo.Text.Contains("'") || textBoxNumHijo.Text.Contains("--") ||
                 textBoxNumDocente.Text.Contains("'") || textBoxNumDocente.Text.Contains("--") ||
-                textBoxIdGrupo.Text.Contains("'") || textBoxIdGrupo.Text.Contains("--"))
+                textBoxIdGrupo.Text.Contains("'") || textBoxIdGrupo.Text.Contains("--") ||
+                textBoxNombPadre.Text.Contains("'") || textBoxNombPadre.Text.Contains("--"))
             {
                 MessageBox.Show("No se permiten caracteres especiales", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
+            string nombrepadre = textBoxNombPadre.Text;
             int idMatricula, numPadre, numHijo, numDocente, idGrupo;
             if (!int.TryParse(textBoxIdMatricula.Text.Trim(), out idMatricula) ||
                 !int.TryParse(textBoxNumPadre.Text, out numPadre) ||
@@ -205,6 +207,7 @@ namespace CapaPresentaciòn.BtControles
             matricula.HijoId = numHijo;
             matricula.DocenteId = numDocente;
             matricula.GrupoId = idGrupo;
+            matricula.Nombre = nombrepadre;
 
           
             //Ya se realizo una matricula con este código por favor ingrese un nuevo codigo para realizar la matricula
@@ -218,6 +221,7 @@ namespace CapaPresentaciòn.BtControles
                 TablaPagos frmPagos = new TablaPagos();
                 frmPagos.Id = idMatricula.ToString();
                 frmPagos.idPadre = numPadre.ToString();
+                frmPagos.Familiar = nombrepadre;
                 frmPagos.Show();
 
             }

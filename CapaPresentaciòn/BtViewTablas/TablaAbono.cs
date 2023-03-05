@@ -235,7 +235,7 @@ namespace CapaPresentaciòn.BtViewTablas
             PrintDocument doc = new PrintDocument();
             doc.PrinterSettings = settings;
             doc.PrintPage += (sender, e) => {
-                e.Graphics.DrawString(factura, new Font("Arial", 12), Brushes.Black, new PointF(0, 0));
+                e.Graphics.DrawString(factura, new Font("Arial", 10), Brushes.Black, new PointF(0, 0));
             };
             doc.Print();
         }

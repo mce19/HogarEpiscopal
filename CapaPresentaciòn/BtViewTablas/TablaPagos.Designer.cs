@@ -45,11 +45,13 @@
             this.label9 = new System.Windows.Forms.Label();
             this.buttonCancelarPago = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
+            this.textBoxNombrePadre = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBoxDetalles
             // 
-            this.textBoxDetalles.Location = new System.Drawing.Point(418, 255);
+            this.textBoxDetalles.Location = new System.Drawing.Point(418, 340);
             this.textBoxDetalles.Name = "textBoxDetalles";
             this.textBoxDetalles.Size = new System.Drawing.Size(252, 23);
             this.textBoxDetalles.TabIndex = 38;
@@ -57,7 +59,7 @@
             // 
             // textBoxSaldo
             // 
-            this.textBoxSaldo.Location = new System.Drawing.Point(418, 108);
+            this.textBoxSaldo.Location = new System.Drawing.Point(418, 176);
             this.textBoxSaldo.Name = "textBoxSaldo";
             this.textBoxSaldo.Size = new System.Drawing.Size(252, 23);
             this.textBoxSaldo.TabIndex = 37;
@@ -78,7 +80,7 @@
             // 
             // dateTimeFecha
             // 
-            this.dateTimeFecha.Location = new System.Drawing.Point(418, 176);
+            this.dateTimeFecha.Location = new System.Drawing.Point(418, 255);
             this.dateTimeFecha.Name = "dateTimeFecha";
             this.dateTimeFecha.Size = new System.Drawing.Size(252, 23);
             this.dateTimeFecha.TabIndex = 32;
@@ -112,7 +114,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(418, 233);
+            this.label7.Location = new System.Drawing.Point(418, 318);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(69, 19);
             this.label7.TabIndex = 28;
@@ -122,7 +124,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(418, 86);
+            this.label6.Location = new System.Drawing.Point(418, 154);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(108, 19);
             this.label6.TabIndex = 27;
@@ -142,7 +144,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(418, 154);
+            this.label3.Location = new System.Drawing.Point(418, 233);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 19);
             this.label3.TabIndex = 24;
@@ -210,12 +212,33 @@
             this.label8.TabIndex = 42;
             this.label8.Text = "Mensualidad";
             // 
+            // textBoxNombrePadre
+            // 
+            this.textBoxNombrePadre.Location = new System.Drawing.Point(418, 108);
+            this.textBoxNombrePadre.Name = "textBoxNombrePadre";
+            this.textBoxNombrePadre.Size = new System.Drawing.Size(252, 23);
+            this.textBoxNombrePadre.TabIndex = 44;
+            this.textBoxNombrePadre.TextChanged += new System.EventHandler(this.textBoxNombrePadre_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.Location = new System.Drawing.Point(418, 86);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 19);
+            this.label5.TabIndex = 43;
+            this.label5.Text = "Nombre";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
             // TablaPagos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(740, 488);
             this.ControlBox = false;
+            this.Controls.Add(this.textBoxNombrePadre);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.buttonCancelarPago);
             this.Controls.Add(this.textBoxId);
@@ -262,5 +285,7 @@
         private Label label9;
         private Button buttonCancelarPago;
         private Label label8;
+        private TextBox textBoxNombrePadre;
+        private Label label5;
     }
 }
