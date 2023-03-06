@@ -33,7 +33,7 @@
             this.textBoxGrupoDocente = new System.Windows.Forms.TextBox();
             this.buttonGuardaDocente = new System.Windows.Forms.Button();
             this.TextBoxDireccionDocente = new System.Windows.Forms.MaskedTextBox();
-            this.TxtTitTablaPadre = new System.Windows.Forms.Label();
+            this.textTitulo = new System.Windows.Forms.Label();
             this.textBoxTelefonoDocente = new System.Windows.Forms.TextBox();
             this.textBoxNombreDocente = new System.Windows.Forms.TextBox();
             this.textBoxNunDocente = new System.Windows.Forms.TextBox();
@@ -95,15 +95,16 @@
             this.TextBoxDireccionDocente.TabIndex = 60;
             this.TextBoxDireccionDocente.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.TextBoxDireccionDocente_MaskInputRejected);
             // 
-            // TxtTitTablaPadre
+            // textTitulo
             // 
-            this.TxtTitTablaPadre.AutoSize = true;
-            this.TxtTitTablaPadre.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TxtTitTablaPadre.Location = new System.Drawing.Point(278, 22);
-            this.TxtTitTablaPadre.Name = "TxtTitTablaPadre";
-            this.TxtTitTablaPadre.Size = new System.Drawing.Size(175, 28);
-            this.TxtTitTablaPadre.TabIndex = 59;
-            this.TxtTitTablaPadre.Text = "Nombre tabla";
+            this.textTitulo.AutoSize = true;
+            this.textTitulo.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textTitulo.Location = new System.Drawing.Point(278, 22);
+            this.textTitulo.Name = "textTitulo";
+            this.textTitulo.Size = new System.Drawing.Size(175, 28);
+            this.textTitulo.TabIndex = 59;
+            this.textTitulo.Text = "Nombre tabla";
+            this.textTitulo.Click += new System.EventHandler(this.textTitulo_Click);
             // 
             // textBoxTelefonoDocente
             // 
@@ -180,7 +181,7 @@
             this.Controls.Add(this.textBoxGrupoDocente);
             this.Controls.Add(this.buttonGuardaDocente);
             this.Controls.Add(this.TextBoxDireccionDocente);
-            this.Controls.Add(this.TxtTitTablaPadre);
+            this.Controls.Add(this.textTitulo);
             this.Controls.Add(this.textBoxTelefonoDocente);
             this.Controls.Add(this.textBoxNombreDocente);
             this.Controls.Add(this.textBoxNunDocente);
@@ -190,6 +191,7 @@
             this.Controls.Add(this.label1);
             this.Name = "TablaDocentes";
             this.Text = "TablaDocentes";
+            this.Load += new System.EventHandler(this.TablaDocentes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,7 +204,7 @@
         private TextBox textBoxGrupoDocente;
         private Button buttonGuardaDocente;
         private MaskedTextBox TextBoxDireccionDocente;
-        private Label TxtTitTablaPadre;
+        private Label textTitulo;
         private TextBox textBoxTelefonoDocente;
         private TextBox textBoxNombreDocente;
         private TextBox textBoxNunDocente;

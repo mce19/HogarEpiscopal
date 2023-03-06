@@ -124,6 +124,7 @@
             this.Controls.Add(this.label1);
             this.Name = "TablaGrupos";
             this.Text = "TablaGrupos";
+            this.Load += new System.EventHandler(this.TablaGrupos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

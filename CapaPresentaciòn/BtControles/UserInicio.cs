@@ -163,22 +163,58 @@ namespace CapaPresentaciòn.BtControles
                    
                         break;
 
-                        /*
-                                        if (dataGridView1.SelectedRows.Count > 0)
-                                    {
-                                        TablaPadre formPadre = new TablaPadre();
-                                        formPadre.Show();
-                                        formPadre.TituloTabla = "Editar Padre";
-                                        formPadre.NumeroDocumento = dataGridView1.SelectedRows[0].Cells["numero_documento"].Value.ToString();
-                                        formPadre.TipoDocumento = dataGridView1.SelectedRows[0].Cells["tipo_documento"].Value.ToString();
-                                        formPadre.Nombre = dataGridView1.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
-                                        formPadre.Direccion = dataGridView1.SelectedRows[0].Cells["direccion"].Value.ToString();
-                                        formPadre.Telefono = dataGridView1.SelectedRows[0].Cells["telefono"].Value.ToString();
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("Por favor seleccione una fila antes de continuar con el proceso de edición");
-                                    } */
+                    case "grupos":
+
+                        TablaGrupos formGrupo = new TablaGrupos();
+                        formGrupo.Show();
+                        formGrupo.Titulo = "Grupo";
+                        formGrupo.Id = dataGridView1.SelectedRows[0].Cells["id"].Value.ToString();
+                        formGrupo.nombreG = dataGridView1.SelectedRows[0].Cells["nombre"].Value.ToString();
+
+                        break;
+
+                    case "docentes":
+
+                        TablaDocentes formDocent = new TablaDocentes();
+                        formDocent.Show();
+                        formDocent.Titulo = "Docentes";
+                        formDocent.Id = dataGridView1.SelectedRows[0].Cells["numero_documento"].Value.ToString();
+                        formDocent.Nombre = dataGridView1.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
+                        formDocent.Direccion = dataGridView1.SelectedRows[0].Cells["direccion"].Value.ToString();
+                        formDocent.Telefono = dataGridView1.SelectedRows[0].Cells["telefono"].Value.ToString();
+                        formDocent.IdGrupo = dataGridView1.SelectedRows[0].Cells["grupo_id"].Value.ToString();
+
+                        break;
+
+
+                    case "matricula":
+
+                        TablaMatriculas formMatricula = new TablaMatriculas();
+                        formMatricula.Show();
+                        formMatricula.Titulo = "Matriculados";
+                        formMatricula.Id = dataGridView1.SelectedRows[0].Cells["id"].Value.ToString();
+                        formMatricula.IdHijo = dataGridView1.SelectedRows[0].Cells["hijo_id"].Value.ToString();
+                        formMatricula.IdPadre = dataGridView1.SelectedRows[0].Cells["padre_id"].Value.ToString();
+                        formMatricula.IdDocente = dataGridView1.SelectedRows[0].Cells["docente_id"].Value.ToString();
+                        formMatricula.IdGrupo = dataGridView1.SelectedRows[0].Cells["grupo_id"].Value.ToString();
+
+                        break;
+
+
+                    case "asistentes":
+
+                        TablaAsistentes formAsistente = new TablaAsistentes();
+                        formAsistente.Show();
+                        formAsistente.Titulo = "Asistentes";
+                        formAsistente.Id = dataGridView1.SelectedRows[0].Cells["numero_documento"].Value.ToString();
+                        formAsistente.Nombre = dataGridView1.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
+                        formAsistente.IdDocente = dataGridView1.SelectedRows[0].Cells["docente_id"].Value.ToString();
+                     
+
+                        break;
+
+
+
                 }
             }
 

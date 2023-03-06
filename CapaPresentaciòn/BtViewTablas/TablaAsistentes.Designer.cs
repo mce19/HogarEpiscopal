@@ -39,8 +39,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonGuardarAsistente = new System.Windows.Forms.Button();
-            this.TextBoxDireccionAsistente = new System.Windows.Forms.MaskedTextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.txtIdDocente = new System.Windows.Forms.MaskedTextBox();
+            this.textTitulo = new System.Windows.Forms.Label();
             this.textBoxNombreAsistente = new System.Windows.Forms.TextBox();
             this.textBoxNumAsistente = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -150,23 +150,24 @@
             this.buttonGuardarAsistente.UseVisualStyleBackColor = false;
             this.buttonGuardarAsistente.Click += new System.EventHandler(this.buttonGuardarAsistente_Click);
             // 
-            // TextBoxDireccionAsistente
+            // txtIdDocente
             // 
-            this.TextBoxDireccionAsistente.Location = new System.Drawing.Point(156, 294);
-            this.TextBoxDireccionAsistente.Name = "TextBoxDireccionAsistente";
-            this.TextBoxDireccionAsistente.Size = new System.Drawing.Size(309, 23);
-            this.TextBoxDireccionAsistente.TabIndex = 73;
-            this.TextBoxDireccionAsistente.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.TextBoxDireccionAsistente_MaskInputRejected);
+            this.txtIdDocente.Location = new System.Drawing.Point(156, 294);
+            this.txtIdDocente.Name = "txtIdDocente";
+            this.txtIdDocente.Size = new System.Drawing.Size(309, 23);
+            this.txtIdDocente.TabIndex = 73;
+            this.txtIdDocente.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.txtIdDocente_MaskInputRejected);
             // 
-            // label3
+            // textTitulo
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(202, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(175, 28);
-            this.label3.TabIndex = 72;
-            this.label3.Text = "Nombre tabla";
+            this.textTitulo.AutoSize = true;
+            this.textTitulo.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.textTitulo.Location = new System.Drawing.Point(202, 18);
+            this.textTitulo.Name = "textTitulo";
+            this.textTitulo.Size = new System.Drawing.Size(175, 28);
+            this.textTitulo.TabIndex = 72;
+            this.textTitulo.Text = "Nombre tabla";
+            this.textTitulo.Click += new System.EventHandler(this.textTitulo_Click);
             // 
             // textBoxNombreAsistente
             // 
@@ -219,14 +220,15 @@
             this.ClientSize = new System.Drawing.Size(616, 474);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonGuardarAsistente);
-            this.Controls.Add(this.TextBoxDireccionAsistente);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtIdDocente);
+            this.Controls.Add(this.textTitulo);
             this.Controls.Add(this.textBoxNombreAsistente);
             this.Controls.Add(this.textBoxNumAsistente);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label9);
             this.Name = "TablaAsistentes";
+            this.Load += new System.EventHandler(this.TablaAsistentes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -245,8 +247,8 @@
         private Label label1;
         private Button buttonCancelar;
         private Button buttonGuardarAsistente;
-        private MaskedTextBox TextBoxDireccionAsistente;
-        private Label label3;
+        private MaskedTextBox txtIdDocente;
+        private Label textTitulo;
         private TextBox textBoxNombreAsistente;
         private TextBox textBoxNumAsistente;
         private Label label7;

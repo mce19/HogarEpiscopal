@@ -30,13 +30,13 @@
         {
             this.buttonCancelar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBoxGrupoMatricula = new System.Windows.Forms.TextBox();
+            this.textIdGrpo = new System.Windows.Forms.TextBox();
             this.buttonGuardaDocente = new System.Windows.Forms.Button();
-            this.TextBoxDireccionMatricula = new System.Windows.Forms.MaskedTextBox();
+            this.textCedPadre = new System.Windows.Forms.MaskedTextBox();
             this.TxtTitTablaMatricula = new System.Windows.Forms.Label();
-            this.textBoxTelefonoMatricula = new System.Windows.Forms.TextBox();
-            this.textBoxNombreMatricula = new System.Windows.Forms.TextBox();
-            this.textBoxNunMatricula = new System.Windows.Forms.TextBox();
+            this.textCedDocente = new System.Windows.Forms.TextBox();
+            this.textCedHijo = new System.Windows.Forms.TextBox();
+            this.textId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -66,13 +66,13 @@
             this.label5.TabIndex = 76;
             this.label5.Text = "Grupo ID";
             // 
-            // textBoxGrupoMatricula
+            // textIdGrpo
             // 
-            this.textBoxGrupoMatricula.Location = new System.Drawing.Point(376, 211);
-            this.textBoxGrupoMatricula.Name = "textBoxGrupoMatricula";
-            this.textBoxGrupoMatricula.Size = new System.Drawing.Size(309, 23);
-            this.textBoxGrupoMatricula.TabIndex = 75;
-            this.textBoxGrupoMatricula.TextChanged += new System.EventHandler(this.textBoxGrupoMatricula_TextChanged);
+            this.textIdGrpo.Location = new System.Drawing.Point(376, 211);
+            this.textIdGrpo.Name = "textIdGrpo";
+            this.textIdGrpo.Size = new System.Drawing.Size(309, 23);
+            this.textIdGrpo.TabIndex = 75;
+            this.textIdGrpo.TextChanged += new System.EventHandler(this.textId_TextChanged);
             // 
             // buttonGuardaDocente
             // 
@@ -86,13 +86,13 @@
             this.buttonGuardaDocente.Text = "Guardar";
             this.buttonGuardaDocente.UseVisualStyleBackColor = false;
             // 
-            // TextBoxDireccionMatricula
+            // textCedPadre
             // 
-            this.TextBoxDireccionMatricula.Location = new System.Drawing.Point(43, 297);
-            this.TextBoxDireccionMatricula.Name = "TextBoxDireccionMatricula";
-            this.TextBoxDireccionMatricula.Size = new System.Drawing.Size(309, 23);
-            this.TextBoxDireccionMatricula.TabIndex = 73;
-            this.TextBoxDireccionMatricula.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.TextBoxDireccionMatricula_MaskInputRejected);
+            this.textCedPadre.Location = new System.Drawing.Point(43, 297);
+            this.textCedPadre.Name = "textCedPadre";
+            this.textCedPadre.Size = new System.Drawing.Size(309, 23);
+            this.textCedPadre.TabIndex = 73;
+            this.textCedPadre.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.TextCedPadre_MaskInputRejected);
             // 
             // TxtTitTablaMatricula
             // 
@@ -104,29 +104,29 @@
             this.TxtTitTablaMatricula.TabIndex = 72;
             this.TxtTitTablaMatricula.Text = "Nombre tabla";
             // 
-            // textBoxTelefonoMatricula
+            // textCedDocente
             // 
-            this.textBoxTelefonoMatricula.Location = new System.Drawing.Point(376, 126);
-            this.textBoxTelefonoMatricula.Name = "textBoxTelefonoMatricula";
-            this.textBoxTelefonoMatricula.Size = new System.Drawing.Size(309, 23);
-            this.textBoxTelefonoMatricula.TabIndex = 71;
-            this.textBoxTelefonoMatricula.TextChanged += new System.EventHandler(this.textBoxTelefonoMatricula_TextChanged);
+            this.textCedDocente.Location = new System.Drawing.Point(376, 126);
+            this.textCedDocente.Name = "textCedDocente";
+            this.textCedDocente.Size = new System.Drawing.Size(309, 23);
+            this.textCedDocente.TabIndex = 71;
+            this.textCedDocente.TextChanged += new System.EventHandler(this.textCedDocente_TextChanged);
             // 
-            // textBoxNombreMatricula
+            // textCedHijo
             // 
-            this.textBoxNombreMatricula.Location = new System.Drawing.Point(43, 211);
-            this.textBoxNombreMatricula.Name = "textBoxNombreMatricula";
-            this.textBoxNombreMatricula.Size = new System.Drawing.Size(309, 23);
-            this.textBoxNombreMatricula.TabIndex = 70;
-            this.textBoxNombreMatricula.TextChanged += new System.EventHandler(this.textBoxNombreMatricula_TextChanged);
+            this.textCedHijo.Location = new System.Drawing.Point(43, 211);
+            this.textCedHijo.Name = "textCedHijo";
+            this.textCedHijo.Size = new System.Drawing.Size(309, 23);
+            this.textCedHijo.TabIndex = 70;
+            this.textCedHijo.TextChanged += new System.EventHandler(this.textCedHijo_TextChanged);
             // 
-            // textBoxNunMatricula
+            // textId
             // 
-            this.textBoxNunMatricula.Location = new System.Drawing.Point(43, 126);
-            this.textBoxNunMatricula.Name = "textBoxNunMatricula";
-            this.textBoxNunMatricula.Size = new System.Drawing.Size(309, 23);
-            this.textBoxNunMatricula.TabIndex = 69;
-            this.textBoxNunMatricula.TextChanged += new System.EventHandler(this.textBoxNunMatricula_TextChanged);
+            this.textId.Location = new System.Drawing.Point(43, 126);
+            this.textId.Name = "textId";
+            this.textId.Size = new System.Drawing.Size(309, 23);
+            this.textId.TabIndex = 69;
+            this.textId.TextChanged += new System.EventHandler(this.textIdGrupo_TextChanged);
             // 
             // label4
             // 
@@ -175,19 +175,20 @@
             this.ClientSize = new System.Drawing.Size(726, 497);
             this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBoxGrupoMatricula);
+            this.Controls.Add(this.textIdGrpo);
             this.Controls.Add(this.buttonGuardaDocente);
-            this.Controls.Add(this.TextBoxDireccionMatricula);
+            this.Controls.Add(this.textCedPadre);
             this.Controls.Add(this.TxtTitTablaMatricula);
-            this.Controls.Add(this.textBoxTelefonoMatricula);
-            this.Controls.Add(this.textBoxNombreMatricula);
-            this.Controls.Add(this.textBoxNunMatricula);
+            this.Controls.Add(this.textCedDocente);
+            this.Controls.Add(this.textCedHijo);
+            this.Controls.Add(this.textId);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "TablaMatriculas";
             this.Text = "TablaMatriculas";
+            this.Load += new System.EventHandler(this.TablaMatriculas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,13 +198,13 @@
 
         private Button buttonCancelar;
         private Label label5;
-        private TextBox textBoxGrupoMatricula;
+        private TextBox textIdGrpo;
         private Button buttonGuardaDocente;
-        private MaskedTextBox TextBoxDireccionMatricula;
+        private MaskedTextBox textCedPadre;
         private Label TxtTitTablaMatricula;
-        private TextBox textBoxTelefonoMatricula;
-        private TextBox textBoxNombreMatricula;
-        private TextBox textBoxNunMatricula;
+        private TextBox textCedDocente;
+        private TextBox textCedHijo;
+        private TextBox textId;
         private Label label4;
         private Label label3;
         private Label label2;
