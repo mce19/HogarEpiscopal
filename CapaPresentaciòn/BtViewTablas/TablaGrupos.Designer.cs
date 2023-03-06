@@ -33,7 +33,7 @@
             this.textBoxIdGrupo = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonCancelarPago = new System.Windows.Forms.Button();
+            this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonGuardarGrupo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -84,17 +84,18 @@
             this.label1.TabIndex = 60;
             this.label1.Text = "ID";
             // 
-            // buttonCancelarPago
+            // buttonCancelar
             // 
-            this.buttonCancelarPago.BackColor = System.Drawing.Color.Red;
-            this.buttonCancelarPago.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonCancelarPago.ForeColor = System.Drawing.Color.White;
-            this.buttonCancelarPago.Location = new System.Drawing.Point(155, 233);
-            this.buttonCancelarPago.Name = "buttonCancelarPago";
-            this.buttonCancelarPago.Size = new System.Drawing.Size(120, 47);
-            this.buttonCancelarPago.TabIndex = 66;
-            this.buttonCancelarPago.Text = "Cancelar";
-            this.buttonCancelarPago.UseVisualStyleBackColor = false;
+            this.buttonCancelar.BackColor = System.Drawing.Color.Red;
+            this.buttonCancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonCancelar.ForeColor = System.Drawing.Color.White;
+            this.buttonCancelar.Location = new System.Drawing.Point(155, 233);
+            this.buttonCancelar.Name = "buttonCancelar";
+            this.buttonCancelar.Size = new System.Drawing.Size(120, 47);
+            this.buttonCancelar.TabIndex = 66;
+            this.buttonCancelar.Text = "Cancelar";
+            this.buttonCancelar.UseVisualStyleBackColor = false;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // buttonGuardarGrupo
             // 
@@ -114,7 +115,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 324);
             this.ControlBox = false;
-            this.Controls.Add(this.buttonCancelarPago);
+            this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonGuardarGrupo);
             this.Controls.Add(this.TxtTitTablaGrupo);
             this.Controls.Add(this.textBoxNombreGrupo);
@@ -135,7 +136,7 @@
         private TextBox textBoxIdGrupo;
         private Label label4;
         private Label label1;
-        private Button buttonCancelarPago;
+        private Button buttonCancelar;
         private Button buttonGuardarGrupo;
     }
 }

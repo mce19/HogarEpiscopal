@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonCancelarPago = new System.Windows.Forms.Button();
+            this.buttonCancelar = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxGrupoDocente = new System.Windows.Forms.TextBox();
             this.buttonGuardaDocente = new System.Windows.Forms.Button();
@@ -43,17 +43,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // buttonCancelarPago
+            // buttonCancelar
             // 
-            this.buttonCancelarPago.BackColor = System.Drawing.Color.Red;
-            this.buttonCancelarPago.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonCancelarPago.ForeColor = System.Drawing.Color.White;
-            this.buttonCancelarPago.Location = new System.Drawing.Point(449, 427);
-            this.buttonCancelarPago.Name = "buttonCancelarPago";
-            this.buttonCancelarPago.Size = new System.Drawing.Size(120, 47);
-            this.buttonCancelarPago.TabIndex = 64;
-            this.buttonCancelarPago.Text = "Cancelar";
-            this.buttonCancelarPago.UseVisualStyleBackColor = false;
+            this.buttonCancelar.BackColor = System.Drawing.Color.Red;
+            this.buttonCancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonCancelar.ForeColor = System.Drawing.Color.White;
+            this.buttonCancelar.Location = new System.Drawing.Point(449, 427);
+            this.buttonCancelar.Name = "buttonCancelar";
+            this.buttonCancelar.Size = new System.Drawing.Size(120, 47);
+            this.buttonCancelar.TabIndex = 64;
+            this.buttonCancelar.Text = "Cancelar";
+            this.buttonCancelar.UseVisualStyleBackColor = false;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // label5
             // 
@@ -174,7 +175,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 497);
             this.ControlBox = false;
-            this.Controls.Add(this.buttonCancelarPago);
+            this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBoxGrupoDocente);
             this.Controls.Add(this.buttonGuardaDocente);
@@ -196,7 +197,7 @@
 
         #endregion
 
-        private Button buttonCancelarPago;
+        private Button buttonCancelar;
         private Label label5;
         private TextBox textBoxGrupoDocente;
         private Button buttonGuardaDocente;

@@ -1,4 +1,5 @@
-﻿using CapaNegocio;
+﻿using CapaEntidad;
+using CapaNegocio;
 using CapaPresentaciòn.BtControles;
 using System;
 using System.Collections.Generic;
@@ -185,7 +186,7 @@ namespace CapaPresentaciòn.BtViewTablas
                 decimal saldoNuevos = saldoActuals - montoAbonados;
                 decimal saldoabono = saldoActuals;
 
-
+               
 
                 if (saldoNuevo == 0)
                 {
@@ -230,37 +231,58 @@ namespace CapaPresentaciòn.BtViewTablas
             // Aquí puedes implementar la lógica para imprimir la factura
             // Puedes usar la clase PrinterSettings y PrintDocument de C# para imprimir
 
-            //Ejemplo de cómo imprimir en una impresora predeterminada:
-            PrinterSettings settings = new PrinterSettings();
-            PrintDocument doc = new PrintDocument();
-            doc.PrinterSettings = settings;
-            doc.PrintPage += (sender, e) => {
-                e.Graphics.DrawString(factura, new Font("Arial", 10), Brushes.Black, new PointF(0, 0));
-            };
-            doc.Print();
+            // Mostrar el diálogo de impresión
+            PrintDialog printDialog = new PrintDialog();
+            DialogResult result = printDialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                // Configurar la impresora y el documento
+                PrinterSettings printerSettings = printDialog.PrinterSettings;
+                PrintDocument printDocument = new PrintDocument();
+                printDocument.PrinterSettings = printerSettings;
+                printDocument.PrintPage += (sender, e) => {
+                    e.Graphics.DrawString(factura, new Font("Arial Bold", 10), Brushes.Black, new PointF(0, 0));
+                };
+
+                // Imprimir el documento
+                printDocument.Print();
+            }
         }
 
 
         private void GenerarFactura(int ids, int padreIds, string nombrePadres, decimal montoMensuals, decimal saldoabono,  decimal montoAbonados, DateTime fechas, string detalless)
         {
+           
             StringBuilder factura = new StringBuilder();
+           
+           
             factura.AppendLine("FACTURA\n");
-            factura.AppendLine("**HOGAR EPISCOPAL**\n");
-            factura.AppendLine("------------------\n");
-            factura.AppendLine("Codigo del abonado: " + ids.ToString() + "\n");
-            factura.AppendLine("N. documento del padre: " + padreIds.ToString() + "\n");
-            factura.AppendLine("Nombre del familiar: " + nombrePadres + "\n");
-            factura.AppendLine("Monto mensual: " + montoMensuals.ToString("F2") + "\n");
-            factura.AppendLine("Saldo actual pendiente: " + saldoabono.ToString("F2") + "\n");
-            factura.AppendLine("Monto abonado: " + montoAbonados.ToString("F2") + "\n");
-            factura.AppendLine("Cancélo la fecha de : " + fechas.ToString("dd/MM/yyyy") + "\n");
-            factura.AppendLine("Detalles: " + detalless + "\n");
+            factura.AppendLine("Hogar Escuela Episcopal\n");
+            factura.AppendLine("-------------------\n");
+            factura.AppendLine("Codigo del abonado: " + "\n" + ids.ToString()+ "\n");
+            factura.AppendLine("N. documento del padre: " + "\n" + padreIds.ToString() + "\n");
+            factura.AppendLine("Nombre del familiar: " + "\n" + nombrePadres + "\n");
+            factura.AppendLine("Monto mensual: " + "\n" + montoMensuals.ToString("F2") + "\n");
+            factura.AppendLine("Saldo actual pendiente: " + "\n" + saldoabono.ToString("F2") + "\n");
+            factura.AppendLine("Monto abonado: " + "\n" + montoAbonados.ToString("F2") + "\n");
+            factura.AppendLine("Cancélo la fecha de : " + "\n" + fechas.ToString("dd/MM/yyyy") + "\n");
+            factura.AppendLine("Detalles: " + "\n" +  detalless + "\n");
+            factura.AppendLine("\n");
+            factura.AppendLine("Gracias");
 
             // Mostrar la factura en un cuadro de diálogo antes de imprimir
-            MessageBox.Show(factura.ToString(), "Factura", MessageBoxButtons.OK);
+            DialogResult result = MessageBox.Show(factura.ToString(), "Factura", MessageBoxButtons.OK);
 
             // Llamada a un método para imprimir la factura
-            ImprimirFactura(factura.ToString());
+            if (result == DialogResult.OK)
+            {
+                // Llamada a un método para imprimir la factura
+                ImprimirFactura(factura.ToString());
+            }
+            else
+            {
+                // El usuario canceló la impresión
+            }
         }
 
 
@@ -269,24 +291,36 @@ namespace CapaPresentaciòn.BtViewTablas
         private void GenerarFacturaAbono(int ids, int padreIds, string nombrePadres, decimal montoMensuals, decimal saldoabono,  decimal montoAbonados, decimal saldoActuals, DateTime fechas, string detalless)
         {
             StringBuilder factura = new StringBuilder();
+            
             factura.AppendLine("FACTURA\n");
-            factura.AppendLine("**HOGAR EPISCOPAL**\n");
+            factura.AppendLine("Hogar Escuela Episcopal\n");
             factura.AppendLine("------------------\n");
-            factura.AppendLine("Codigo del abonado: " + ids.ToString() + "\n");
-            factura.AppendLine("N. documento del padre: " + padreIds.ToString() + "\n");
-            factura.AppendLine("Nombre del familiar: " + nombrePadres + "\n");
-            factura.AppendLine("Monto mensual: " + montoMensuals.ToString("F2") + "\n");
-            factura.AppendLine("Saldo actual pendiente: " + saldoabono.ToString("F2") + "\n");
-            factura.AppendLine("Monto abonado: " + montoAbonados.ToString("F2") + "\n");
-            factura.AppendLine("Saldo actual: " + saldoActuals.ToString("F2") + "\n");
-            factura.AppendLine("Abono en la fecha de : " + fechas.ToString("dd/MM/yyyy") + "\n");
-            factura.AppendLine("Detalles: " + detalless + "\n");
+            factura.AppendLine("Codigo del abonado: " + "\n" + ids.ToString() + "\n");
+            factura.AppendLine("N. documento del padre: " + "\n" + padreIds.ToString() + "\n");
+            factura.AppendLine("Nombre del familiar: " + "\n" + nombrePadres + "\n");
+            factura.AppendLine("Monto mensual: " + "\n" + montoMensuals.ToString("F2") + "\n");
+            factura.AppendLine("Saldo actual pendiente: " + "\n" + saldoabono.ToString("F2") + "\n");
+            factura.AppendLine("Monto abonado: " + "\n" + montoAbonados.ToString("F2") + "\n");
+            factura.AppendLine("Saldo actual: " + "\n" + saldoActuals.ToString("F2") + "\n");
+            factura.AppendLine("Abono en la fecha de : " + "\n" + fechas.ToString("dd/MM/yyyy") + "\n");
+            factura.AppendLine("Detalles: " + "\n" + detalless + "\n");
+            factura.AppendLine("\n");
+            factura.AppendLine("Gracias");
 
             // Mostrar la factura en un cuadro de diálogo antes de imprimir
-            MessageBox.Show(factura.ToString(), "Factura", MessageBoxButtons.OK);
+            DialogResult result = MessageBox.Show(factura.ToString(), "Factura", MessageBoxButtons.OK);
 
             // Llamada a un método para imprimir la factura
-            ImprimirFactura(factura.ToString());
+            if (result == DialogResult.OK)
+            {
+                // Llamada a un método para imprimir la factura
+                ImprimirFactura(factura.ToString());
+            }
+            else
+            {
+                // El usuario canceló la impresión
+            }
+
         }
 
         private void textBoxnombre_TextChanged(object sender, EventArgs e)

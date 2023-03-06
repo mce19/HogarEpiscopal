@@ -95,20 +95,28 @@ namespace CapaPresentaciòn.BtControles
                     formHijos.Show();
                     formHijos.TituloTabla = "Agregar un nuevo hijo";
                     break;
-              /*  case "doncentes":
+                case "matricula":
                     TablaMatriculas formMatriculas = new TablaMatriculas();
                     formMatriculas.Show();
                     break;
-                case "asistentes":
+                case "docentes":
                     TablaDocentes formDocentes = new TablaDocentes();
                     formDocentes.Show();
                     break;
-                case "tabPageGrupos":
+                case "asistentes":
+                    TablaAsistentes formAsistente = new TablaAsistentes();
+                    formAsistente.Show();
+                    break;
+                case "grupos":
                     TablaGrupos formGrupos = new TablaGrupos();
                     formGrupos.Show();
                     break;
+                case "pagos":
+                    TablaPagos formPagos = new TablaPagos();
+                    formPagos.Show();
+                    break;
                 default:
-                    break;*/
+                    break;
             }
 
         }

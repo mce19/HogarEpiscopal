@@ -46,5 +46,10 @@ namespace CapaPresentaciòn.BtViewTablas
         {
 
         }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

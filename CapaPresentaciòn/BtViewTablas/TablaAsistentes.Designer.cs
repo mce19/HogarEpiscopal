@@ -37,7 +37,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonCancelar = new System.Windows.Forms.Button();
             this.buttonGuardarAsistente = new System.Windows.Forms.Button();
             this.TextBoxDireccionAsistente = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -124,17 +124,18 @@
             this.label1.Size = new System.Drawing.Size(100, 23);
             this.label1.TabIndex = 0;
             // 
-            // button1
+            // buttonCancelar
             // 
-            this.button1.BackColor = System.Drawing.Color.Red;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(156, 350);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 47);
-            this.button1.TabIndex = 77;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.buttonCancelar.BackColor = System.Drawing.Color.Red;
+            this.buttonCancelar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.buttonCancelar.ForeColor = System.Drawing.Color.White;
+            this.buttonCancelar.Location = new System.Drawing.Point(156, 350);
+            this.buttonCancelar.Name = "buttonCancelar";
+            this.buttonCancelar.Size = new System.Drawing.Size(120, 47);
+            this.buttonCancelar.TabIndex = 77;
+            this.buttonCancelar.Text = "Cancelar";
+            this.buttonCancelar.UseVisualStyleBackColor = false;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // buttonGuardarAsistente
             // 
@@ -216,7 +217,7 @@
             // TablaAsistentes
             // 
             this.ClientSize = new System.Drawing.Size(616, 474);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonCancelar);
             this.Controls.Add(this.buttonGuardarAsistente);
             this.Controls.Add(this.TextBoxDireccionAsistente);
             this.Controls.Add(this.label3);
@@ -242,7 +243,7 @@
         private Label label4;
         private Label label2;
         private Label label1;
-        private Button button1;
+        private Button buttonCancelar;
         private Button buttonGuardarAsistente;
         private MaskedTextBox TextBoxDireccionAsistente;
         private Label label3;
