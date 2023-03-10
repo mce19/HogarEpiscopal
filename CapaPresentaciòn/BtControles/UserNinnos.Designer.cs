@@ -376,6 +376,7 @@
             this.Controls.Add(this.label1);
             this.Name = "UserNinnos";
             this.Size = new System.Drawing.Size(1491, 646);
+            this.Load += new System.EventHandler(this.UserNinnos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPadresMatricula)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

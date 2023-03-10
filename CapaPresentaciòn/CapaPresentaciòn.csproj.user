@@ -4,6 +4,9 @@
     <Compile Update="BtControles\Bienvenida.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="BtControles\UserHistorial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="BtControles\UserInicio.cs">
       <SubType>UserControl</SubType>
     </Compile>

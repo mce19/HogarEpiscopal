@@ -1,4 +1,5 @@
 ﻿using CapaDatos;
+using CapaEntidad;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -28,6 +29,24 @@ namespace CapaNegocio
             return oCDGrupos.ListarInformacionPorGrupo(groupName);
         }
 
+        public bool InsertarGrupo(int id, string nombre)
+        {
+            return oCDGrupos.InsertarGrupo(id, nombre);
+        }
+
+        public void ActualizarGrupo(int id, string nombre)
+        {
+            try
+            {
+                oCDGrupos.ActualizarGrupo( id, nombre);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al actualizar grupo: " + ex.Message);
+            }
+        }
     }
 
 }
+
+

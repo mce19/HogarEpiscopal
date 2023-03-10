@@ -72,6 +72,21 @@ namespace CapaNegocio
             return existeMatricula;
         }
 
+
+        public bool InsertarMatricula(int id, int hijoId, int padreId, int docenteId, int grupoId)
+        {
+            bool resultado = false;
+            resultado = objCDMatricula.InsertarMatricula(id, hijoId, padreId, docenteId, grupoId);
+            return resultado;
+        }
+
+        public bool ActualizarMatricula(int id, int hijoId, int padreId, int docenteId, int grupoId)
+        {
+            bool resultado = false;
+            resultado = objCDMatricula.ActualizarMatricula(id, hijoId, padreId, docenteId, grupoId);
+            return resultado;
+        }
+
     }
 
 }

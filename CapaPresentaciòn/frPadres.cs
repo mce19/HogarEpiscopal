@@ -51,8 +51,9 @@ namespace capaPresentación
         private void guna2Button4_Click(object sender, EventArgs e)
         {
 
-            UserPagos userpag = new UserPagos();
-            addUserControl(userpag);
+            UserHistorial userpHistorial = new UserHistorial();
+            addUserControl(userpHistorial);
+
 
         }
         private void guna2Button8_Click(object sender, EventArgs e)
@@ -62,7 +63,7 @@ namespace capaPresentación
             addUserControl(userprinc);
 
         }
-
+        
         private void panelContainer_Paint(object sender, PaintEventArgs e)
         {
 

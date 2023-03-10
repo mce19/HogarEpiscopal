@@ -13,6 +13,7 @@ using CapaDatos;
 using CapaPresentaciòn.BtViewTablas;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using CapaEntidad;
+using iTextSharp.tool.xml.html.head;
 
 namespace CapaPresentaciòn.BtControles
 {
@@ -68,14 +69,15 @@ namespace CapaPresentaciòn.BtControles
                 buttonPagar.Visible = false;
             }
 
-            /*
-            lblTablaSeleccionada.Text = cmbTablas.SelectedItem.ToString().ToUpper();
-                tablasNegocio.CargarDatosTabla(cmbTablas.SelectedItem.ToString(), dataGridView1);
-            string[] titulos = tablasNegocio.ObtenerDiccionario(cmbTablas.SelectedItem.ToString());
-            for (int i = 0; i < titulos.Length; i++)
+            if (cmbTablas.SelectedItem.ToString() == "matricula")
             {
-                dataGridView1.Columns[i].HeaderText = titulos[i];
-            } */
+                buttonNuevo.Visible = false;
+            }
+            else
+            {
+                buttonNuevo.Visible = true;
+            }
+
         }
 
         private void buttonNuevo_Click(object sender, EventArgs e)
@@ -102,6 +104,7 @@ namespace CapaPresentaciòn.BtControles
                 case "docentes":
                     TablaDocentes formDocentes = new TablaDocentes();
                     formDocentes.Show();
+                    formDocentes.Titulo = "Nuevo docente";
                     break;
                 case "asistentes":
                     TablaAsistentes formAsistente = new TablaAsistentes();
@@ -110,6 +113,7 @@ namespace CapaPresentaciòn.BtControles
                 case "grupos":
                     TablaGrupos formGrupos = new TablaGrupos();
                     formGrupos.Show();
+                    formGrupos.Titulo = "Nuevo grupo";
                     break;
                 case "pagos":
                     TablaPagos formPagos = new TablaPagos();
@@ -166,24 +170,22 @@ namespace CapaPresentaciòn.BtControles
                     case "grupos":
 
                         TablaGrupos formGrupo = new TablaGrupos();
-                        formGrupo.Show();
-                        formGrupo.Titulo = "Grupo";
+                        formGrupo.Titulo = "Editar Grupo";
                         formGrupo.Id = dataGridView1.SelectedRows[0].Cells["id"].Value.ToString();
                         formGrupo.nombreG = dataGridView1.SelectedRows[0].Cells["nombre"].Value.ToString();
-
+                        formGrupo.Show();
                         break;
 
                     case "docentes":
 
                         TablaDocentes formDocent = new TablaDocentes();
-                        formDocent.Show();
-                        formDocent.Titulo = "Docentes";
+                        formDocent.Titulo = "Editar docente";
                         formDocent.Id = dataGridView1.SelectedRows[0].Cells["numero_documento"].Value.ToString();
                         formDocent.Nombre = dataGridView1.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
                         formDocent.Direccion = dataGridView1.SelectedRows[0].Cells["direccion"].Value.ToString();
                         formDocent.Telefono = dataGridView1.SelectedRows[0].Cells["telefono"].Value.ToString();
                         formDocent.IdGrupo = dataGridView1.SelectedRows[0].Cells["grupo_id"].Value.ToString();
-
+                        formDocent.Show();
                         break;
 
 
@@ -191,7 +193,7 @@ namespace CapaPresentaciòn.BtControles
 
                         TablaMatriculas formMatricula = new TablaMatriculas();
                         formMatricula.Show();
-                        formMatricula.Titulo = "Matriculados";
+                        formMatricula.Titulo = "Editar matricula";
                         formMatricula.Id = dataGridView1.SelectedRows[0].Cells["id"].Value.ToString();
                         formMatricula.IdHijo = dataGridView1.SelectedRows[0].Cells["hijo_id"].Value.ToString();
                         formMatricula.IdPadre = dataGridView1.SelectedRows[0].Cells["padre_id"].Value.ToString();
@@ -279,9 +281,9 @@ namespace CapaPresentaciòn.BtControles
                         // Código para eliminar en la tabla docentes
                         // Código para eliminar en la tabla docentes
                         // Eliminar los registros de las tablas relacionadas (grupos, matriculas, asistentes) antes de eliminar el docente
-                        using (SqlCommand command = new SqlCommand("DELETE FROM matricula WHERE docente_id = @docenteId; DELETE FROM matricula WHERE docente_id = @docenteId; DELETE FROM asistentes WHERE docente_id = @docenteId; DELETE FROM docentes WHERE id = @docenteId", connection))
+                        using (SqlCommand command = new SqlCommand("DELETE FROM matricula WHERE docente_id = @docenteId; DELETE FROM matricula WHERE docente_id = @docenteId; DELETE FROM asistentes WHERE docente_id = @docenteId; DELETE FROM docentes WHERE numero_documento = @docenteId", connection))
                         {
-                            command.Parameters.AddWithValue("@docenteId", dataGridView1.SelectedRows[0].Cells["id"].Value);
+                            command.Parameters.AddWithValue("@docenteId", dataGridView1.SelectedRows[0].Cells["numero_documento"].Value);
                             command.ExecuteNonQuery();
                             connection.Close();
                             tablasNegocio.CargarDatosTabla(cmbTablas.SelectedItem.ToString(), dataGridView1);

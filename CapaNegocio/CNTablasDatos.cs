@@ -31,7 +31,7 @@ namespace CapaNegocio
         {"grupos", new[] { "ID", "Nombre" } },
         {"matricula", new[] { "Código", "Ced. Hijo", "Ced. Padre", "Ced. Docénte", "ID Grupo" } },
         {"pagos", new[] { "ID", "Número Documento", "Pago mensual", "Abono", "Saldo actual", "Fecha", "Concepto"} },
-        {"historial_pagos", new[] { "ID","Número Documento", "Monto cancelado", "Fecha" } },
+        {"Historial", new[] { "ID","Número Documento", "Nombre", "Monto cancelado", "Fecha" } },
 
     };
 
@@ -79,3 +79,5 @@ namespace CapaNegocio
          }
     }
 }
+
+

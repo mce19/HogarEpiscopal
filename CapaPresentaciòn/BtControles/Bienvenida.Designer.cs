@@ -42,9 +42,9 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.label1.Location = new System.Drawing.Point(573, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(357, 38);
+            this.label1.Size = new System.Drawing.Size(319, 38);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Lista de padres e hijos";
+            this.label1.Text = "Pagos por cancelar";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // dataGridViewPágos

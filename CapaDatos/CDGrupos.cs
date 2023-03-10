@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaEntidad;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -61,6 +62,68 @@ namespace CapaDatos
             return dataTable;
         }
 
+
+        public bool InsertarGrupo(int id, string nombre)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand("InsertarGrupo", conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@id", id);
+                        cmd.Parameters.AddWithValue("@nombre", nombre);
+                    
+
+
+                        int rowsAffected = cmd.ExecuteNonQuery();//verificamos que se agrego una nueva fila
+                        if (rowsAffected > 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al insertar pago en historial: " + ex.Message);
+                return false;
+            }
+        }
+
+        public void ActualizarGrupo(int id, string nombre)
+        {
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(connectionString))
+                {
+                    conexion.Open();
+                    SqlCommand comando = new SqlCommand("ActualizarGrupo", conexion);
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@id", id);
+                    comando.Parameters.AddWithValue("@nombre", nombre);
+                    int rowsAffected = comando.ExecuteNonQuery();
+                    if (rowsAffected > 0)
+                    {
+                        // El grupo se actualizó correctamente
+                    }
+                    else
+                    {
+                        throw new Exception("No se pudo actualizar el grupo");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al actualizar grupo: " + ex.Message);
+            }
+        }
 
     }
 }

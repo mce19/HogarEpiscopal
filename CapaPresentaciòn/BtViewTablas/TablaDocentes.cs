@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace CapaPresentaciòn.BtViewTablas
 {
     public partial class TablaDocentes : Form
     {
+        CNDocente objeto = new CNDocente();
         public TablaDocentes()
         {
             InitializeComponent();
@@ -86,8 +88,70 @@ namespace CapaPresentaciòn.BtViewTablas
 
         private void buttonGuardaDocente_Click(object sender, EventArgs e)
         {
+            //agreggar nuevo 
+            // Validar datos de entrada
+            if (!string.IsNullOrEmpty(textBoxNunDocente.Text) && !string.IsNullOrEmpty(textBoxNombreDocente.Text))
+            {
 
+                // Crear objeto padre
+                int numeroDocumento;
+                if (!int.TryParse(textBoxNunDocente.Text, out numeroDocumento))
+                {
+                    MessageBox.Show("El número de documento debe ser un valor numérico y no mayor de 9 digitos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(TextBoxDireccionDocente.Text))
+                {
+                    MessageBox.Show("Por favor, ingresa la dirección del docente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(textBoxTelefonoDocente.Text) || !long.TryParse(textBoxTelefonoDocente.Text, out long telefono) || textBoxTelefonoDocente.Text.Length != 8)
+                {
+                    MessageBox.Show("Por favor, ingresa un número de teléfono válido (8 dígitos)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+
+
+                int id = numeroDocumento;
+                string nombre = textBoxNombreDocente.Text;
+                string direccion = TextBoxDireccionDocente.Text;
+               // string  telefono = textBoxTelefonoDocente.Text;
+                int grupo = int.Parse(textBoxGrupoDocente.Text);
+
+
+
+
+                if (Titulo == "Editar docente")
+                {
+
+                   objeto.ActualizarDocente(id, nombre, direccion, telefono.ToString(), grupo);
+                    // Mensaje de éxito
+         
+
+                }
+                else
+                {
+                    objeto.InsertarDocente(id, nombre, direccion, telefono.ToString(), grupo);
+                    // Mensaje de éxito
+                    MessageBox.Show("Docente guardado con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+
+
+                // Cerrar formulario
+                this.Close();
+            }
+
+            else
+            {
+                // Mostrar mensaje de error
+                MessageBox.Show("Por favor, ingresa todos los datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+    
 
         private void buttonCancelar_Click(object sender, EventArgs e)
         {

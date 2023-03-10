@@ -38,7 +38,6 @@ CREATE TABLE docentes (
 	FOREIGN KEY (grupo_id) REFERENCES grupos(id)
 );
 
-
 CREATE TABLE matricula (
 id INT PRIMARY KEY,
 hijo_id INT NOT NULL,
@@ -77,7 +76,87 @@ CREATE TABLE historial_pagos (
     FOREIGN KEY (padre_id) REFERENCES padres(numero_documento)
 );
 
+CREATE PROCEDURE Historial
+AS
+BEGIN
+    SELECT 
+        hp.id, 
+		p.numero_documento AS Documento, 
+        p.nombre_completo AS Nombre, 
+        hp.monto_cancelado, 
+        hp.fecha_cancelacion 
+    FROM 
+        historial_pagos hp 
+        INNER JOIN padres p ON hp.padre_id = p.numero_documento 
+END
 
+
+
+
+EXEC Historial
+DROP PROCEDURE Historial
+
+CREATE PROCEDURE InsertarGrupo
+    @id INT,
+    @nombre VARCHAR(50)
+AS
+BEGIN
+    INSERT INTO grupos (id, nombre)
+    VALUES (@id, @nombre)
+END
+
+CREATE PROCEDURE ActualizarGrupo
+    @id INT,
+    @nombre VARCHAR(50)
+AS
+BEGIN
+    UPDATE grupos
+    SET nombre = @nombre
+    WHERE id = @id
+END
+
+
+CREATE PROCEDURE InsertarDocente
+    @numero_documento INT,
+    @nombre_completo VARCHAR(50),
+    @direccion VARCHAR(100),
+    @telefono VARCHAR(20),
+    @grupo_id INT
+AS
+BEGIN
+    INSERT INTO docentes (numero_documento, nombre_completo, direccion, telefono, grupo_id)
+    VALUES (@numero_documento, @nombre_completo, @direccion, @telefono, @grupo_id)
+END
+
+CREATE PROCEDURE ActualizarDocente
+    @numero_documento INT,
+    @nombre_completo VARCHAR(50),
+    @direccion VARCHAR(100),
+    @telefono VARCHAR(20),
+    @grupo_id INT
+AS
+BEGIN
+    UPDATE docentes
+    SET nombre_completo = @nombre_completo,
+        direccion = @direccion,
+        telefono = @telefono,
+        grupo_id = @grupo_id
+    WHERE numero_documento = @numero_documento;
+END
+
+
+CREATE PROCEDURE ActualizarMatricula
+    @id int,
+    @hijo_id int,
+    @padre_id int,
+    @docente_id int,
+    @grupo_id int
+AS
+BEGIN
+    UPDATE matricula
+    SET hijo_id = @hijo_id, padre_id = @padre_id, docente_id = @docente_id, grupo_id = @grupo_id
+    WHERE id = @id;
+END
 
 
 DELETE FROM hijos;
@@ -88,7 +167,7 @@ DROP TABLE hijos;
 DROP TABLE historial_pagos;
 
 DROP TABLE pagos;
-drop table abonos;
+drop table grupos;
 drop table historial_pagos;
 DROP TABLE asistentes;
 

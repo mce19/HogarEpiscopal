@@ -50,6 +50,76 @@ namespace CapaDatos
         }
 
 
+        public bool InsertarMatricula(int id, int hijoId, int padreId, int docenteId, int grupoId)
+        {
+            bool resultado = false;
+
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("InsertarMatricula", conexion);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@hijoId", hijoId);
+                    cmd.Parameters.AddWithValue("@padreId", padreId);
+                    cmd.Parameters.AddWithValue("@docenteId", docenteId);
+                    cmd.Parameters.AddWithValue("@grupoId", grupoId);
+
+                    conexion.Open();
+
+                    int filasAfectadas = cmd.ExecuteNonQuery();
+
+                    if (filasAfectadas > 0)
+                    {
+                        resultado = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return resultado;
+        }
+
+
+        public bool ActualizarMatricula(int id, int hijoId, int padreId, int docenteId, int grupoId)
+        {
+            bool resultado = false;
+
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("ActualizarMatricula", conexion);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@hijo_id", hijoId);
+                    cmd.Parameters.AddWithValue("@padre_id", padreId);
+                    cmd.Parameters.AddWithValue("@docent_id", docenteId);
+                    cmd.Parameters.AddWithValue("@grupo_id", grupoId);
+
+                    conexion.Open();
+
+                    int filasAfectadas = cmd.ExecuteNonQuery();
+
+                    if (filasAfectadas > 0)
+                    {
+                        resultado = true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return resultado;
+        }
 
         public void EditarHijo(Hijos hijo)
         {

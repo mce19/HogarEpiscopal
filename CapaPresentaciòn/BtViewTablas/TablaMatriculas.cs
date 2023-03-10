@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace CapaPresentaciòn.BtViewTablas
 {
     public partial class TablaMatriculas : Form
     {
+
+        CNMatricula objeto = new CNMatricula();
         public TablaMatriculas()
         {
             InitializeComponent();
@@ -93,6 +96,54 @@ namespace CapaPresentaciòn.BtViewTablas
         private void TablaMatriculas_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonGuardaDocente_Click(object sender, EventArgs e)
+        {
+            // Validar que los campos no estén vacíos
+            if (string.IsNullOrWhiteSpace(textId.Text) ||
+                string.IsNullOrWhiteSpace(textCedHijo.Text) ||
+                string.IsNullOrWhiteSpace(textCedPadre.Text) ||
+                string.IsNullOrWhiteSpace(textCedDocente.Text) ||
+                string.IsNullOrWhiteSpace(textIdGrpo.Text))
+            {
+                MessageBox.Show("Por favor, complete todos los campos.");
+                return;
+            }
+
+            // Validar que los campos tengan valores numéricos
+            int id, hijoId, padreId, docenteId, grupoId;
+            if (!int.TryParse(textId.Text, out id) ||
+                !int.TryParse(textCedHijo.Text, out hijoId) ||
+                !int.TryParse(textCedPadre.Text, out padreId) ||
+                !int.TryParse(textCedDocente.Text, out docenteId) ||
+                !int.TryParse(textIdGrpo.Text, out grupoId))
+            {
+                MessageBox.Show("Por favor, ingrese valores numéricos válidos.");
+                return;
+            }
+
+            // Llamar al método de la capa de negocios para actualizar la matrícula
+            bool resultado = false;
+            try
+            {
+                resultado = objeto.ActualizarMatricula(id, hijoId, padreId, docenteId, grupoId);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar la matrícula: " + ex.Message);
+                return;
+            }
+
+            if (resultado)
+            {
+                MessageBox.Show("Matrícula actualizada correctamente.");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("No se pudo actualizar la matrícula.");
+            }
         }
     }
 }

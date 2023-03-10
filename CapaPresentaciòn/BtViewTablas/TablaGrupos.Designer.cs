@@ -41,7 +41,7 @@
             // 
             this.TxtTitTablaGrupo.AutoSize = true;
             this.TxtTitTablaGrupo.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TxtTitTablaGrupo.Location = new System.Drawing.Point(206, 31);
+            this.TxtTitTablaGrupo.Location = new System.Drawing.Point(179, 29);
             this.TxtTitTablaGrupo.Name = "TxtTitTablaGrupo";
             this.TxtTitTablaGrupo.Size = new System.Drawing.Size(175, 28);
             this.TxtTitTablaGrupo.TabIndex = 64;
@@ -50,7 +50,7 @@
             // 
             // textBoxNombreGrupo
             // 
-            this.textBoxNombreGrupo.Location = new System.Drawing.Point(155, 193);
+            this.textBoxNombreGrupo.Location = new System.Drawing.Point(155, 167);
             this.textBoxNombreGrupo.Name = "textBoxNombreGrupo";
             this.textBoxNombreGrupo.Size = new System.Drawing.Size(252, 23);
             this.textBoxNombreGrupo.TabIndex = 63;
@@ -58,7 +58,7 @@
             // 
             // textBoxIdGrupo
             // 
-            this.textBoxIdGrupo.Location = new System.Drawing.Point(155, 124);
+            this.textBoxIdGrupo.Location = new System.Drawing.Point(155, 98);
             this.textBoxIdGrupo.Name = "textBoxIdGrupo";
             this.textBoxIdGrupo.Size = new System.Drawing.Size(252, 23);
             this.textBoxIdGrupo.TabIndex = 62;
@@ -68,7 +68,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(155, 171);
+            this.label4.Location = new System.Drawing.Point(155, 145);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 19);
             this.label4.TabIndex = 61;
@@ -78,7 +78,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(155, 102);
+            this.label1.Location = new System.Drawing.Point(155, 76);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(24, 19);
             this.label1.TabIndex = 60;
@@ -108,6 +108,7 @@
             this.buttonGuardarGrupo.TabIndex = 65;
             this.buttonGuardarGrupo.Text = "Guardar";
             this.buttonGuardarGrupo.UseVisualStyleBackColor = false;
+            this.buttonGuardarGrupo.Click += new System.EventHandler(this.buttonGuardarGrupo_Click);
             // 
             // TablaGrupos
             // 

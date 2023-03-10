@@ -85,6 +85,7 @@
             this.buttonGuardaDocente.TabIndex = 74;
             this.buttonGuardaDocente.Text = "Guardar";
             this.buttonGuardaDocente.UseVisualStyleBackColor = false;
+            this.buttonGuardaDocente.Click += new System.EventHandler(this.buttonGuardaDocente_Click);
             // 
             // textCedPadre
             // 

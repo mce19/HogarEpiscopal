@@ -118,7 +118,7 @@
             this.guna2Button5.Name = "guna2Button5";
             this.guna2Button5.Size = new System.Drawing.Size(180, 58);
             this.guna2Button5.TabIndex = 0;
-            this.guna2Button5.Text = "Pagos";
+            this.guna2Button5.Text = "Historial de pagos";
             this.guna2Button5.Click += new System.EventHandler(this.guna2Button4_Click);
             // 
             // guna2Button4
@@ -166,7 +166,7 @@
             this.guna2Button8.Name = "guna2Button8";
             this.guna2Button8.Size = new System.Drawing.Size(180, 58);
             this.guna2Button8.TabIndex = 0;
-            this.guna2Button8.Text = "Bienvenida";
+            this.guna2Button8.Text = "Montos por Pagar";
             this.guna2Button8.Click += new System.EventHandler(this.guna2Button8_Click);
             // 
             // guna2Button1

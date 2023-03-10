@@ -257,5 +257,10 @@ namespace CapaPresentaciòn.BtControles
         {
 
         }
+
+        private void UserNinnos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
