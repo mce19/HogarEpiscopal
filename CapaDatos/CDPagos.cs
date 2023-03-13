@@ -152,6 +152,27 @@ namespace CapaDatos
         }
 
 
+        public DataTable ObtenerNombresPagos(string nombre)
+        {
+            DataTable dtPagos = new DataTable();
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand("ObtenerNombresPagos", conexion);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@nombre", nombre);
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    adapter.Fill(dtPagos);
+                }
+            }
+            catch (SqlException ex)
+            {
+                // Aquí puedes manejar la excepción de acuerdo a tus necesidades
+                throw ex;
+            }
+            return dtPagos;
+        }
 
 
 

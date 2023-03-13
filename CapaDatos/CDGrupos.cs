@@ -75,7 +75,7 @@ namespace CapaDatos
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@id", id);
                         cmd.Parameters.AddWithValue("@nombre", nombre);
-                    
+
 
 
                         int rowsAffected = cmd.ExecuteNonQuery();//verificamos que se agrego una nueva fila
@@ -125,6 +125,45 @@ namespace CapaDatos
             }
         }
 
-    }
+        /// <summary>
+        /// Obtiene los detalles del grupo seleccionado.
+        /// </summary>
+        /// <param name="nombreGrupo">El nombre del grupo a consultar.</param>
+        /// <returns>Un objeto DataTable con los detalles del grupo.</returns>
+
+        public DataTable ObtenerGrupoDetalle(string nombreGrupo)
+        {
+
+
+            try
+            {
+                using (SqlConnection conexion = new SqlConnection(connectionString))
+                {
+
+                    conexion.Open();
+                    SqlCommand comando = new SqlCommand("ObtenerGrupoDetalle", conexion);
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@nombre_grupo", nombreGrupo);
+
+                    SqlDataAdapter adaptador = new SqlDataAdapter(comando);
+                    DataTable tabla = new DataTable();
+                    adaptador.Fill(tabla);
+
+                    return tabla;
+                }
+
+            }
+
+
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener detalle del grupo: " + ex.Message);
+            }
+         }
+
+     }
+
+
+    
 }
 

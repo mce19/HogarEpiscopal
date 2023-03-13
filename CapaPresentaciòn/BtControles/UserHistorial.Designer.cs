@@ -32,6 +32,8 @@
             this.dataGridViewHistorial = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonFactura = new System.Windows.Forms.Button();
+            this.textBoxBuscador = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistorial)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,10 +83,31 @@
             this.buttonFactura.UseVisualStyleBackColor = false;
             this.buttonFactura.Click += new System.EventHandler(this.buttonFactura_Click);
             // 
+            // textBoxBuscador
+            // 
+            this.textBoxBuscador.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBoxBuscador.Location = new System.Drawing.Point(195, 88);
+            this.textBoxBuscador.Name = "textBoxBuscador";
+            this.textBoxBuscador.Size = new System.Drawing.Size(629, 23);
+            this.textBoxBuscador.TabIndex = 9;
+            this.textBoxBuscador.TextChanged += new System.EventHandler(this.textBoxBuscador_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(33, 87);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(156, 19);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Buscar por nombre";
+            // 
             // UserHistorial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBoxBuscador);
             this.Controls.Add(this.buttonFactura);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewHistorial);
@@ -102,5 +125,7 @@
         private DataGridView dataGridViewHistorial;
         private Label label1;
         private Button buttonFactura;
+        private TextBox textBoxBuscador;
+        private Label label2;
     }
 }

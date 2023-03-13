@@ -52,7 +52,10 @@ namespace CapaNegocio
             capaDatos.ActualizarPago(id, montoAbonado, saldoActual, fecha, concepto);
         }
 
-
+        public DataTable ObtenerNombresPagos(string nombre)
+        {
+            return cdPagos.ObtenerNombresPagos(nombre);
+        }
 
     }
 

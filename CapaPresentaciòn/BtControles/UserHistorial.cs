@@ -73,12 +73,25 @@ namespace CapaPresentaciòn.BtControles
 
         private void UserHistorial_Load(object sender, EventArgs e)
         {
+
+            // Obtener el historial de pagos y mostrarlo en el DataGridView
+            DataTable dataTable = cnPagos.BuscarPorNombre("");
+            dataGridViewHistorial.DataSource = dataTable;
             CargarTablaPagos();
         }
 
         private void buttonFactura_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBoxBuscador_TextChanged(object sender, EventArgs e)
+        {
+            string nombre = textBoxBuscador.Text;
+
+            // Buscar por nombre y mostrar los resultados en el DataGridView
+            DataTable dataTable = cnPagos.BuscarPorNombre(nombre);
+            dataGridViewHistorial.DataSource = dataTable;
         }
     }
 }

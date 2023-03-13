@@ -100,7 +100,7 @@ namespace CapaDatos
                     cmd.Parameters.AddWithValue("@id", id);
                     cmd.Parameters.AddWithValue("@hijo_id", hijoId);
                     cmd.Parameters.AddWithValue("@padre_id", padreId);
-                    cmd.Parameters.AddWithValue("@docent_id", docenteId);
+                    cmd.Parameters.AddWithValue("@docente_id", docenteId);
                     cmd.Parameters.AddWithValue("@grupo_id", grupoId);
 
                     conexion.Open();

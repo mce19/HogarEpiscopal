@@ -38,6 +38,14 @@ CREATE TABLE docentes (
 	FOREIGN KEY (grupo_id) REFERENCES grupos(id)
 );
 
+
+CREATE TABLE asistentes (
+    numero_documento INT PRIMARY KEY,
+    nombre_completo VARCHAR(50) NOT NULL,
+    docente_id INT NOT NULL,
+    FOREIGN KEY (docente_id) REFERENCES docentes(numero_documento)
+);
+
 CREATE TABLE matricula (
 id INT PRIMARY KEY,
 hijo_id INT NOT NULL,
@@ -50,12 +58,6 @@ FOREIGN KEY (docente_id) REFERENCES docentes(numero_documento),
 FOREIGN KEY (grupo_id) REFERENCES grupos(id)
 );
 
-CREATE TABLE asistentes (
-    numero_documento INT PRIMARY KEY,
-    nombre_completo VARCHAR(50) NOT NULL,
-    docente_id INT NOT NULL,
-    FOREIGN KEY (docente_id) REFERENCES docentes(numero_documento)
-);
 
 CREATE TABLE pagos (
     id INT PRIMARY KEY,
@@ -90,11 +92,31 @@ BEGIN
         INNER JOIN padres p ON hp.padre_id = p.numero_documento 
 END
 
+CREATE PROCEDURE BuscarNombreHistorial
+    @nombre VARCHAR(50)
+AS
+BEGIN
+    SELECT 
+        hp.id, 
+		p.numero_documento AS Documento, 
+        p.nombre_completo AS Nombre, 
+        hp.monto_cancelado, 
+        hp.fecha_cancelacion 
+    FROM 
+        historial_pagos hp 
+        INNER JOIN padres p ON hp.padre_id = p.numero_documento 
+    WHERE 
+        p.nombre_completo LIKE '%' + @nombre + '%'
+END
+
+
+
+
 
 
 
 EXEC Historial
-DROP PROCEDURE Historial
+DROP PROCEDURE BuscarNombreHistorial
 
 CREATE PROCEDURE InsertarGrupo
     @id INT,
@@ -115,6 +137,20 @@ BEGIN
     WHERE id = @id
 END
 
+CREATE PROCEDURE ObtenerGrupoDetalle
+    @nombre_grupo VARCHAR(50)
+AS
+BEGIN
+    SELECT d.nombre_completo AS 'Docente', a.nombre_completo AS 'Asistente'
+    FROM docentes d
+    JOIN grupos g ON d.grupo_id = g.id
+    LEFT JOIN asistentes a ON d.numero_documento = a.docente_id
+    WHERE g.nombre = @nombre_grupo;
+END
+
+
+EXEC ObtenerGrupoDetalle 'Escolares IV'
+drop procedure ObtenerGrupoDetalle
 
 CREATE PROCEDURE InsertarDocente
     @numero_documento INT,
@@ -146,11 +182,11 @@ END
 
 
 CREATE PROCEDURE ActualizarMatricula
-    @id int,
-    @hijo_id int,
-    @padre_id int,
-    @docente_id int,
-    @grupo_id int
+    @id INT,
+    @hijo_id INT,
+    @padre_id INT,
+    @docente_id INT,
+    @grupo_id INT
 AS
 BEGIN
     UPDATE matricula
@@ -158,6 +194,7 @@ BEGIN
     WHERE id = @id;
 END
 
+DROP PROCEDURE ActualizarMatricula
 
 DELETE FROM hijos;
 DELETE FROM pagos;
@@ -179,6 +216,19 @@ BEGIN
     FROM pagos p
     JOIN padres pa ON p.padre_id = pa.numero_documento
 END
+
+
+CREATE PROCEDURE ObtenerNombresPagos
+    @nombre VARCHAR(50)
+AS
+BEGIN
+    SELECT p.id, p.padre_id, pa.nombre_completo, p.monto_mensual, p.monto_abonado, p.saldo_actual, p.fecha, p.concepto
+    FROM pagos p
+    JOIN padres pa ON p.padre_id = pa.numero_documento
+    WHERE pa.nombre_completo LIKE '%' + @nombre + '%'
+END
+
+
 
 EXEC ObtenerPagosConNombresPadres
 DROP PROCEDURE ObtenerPagosConNombresPadres;
@@ -253,7 +303,7 @@ VALUES ( 111111111, 'Juan Perez', 'Calle 1', '3123456789', 1),
 
 
 	   INSERT INTO asistentes ( numero_documento, nombre_completo, docente_id)
-VALUES (12345678, 'Juan Perez', 111111111),
+VALUES (12345678, 'Juan Perez', 12345678),
 ( 87654321, 'Maria Garcia', 222222222);
        
 

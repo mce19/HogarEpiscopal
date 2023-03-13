@@ -95,8 +95,22 @@ namespace CapaPresentaciòn.BtControles
         private void Bienvenida_Load(object sender, EventArgs e)
         {
             CargarTablaPagos();
+            DataTable dataTable = cnPagos.ObtenerNombresPagos("");
+            dataGridViewPágos.DataSource = dataTable;
         }
 
-
+        private void textBoxBuscador_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string nombre = textBoxBuscador.Text;
+                DataTable dataTable = cnPagos.ObtenerNombresPagos(nombre);
+                dataGridViewPágos.DataSource = dataTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al buscar el historial de montos cancelados: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

@@ -38,5 +38,23 @@ namespace CapaDatos
             return dtPagos;
         }
 
+        public DataTable BuscarPorNombre(string nombre)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("BuscarNombreHistorial", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@nombre", nombre);
+                    con.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    DataTable dataTable = new DataTable();
+                    dataTable.Load(reader);
+                    con.Close();
+                    return dataTable;
+                }
+            }
+
+        }
     }
 }

@@ -14,6 +14,9 @@ namespace CapaNegocio
        CDGrupos datos = new CDGrupos(); 
        CDGrupos oCDGrupos;
 
+
+     
+
         public CNGrupos()
         {
             oCDGrupos = new CDGrupos();
@@ -45,6 +48,19 @@ namespace CapaNegocio
                 throw new Exception("Error al actualizar grupo: " + ex.Message);
             }
         }
+
+        public DataTable ObtenerDetalleGrupo(string nombreGrupo)
+        {
+            try
+            {
+                return new CDGrupos().ObtenerGrupoDetalle(nombreGrupo);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener detalle del grupo: " + ex.Message);
+            }
+        }
+
     }
 
 }

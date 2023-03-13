@@ -26,5 +26,10 @@ namespace CapaNegocio
                 throw new Exception("Error al obtener el hostorial.", ex);
             }
         }
+
+        public DataTable BuscarPorNombre(string nombre)
+        {
+            return cdPagos.BuscarPorNombre(nombre);
+        }
     }
 }

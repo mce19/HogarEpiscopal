@@ -89,6 +89,7 @@ namespace CapaPresentaciòn.BtControles
             string groupName = drv["nombre"].ToString();
             DataTable dataTable = cdGrupos.ListarInformacionPorGrupo(groupName);
 
+
             dataGridViewGrupos.DataSource = dataTable;
             int numHombres = 0;
             int numMujeres = 0;
@@ -128,9 +129,26 @@ namespace CapaPresentaciòn.BtControles
             NumPani.Text = numPani.ToString();
             NumPrivados.Text = numPrivados.ToString();
 
+
+            // Obtener información del grupo
+            DataTable dtGrupoDetalle = cdGrupos.ObtenerGrupoDetalle(groupName);
+
+
+            if (dtGrupoDetalle.Rows.Count > 0)
+            {
+                // Mostrar el nombre del docente y del asistente en un Label
+                string docente = dtGrupoDetalle.Rows[0]["Docente"].ToString();
+                string asistente = dtGrupoDetalle.Rows[0]["Asistente"].ToString();
+                labelNameDocente.Text = docente;
+                labelNameAsistente.Text =  asistente;
+            }
+           
+
         }
 
-        private void buttonPdf_Click(object sender, EventArgs e)
+
+       
+            private void buttonPdf_Click(object sender, EventArgs e)
         {
             SaveFileDialog guardar = new SaveFileDialog();
             guardar.FileName = DateTime.Now.ToString("dd-MM-yyyy-HH-mm-ss") + ".pdf";
@@ -148,7 +166,14 @@ namespace CapaPresentaciòn.BtControles
                     PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
                     pdfDoc.Open();
                     // Agregar un encabezado con el nombre del grupo
-                    pdfDoc.Add(new Phrase("Nombre del grupo: " + nombreGrupo));
+                    pdfDoc.Add(new Phrase("Año: " + DateTime.Now.Year));
+                    pdfDoc.Add(new Phrase("\n"));
+                    pdfDoc.Add(new Phrase("Grupo: " + nombreGrupo));
+                    pdfDoc.Add(new Phrase("\n"));
+                    pdfDoc.Add(new Phrase("Docente: " + labelNameDocente.Text));
+                    pdfDoc.Add(new Phrase("\n"));
+                    pdfDoc.Add(new Phrase("Asistente: " + labelNameAsistente.Text));
+
                     pdfDoc.Add(new Paragraph("\n"));
                     pdfDoc.Add(new Paragraph("\n"));
 
@@ -223,6 +248,19 @@ namespace CapaPresentaciòn.BtControles
                     stream.Close();
                 }
             }
+
+        }
+        private void anno_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void labelNameDocente_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelNameAsistente_Click(object sender, EventArgs e)
+        {
 
         }
     }

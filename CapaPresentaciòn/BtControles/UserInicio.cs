@@ -386,5 +386,15 @@ namespace CapaPresentaciòn.BtControles
         {
             
         }
+
+        private void NumNacional_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NumExtranjero_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
