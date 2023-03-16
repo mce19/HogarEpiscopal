@@ -109,6 +109,7 @@ namespace CapaPresentaciòn.BtControles
                 case "asistentes":
                     TablaAsistentes formAsistente = new TablaAsistentes();
                     formAsistente.Show();
+                    formAsistente.Titulo = "Nuevo asistente";
                     break;
                 case "grupos":
                     TablaGrupos formGrupos = new TablaGrupos();
@@ -207,8 +208,9 @@ namespace CapaPresentaciòn.BtControles
 
                         TablaAsistentes formAsistente = new TablaAsistentes();
                         formAsistente.Show();
-                        formAsistente.Titulo = "Asistentes";
-                        formAsistente.Id = dataGridView1.SelectedRows[0].Cells["numero_documento"].Value.ToString();
+                        formAsistente.Titulo = "Editar asistente";
+                        formAsistente.Id = dataGridView1.SelectedRows[0].Cells["id"].Value.ToString();
+                        formAsistente.NumDocumento = dataGridView1.SelectedRows[0].Cells["numero_documento"].Value.ToString();
                         formAsistente.Nombre = dataGridView1.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
                         formAsistente.IdDocente = dataGridView1.SelectedRows[0].Cells["docente_id"].Value.ToString();
                      

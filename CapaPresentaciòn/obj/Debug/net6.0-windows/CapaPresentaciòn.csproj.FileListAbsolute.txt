@@ -275,6 +275,7 @@ C:\Users\panad\Downloads\ultima version\HogarEpiscopal\CapaPresentaciòn\bin\Deb
 C:\Users\panad\Downloads\ultima version\HogarEpiscopal\CapaPresentaciòn\bin\Debug\net6.0-windows\CapaDatos.pdb
 C:\Users\panad\Downloads\ultima version\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.csproj.AssemblyReference.cache
 C:\Users\panad\Downloads\ultima version\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtControles.Bienvenida.resources
+C:\Users\panad\Downloads\ultima version\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtControles.UserHistorial.resources
 C:\Users\panad\Downloads\ultima version\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtControles.UserInicio.resources
 C:\Users\panad\Downloads\ultima version\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtControles.UserNinnos.resources
 C:\Users\panad\Downloads\ultima version\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtControles.UserPadres.resources
@@ -300,4 +301,3 @@ C:\Users\panad\Downloads\ultima version\HogarEpiscopal\CapaPresentaciòn\obj\Deb
 C:\Users\panad\Downloads\ultima version\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.pdb
 C:\Users\panad\Downloads\ultima version\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.genruntimeconfig.cache
 C:\Users\panad\Downloads\ultima version\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\ref\CapaPresentaciòn.dll
-C:\Users\panad\Downloads\ultima version\HogarEpiscopal\CapaPresentaciòn\obj\Debug\net6.0-windows\CapaPresentaciòn.BtControles.UserHistorial.resources

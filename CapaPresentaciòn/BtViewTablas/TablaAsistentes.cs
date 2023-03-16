@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapaNegocio;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,12 +25,18 @@ namespace CapaPresentaciòn.BtViewTablas
             set { _Titulo = value; textTitulo.Text = _Titulo; }
         }
 
+        private string _NumDocumento;
+        public string NumDocumento
+        {
+            get { return _NumDocumento; }
+            set { _NumDocumento = value; textBoxNumAsistente.Text = _NumDocumento; }
+        }
 
         private string _Id;
         public string Id
         {
             get { return _Id; }
-            set { _Id = value; textBoxNumAsistente.Text = _Id; }
+            set { _Id = value; textId.Text = _Id; }
         }
 
 
@@ -54,6 +61,37 @@ namespace CapaPresentaciòn.BtViewTablas
 
         private void buttonGuardarAsistente_Click(object sender, EventArgs e)
         {
+
+            // Obtener los valores de los controles de la interfaz de usuario
+            int id = int.Parse(textId.Text);
+            int numerodocumento = int.Parse(textBoxNumAsistente.Text);
+            string nombreCompleto = textBoxNombreAsistente.Text;
+            int docenteId = 0;
+            if (int.TryParse(txtIdDocente.Text, out int result))
+            {
+                docenteId = result;
+            }
+
+            // Crear una instancia de la clase GestorAsistentes
+            CNAsistente gestorAsistentes = new CNAsistente();
+
+            // Llamar al método AgregarAsistente de la instancia gestorAsistentes
+
+            // Llamar al método AgregarAsistente de la instancia gestorAsistentes
+            if (Titulo == "Editar asistente")
+            {
+                gestorAsistentes.ActualizarAsistente(id, numerodocumento, nombreCompleto, docenteId);
+                MessageBox.Show("El asistente se ha actualizado correctamente.", "Actualización exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                gestorAsistentes.AgregarAsistente(numerodocumento, nombreCompleto, docenteId);
+                MessageBox.Show("El asistente se ha guardado correctamente.", "Guardado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            // Cerrar el formulario
+            this.Close();
+
 
         }
 
@@ -83,6 +121,11 @@ namespace CapaPresentaciòn.BtViewTablas
         }
 
         private void textTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textId_Click(object sender, EventArgs e)
         {
 
         }

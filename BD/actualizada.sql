@@ -40,11 +40,17 @@ CREATE TABLE docentes (
 
 
 CREATE TABLE asistentes (
-    numero_documento INT PRIMARY KEY,
+    id INT IDENTITY(1,1) PRIMARY KEY,
+    numero_documento INT NOT NULL,
     nombre_completo VARCHAR(50) NOT NULL,
     docente_id INT NOT NULL,
     FOREIGN KEY (docente_id) REFERENCES docentes(numero_documento)
 );
+
+DROP TABLE ASISTENTES
+
+
+drop table asistentes
 
 CREATE TABLE matricula (
 id INT PRIMARY KEY,
@@ -109,9 +115,38 @@ BEGIN
         p.nombre_completo LIKE '%' + @nombre + '%'
 END
 
+CREATE PROCEDURE Adsistente
+    @numero_documento INT,
+    @nombre_completo VARCHAR(50),
+    @docente_id INT
+AS
+BEGIN
+    IF NOT EXISTS (SELECT * FROM asistentes WHERE numero_documento = @numero_documento)
+    BEGIN
+        INSERT INTO asistentes (numero_documento, nombre_completo, docente_id)
+        VALUES (@numero_documento, @nombre_completo, @docente_id)
+        PRINT 'Registro insertado correctamente.'
+    END
+    ELSE
+    BEGIN
+        PRINT 'El número de documento ya existe en la tabla.'
+    END
+END
 
 
-
+CREATE PROCEDURE Updateasistente
+    @id INT,
+    @numero_documento INT,
+    @nombre_completo VARCHAR(50),
+    @docente_id INT
+AS
+BEGIN
+    UPDATE asistentes
+    SET numero_documento = @numero_documento,
+        nombre_completo = @nombre_completo,
+        docente_id = @docente_id
+    WHERE id = @id
+END
 
 
 

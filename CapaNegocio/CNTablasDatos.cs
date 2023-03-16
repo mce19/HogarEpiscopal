@@ -27,7 +27,7 @@ namespace CapaNegocio
         {"padres", new[] {"Tipo de documento", "Número Documento", "Nombre Completo", "Dirección", "Teléfono" } },
         {"hijos", new[] { "Número Documento", "Nombre Completo", "Fecha Nacimiento", "Edad", "Género", "Según INEC", "Subsidio", "N. Documento del padre", "Registrado" } },
         {"docentes", new[] { "Número Documento", "Nombre Completo", "Direcciòn", "Tèlefono", "Grugo asignado"} },
-        {"asistentes", new[] { "Número Documento", "Nombre Completo", "N. Docente" } },
+        {"asistentes", new[] { "ID", "Número Documento", "Nombre Completo", "N. Docente" } },
         {"grupos", new[] { "ID", "Nombre" } },
         {"matricula", new[] { "Código", "Ced. Hijo", "Ced. Padre", "Ced. Docénte", "ID Grupo" } },
         {"pagos", new[] { "ID", "Número Documento", "Pago mensual", "Abono", "Saldo actual", "Fecha", "Concepto"} },
