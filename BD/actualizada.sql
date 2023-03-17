@@ -47,10 +47,6 @@ CREATE TABLE asistentes (
     FOREIGN KEY (docente_id) REFERENCES docentes(numero_documento)
 );
 
-DROP TABLE ASISTENTES
-
-
-drop table asistentes
 
 CREATE TABLE matricula (
 id INT PRIMARY KEY,
@@ -132,6 +128,8 @@ BEGIN
         PRINT 'El número de documento ya existe en la tabla.'
     END
 END
+
+select * from asistentes
 
 
 CREATE PROCEDURE Updateasistente

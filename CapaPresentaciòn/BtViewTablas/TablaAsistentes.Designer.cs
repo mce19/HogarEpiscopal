@@ -46,7 +46,8 @@
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
-            textId = new Label();
+            textId = new TextBox();
+            label3 = new Label();
             SuspendLayout();
             // 
             // buttonCancelarPago
@@ -218,18 +219,28 @@
             // 
             // textId
             // 
-            textId.AutoSize = true;
-            textId.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            textId.Location = new Point(152, 85);
+            textId.Location = new Point(152, 83);
             textId.Name = "textId";
-            textId.Size = new Size(27, 21);
+            textId.ReadOnly = true;
+            textId.Size = new Size(100, 23);
             textId.TabIndex = 78;
-            textId.Text = "ID";
-            textId.Click += textId_Click;
+            textId.TextChanged += textId_TextChanged;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(152, 61);
+            label3.Name = "label3";
+            label3.Size = new Size(24, 19);
+            label3.TabIndex = 79;
+            label3.Text = "ID";
+            label3.Click += label3_Click;
             // 
             // TablaAsistentes
             // 
             ClientSize = new Size(616, 474);
+            Controls.Add(label3);
             Controls.Add(textId);
             Controls.Add(buttonCancelar);
             Controls.Add(buttonGuardarAsistente);
@@ -266,6 +277,7 @@
         private Label label7;
         private Label label8;
         private Label label9;
-        private Label textId;
+        private TextBox textId;
+        private Label label3;
     }
 }

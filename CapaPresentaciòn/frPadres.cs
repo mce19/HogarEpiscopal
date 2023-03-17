@@ -17,7 +17,7 @@ namespace capaPresentación
         //inicio
 
         private void addUserControl(UserControl userControl)
-        { 
+        {
             userControl.Dock = DockStyle.Fill;
             panelContainer.Controls.Clear();
             panelContainer.Controls.Add(userControl);
@@ -63,7 +63,7 @@ namespace capaPresentación
             addUserControl(userprinc);
 
         }
-        
+
         private void panelContainer_Paint(object sender, PaintEventArgs e)
         {
 

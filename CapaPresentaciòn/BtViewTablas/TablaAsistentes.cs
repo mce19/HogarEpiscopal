@@ -125,7 +125,14 @@ namespace CapaPresentaciòn.BtViewTablas
 
         }
 
-        private void textId_Click(object sender, EventArgs e)
+      
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textId_TextChanged(object sender, EventArgs e)
         {
 
         }

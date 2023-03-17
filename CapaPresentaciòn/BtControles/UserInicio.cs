@@ -251,15 +251,18 @@ namespace CapaPresentaciòn.BtControles
                 switch (cmbTablas.SelectedItem.ToString())
                 {
                     case "padres":
-                        // Código para eliminar en la tabla padres
-                        // Eliminar los registros de las tablas relacionadas (hijos, pagos, historial_pagos) antes de eliminar el padre
-                        using (SqlCommand command = new SqlCommand("BEGIN TRANSACTION; DELETE FROM matricula WHERE hijo_id IN (SELECT numero_documento FROM hijos WHERE padre_id = @padreId); DELETE FROM historial_pagos WHERE padre_id = @padreId; DELETE FROM pagos WHERE padre_id = @padreId; DELETE FROM hijos WHERE padre_id = @padreId; DELETE FROM padres WHERE numero_documento = @padreId; COMMIT;", connection))
+
+                        string nombrePadre = dataGridView1.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
+                        if (MessageBox.Show("¿Está seguro que desea eliminar a" + nombrePadre + "?" + "si lo elimina se eliminar el registro de su hijo tambien.", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            command.Parameters.AddWithValue("@padreId", dataGridView1.SelectedRows[0].Cells[1].Value);
-                            command.ExecuteNonQuery();
-                            connection.Close();
-                            tablasNegocio.CargarDatosTabla(cmbTablas.SelectedItem.ToString(), dataGridView1);
-                            MessageBox.Show("Padre eliminado con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            using (SqlCommand command = new SqlCommand("BEGIN TRANSACTION; DELETE FROM matricula WHERE hijo_id IN (SELECT numero_documento FROM hijos WHERE padre_id = @padreId); DELETE FROM historial_pagos WHERE padre_id = @padreId; DELETE FROM pagos WHERE padre_id = @padreId; DELETE FROM hijos WHERE padre_id = @padreId; DELETE FROM padres WHERE numero_documento = @padreId; COMMIT;", connection))
+                            {
+                                command.Parameters.AddWithValue("@padreId", dataGridView1.SelectedRows[0].Cells[1].Value);
+                                command.ExecuteNonQuery();
+                                connection.Close();
+                                tablasNegocio.CargarDatosTabla(cmbTablas.SelectedItem.ToString(), dataGridView1);
+                                MessageBox.Show("Padre eliminado con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
                         }
 
 
@@ -268,40 +271,54 @@ namespace CapaPresentaciòn.BtControles
                         // Código para eliminar en la tabla hijos
                         using (SqlConnection connections = new SqlConnection(tablasDatos.connectionString))
                         {
-                            connections.Open();
-                            using (SqlCommand command = new SqlCommand("DELETE FROM hijos WHERE padre_id = @padreId; DELETE FROM pagos WHERE padre_id = @padreId; DELETE FROM historial_pagos WHERE padre_id = @padreId; DELETE FROM padres WHERE numero_documento = @padreId", connection))
+                            string nombreHijo = dataGridView1.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
+                            if (MessageBox.Show("No se puede eliminar a " + nombreHijo + ", debe eliminar a su padre o persona acargo de su matricula para que se elimine del registro.", "Confirmar eliminación", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
                             {
-                                command.Parameters.AddWithValue("@padreId", dataGridView1.SelectedRows[0].Cells["numero_documento"].Value);
-                                command.ExecuteNonQuery();
+                                connections.Open();
+                                using (SqlCommand command = new SqlCommand("DELETE FROM hijos WHERE padre_id = @padreId; DELETE FROM pagos WHERE padre_id = @padreId; DELETE FROM historial_pagos WHERE padre_id = @padreId; DELETE FROM padres WHERE numero_documento = @padreId", connection))
+                                {
+                                    command.Parameters.AddWithValue("@padreId", dataGridView1.SelectedRows[0].Cells["numero_documento"].Value);
+                                    command.ExecuteNonQuery();
+                                }
+                                connections.Close();
+                                tablasNegocio.CargarDatosTabla(cmbTablas.SelectedItem.ToString(), dataGridView1);
                             }
-                            connections.Close();
-                            tablasNegocio.CargarDatosTabla(cmbTablas.SelectedItem.ToString(), dataGridView1);
+
+                           
 
                         }
                         break;
                     case "docentes":
-                        // Código para eliminar en la tabla docentes
-                        // Código para eliminar en la tabla docentes
-                        // Eliminar los registros de las tablas relacionadas (grupos, matriculas, asistentes) antes de eliminar el docente
-                        using (SqlCommand command = new SqlCommand("DELETE FROM matricula WHERE docente_id = @docenteId; DELETE FROM matricula WHERE docente_id = @docenteId; DELETE FROM asistentes WHERE docente_id = @docenteId; DELETE FROM docentes WHERE numero_documento = @docenteId", connection))
+
+
+                        string nombreDocente = dataGridView1.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
+                        if (MessageBox.Show("¿Está seguro que desea eliminar al docente " + nombreDocente + "?" + "Si lo decea eliminar asegurece que no este asignado a ningun grupo, asistente o matricula ya que si esta asignado dicho docente, tambien se eliminarán esos registros, lo adecuado seria que les asigne otro docente", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            command.Parameters.AddWithValue("@docenteId", dataGridView1.SelectedRows[0].Cells["numero_documento"].Value);
-                            command.ExecuteNonQuery();
-                            connection.Close();
-                            tablasNegocio.CargarDatosTabla(cmbTablas.SelectedItem.ToString(), dataGridView1);
-                            MessageBox.Show("Docente eliminado con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            using (SqlCommand command = new SqlCommand("DELETE FROM matricula WHERE docente_id = @docenteId; DELETE FROM matricula WHERE docente_id = @docenteId; DELETE FROM asistentes WHERE docente_id = @docenteId; DELETE FROM docentes WHERE numero_documento = @docenteId", connection))
+                            {
+                                command.Parameters.AddWithValue("@docenteId", dataGridView1.SelectedRows[0].Cells["numero_documento"].Value);
+                                command.ExecuteNonQuery();
+                                connection.Close();
+                                tablasNegocio.CargarDatosTabla(cmbTablas.SelectedItem.ToString(), dataGridView1);
+                                MessageBox.Show("Si desea elimiar este docente primero asegurese que no este asignado a ninguna matricula o grupo", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
                         }
                         break;
          
                     case "asistentes":
                         // Código para eliminar en la tabla asistentes
-                        using (SqlCommand command = new SqlCommand("DELETE FROM asistentes WHERE id = @idAsistente", connection))
+
+                        string nombreAsistente = dataGridView1.SelectedRows[0].Cells["nombre"].Value.ToString();
+                        if (MessageBox.Show("¿Está seguro que desea eliminar a" + nombreAsistente + "?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            command.Parameters.AddWithValue("@idAsistente", dataGridView1.SelectedRows[0].Cells["id"].Value);
-                            command.ExecuteNonQuery();
-                            connection.Close();
-                            tablasNegocio.CargarDatosTabla(cmbTablas.SelectedItem.ToString(), dataGridView1);
-                            MessageBox.Show("Asistente eliminado con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            using (SqlCommand command = new SqlCommand("DELETE FROM asistentes WHERE id = @idAsistente", connection))
+                            {
+                                command.Parameters.AddWithValue("@idAsistente", dataGridView1.SelectedRows[0].Cells["id"].Value);
+                                command.ExecuteNonQuery();
+                                connection.Close();
+                                tablasNegocio.CargarDatosTabla(cmbTablas.SelectedItem.ToString(), dataGridView1);
+                                MessageBox.Show("Asistente eliminado con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
                         }
                         break;
 
