@@ -28,96 +28,97 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dataGridViewHistorial = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonFactura = new System.Windows.Forms.Button();
-            this.textBoxBuscador = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistorial)).BeginInit();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            dataGridViewHistorial = new DataGridView();
+            label1 = new Label();
+            buttonFactura = new Button();
+            textBoxBuscador = new TextBox();
+            label2 = new Label();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewHistorial).BeginInit();
+            SuspendLayout();
             // 
             // dataGridViewHistorial
             // 
-            this.dataGridViewHistorial.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewHistorial.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridViewHistorial.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewHistorial.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewHistorial.Location = new System.Drawing.Point(33, 126);
-            this.dataGridViewHistorial.Name = "dataGridViewHistorial";
-            this.dataGridViewHistorial.RowTemplate.Height = 25;
-            this.dataGridViewHistorial.Size = new System.Drawing.Size(1439, 378);
-            this.dataGridViewHistorial.TabIndex = 5;
-            this.dataGridViewHistorial.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHistorial_CellContentClick);
+            dataGridViewHistorial.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewHistorial.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewHistorial.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewHistorial.BackgroundColor = SystemColors.ButtonHighlight;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridViewHistorial.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewHistorial.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewHistorial.Location = new Point(33, 126);
+            dataGridViewHistorial.Name = "dataGridViewHistorial";
+            dataGridViewHistorial.RowTemplate.Height = 25;
+            dataGridViewHistorial.Size = new Size(1439, 378);
+            dataGridViewHistorial.TabIndex = 5;
+            dataGridViewHistorial.CellContentClick += dataGridViewHistorial_CellContentClick;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(585, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(303, 38);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Historial de pagos ";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.ActiveCaptionText;
+            label1.Location = new Point(585, 32);
+            label1.Name = "label1";
+            label1.Size = new Size(303, 38);
+            label1.TabIndex = 6;
+            label1.Text = "Historial de pagos ";
+            label1.TextAlign = ContentAlignment.TopCenter;
             // 
             // buttonFactura
             // 
-            this.buttonFactura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.buttonFactura.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonFactura.ForeColor = System.Drawing.Color.White;
-            this.buttonFactura.Location = new System.Drawing.Point(1310, 551);
-            this.buttonFactura.Name = "buttonFactura";
-            this.buttonFactura.Size = new System.Drawing.Size(162, 44);
-            this.buttonFactura.TabIndex = 7;
-            this.buttonFactura.Text = "Imprimir Factura";
-            this.buttonFactura.UseVisualStyleBackColor = false;
-            this.buttonFactura.Click += new System.EventHandler(this.buttonFactura_Click);
+            buttonFactura.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonFactura.BackColor = Color.FromArgb(0, 192, 0);
+            buttonFactura.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonFactura.ForeColor = Color.White;
+            buttonFactura.Location = new Point(1310, 551);
+            buttonFactura.Name = "buttonFactura";
+            buttonFactura.Size = new Size(162, 44);
+            buttonFactura.TabIndex = 7;
+            buttonFactura.Text = "Imprimir Factura";
+            buttonFactura.UseVisualStyleBackColor = false;
+            buttonFactura.Click += buttonFactura_Click;
             // 
             // textBoxBuscador
             // 
-            this.textBoxBuscador.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBoxBuscador.Location = new System.Drawing.Point(195, 88);
-            this.textBoxBuscador.Name = "textBoxBuscador";
-            this.textBoxBuscador.Size = new System.Drawing.Size(629, 23);
-            this.textBoxBuscador.TabIndex = 9;
-            this.textBoxBuscador.TextChanged += new System.EventHandler(this.textBoxBuscador_TextChanged);
+            textBoxBuscador.BackColor = SystemColors.InactiveBorder;
+            textBoxBuscador.Location = new Point(195, 88);
+            textBoxBuscador.Name = "textBoxBuscador";
+            textBoxBuscador.Size = new Size(629, 23);
+            textBoxBuscador.TabIndex = 9;
+            textBoxBuscador.TextChanged += textBoxBuscador_TextChanged;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(33, 87);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 19);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Buscar por nombre";
+            label2.AutoSize = true;
+            label2.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(33, 87);
+            label2.Name = "label2";
+            label2.Size = new Size(156, 19);
+            label2.TabIndex = 12;
+            label2.Text = "Buscar por nombre";
             // 
             // UserHistorial
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBoxBuscador);
-            this.Controls.Add(this.buttonFactura);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridViewHistorial);
-            this.Name = "UserHistorial";
-            this.Size = new System.Drawing.Size(1491, 646);
-            this.Load += new System.EventHandler(this.UserHistorial_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistorial)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(label2);
+            Controls.Add(textBoxBuscador);
+            Controls.Add(buttonFactura);
+            Controls.Add(label1);
+            Controls.Add(dataGridViewHistorial);
+            Name = "UserHistorial";
+            Size = new Size(1491, 646);
+            Load += UserHistorial_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridViewHistorial).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

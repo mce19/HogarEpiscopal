@@ -16,7 +16,7 @@ namespace CapaPresentaciòn.BtControles
     public partial class Bienvenida : UserControl
     {
         private CNPagos cnPagos;
-      
+
 
         public Bienvenida()
         {
@@ -31,7 +31,7 @@ namespace CapaPresentaciòn.BtControles
         private TablaAbono formPadre; //instancia para evitar multiples ventanas
         private void buttonNewAbono_Click(object sender, EventArgs e)
         {
-           
+
 
             if (formPadre == null || formPadre.IsDisposed)
             {
@@ -65,7 +65,7 @@ namespace CapaPresentaciòn.BtControles
             }
 
         }
-                        
+
 
         private void CargarTablaPagos()
         {

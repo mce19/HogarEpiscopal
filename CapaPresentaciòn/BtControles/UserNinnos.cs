@@ -122,7 +122,7 @@ namespace CapaPresentaciòn.BtControles
                     MessageBox.Show("Por favor seleccione una fila.");
                 }
             }
-            
+
             else
             {
                 // Mostrar un mensaje de error si no se seleccionó ninguna fila
@@ -146,7 +146,7 @@ namespace CapaPresentaciòn.BtControles
             textBoxNumHijo.Clear();
             textBoxNumDocente.Clear();
             textBoxIdGrupo.Clear();
-            
+
         }
 
 
@@ -209,7 +209,7 @@ namespace CapaPresentaciòn.BtControles
             matricula.GrupoId = idGrupo;
             matricula.Nombre = nombrepadre;
 
-          
+
             //Ya se realizo una matricula con este código por favor ingrese un nuevo codigo para realizar la matricula
             CNMatricula capaDatos = new CNMatricula();
             capaDatos.AgregarMatricula(matricula);

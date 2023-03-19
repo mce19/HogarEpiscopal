@@ -28,96 +28,100 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridViewPágos = new System.Windows.Forms.DataGridView();
-            this.buttonNewAbono = new System.Windows.Forms.Button();
-            this.textBoxBuscador = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPágos)).BeginInit();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            label1 = new Label();
+            dataGridViewPágos = new DataGridView();
+            buttonNewAbono = new Button();
+            textBoxBuscador = new TextBox();
+            label2 = new Label();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewPágos).BeginInit();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(573, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(319, 38);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Pagos por cancelar";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            label1.Anchor = AnchorStyles.Top;
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 24F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.ActiveCaptionText;
+            label1.Location = new Point(573, 22);
+            label1.Name = "label1";
+            label1.Size = new Size(319, 38);
+            label1.TabIndex = 3;
+            label1.Text = "Pagos por cancelar";
+            label1.TextAlign = ContentAlignment.TopCenter;
             // 
             // dataGridViewPágos
             // 
-            this.dataGridViewPágos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewPágos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridViewPágos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewPágos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewPágos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewPágos.Location = new System.Drawing.Point(29, 143);
-            this.dataGridViewPágos.Name = "dataGridViewPágos";
-            this.dataGridViewPágos.RowTemplate.Height = 25;
-            this.dataGridViewPágos.Size = new System.Drawing.Size(1439, 378);
-            this.dataGridViewPágos.TabIndex = 4;
-            this.dataGridViewPágos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPágos_CellContentClick);
+            dataGridViewPágos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewPágos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewPágos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewPágos.BackgroundColor = SystemColors.ButtonHighlight;
+            dataGridViewPágos.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewPágos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridViewPágos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewPágos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewPágos.Location = new Point(49, 135);
+            dataGridViewPágos.Name = "dataGridViewPágos";
+            dataGridViewPágos.RowTemplate.Height = 25;
+            dataGridViewPágos.Size = new Size(1439, 378);
+            dataGridViewPágos.TabIndex = 4;
+            dataGridViewPágos.CellContentClick += dataGridViewPágos_CellContentClick;
             // 
             // buttonNewAbono
             // 
-            this.buttonNewAbono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.buttonNewAbono.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonNewAbono.ForeColor = System.Drawing.Color.White;
-            this.buttonNewAbono.Location = new System.Drawing.Point(1332, 556);
-            this.buttonNewAbono.Name = "buttonNewAbono";
-            this.buttonNewAbono.Size = new System.Drawing.Size(136, 44);
-            this.buttonNewAbono.TabIndex = 5;
-            this.buttonNewAbono.Text = "Abonar";
-            this.buttonNewAbono.UseVisualStyleBackColor = false;
-            this.buttonNewAbono.Click += new System.EventHandler(this.buttonNewAbono_Click);
+            buttonNewAbono.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            buttonNewAbono.BackColor = Color.FromArgb(0, 192, 0);
+            buttonNewAbono.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonNewAbono.ForeColor = Color.White;
+            buttonNewAbono.Location = new Point(1332, 556);
+            buttonNewAbono.Name = "buttonNewAbono";
+            buttonNewAbono.Size = new Size(136, 44);
+            buttonNewAbono.TabIndex = 5;
+            buttonNewAbono.Text = "Abonar";
+            buttonNewAbono.UseVisualStyleBackColor = false;
+            buttonNewAbono.Click += buttonNewAbono_Click;
             // 
             // textBoxBuscador
             // 
-            this.textBoxBuscador.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBoxBuscador.Location = new System.Drawing.Point(191, 106);
-            this.textBoxBuscador.Name = "textBoxBuscador";
-            this.textBoxBuscador.Size = new System.Drawing.Size(629, 23);
-            this.textBoxBuscador.TabIndex = 10;
-            this.textBoxBuscador.TextChanged += new System.EventHandler(this.textBoxBuscador_TextChanged);
+            textBoxBuscador.BackColor = SystemColors.InactiveBorder;
+            textBoxBuscador.Location = new Point(191, 106);
+            textBoxBuscador.Name = "textBoxBuscador";
+            textBoxBuscador.Size = new Size(629, 23);
+            textBoxBuscador.TabIndex = 10;
+            textBoxBuscador.TextChanged += textBoxBuscador_TextChanged;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(29, 106);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(156, 19);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Buscar por nombre";
+            label2.AutoSize = true;
+            label2.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(29, 106);
+            label2.Name = "label2";
+            label2.Size = new Size(156, 19);
+            label2.TabIndex = 11;
+            label2.Text = "Buscar por nombre";
             // 
             // Bienvenida
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBoxBuscador);
-            this.Controls.Add(this.buttonNewAbono);
-            this.Controls.Add(this.dataGridViewPágos);
-            this.Controls.Add(this.label1);
-            this.Name = "Bienvenida";
-            this.Size = new System.Drawing.Size(1491, 646);
-            this.Load += new System.EventHandler(this.Bienvenida_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPágos)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(label2);
+            Controls.Add(textBoxBuscador);
+            Controls.Add(buttonNewAbono);
+            Controls.Add(dataGridViewPágos);
+            Controls.Add(label1);
+            Name = "Bienvenida";
+            Size = new Size(1491, 646);
+            Load += Bienvenida_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridViewPágos).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

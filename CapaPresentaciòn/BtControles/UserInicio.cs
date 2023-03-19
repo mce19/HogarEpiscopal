@@ -107,7 +107,7 @@ namespace CapaPresentaciòn.BtControles
                     formDocentes.Titulo = "Nuevo docente";
                     break;
                 case "asistentes":
-                    TablaAsistentes formAsistente = new TablaAsistentes();
+                    GuardarAistente formAsistente = new GuardarAistente();
                     formAsistente.Show();
                     formAsistente.Titulo = "Nuevo asistente";
                     break;
@@ -152,20 +152,20 @@ namespace CapaPresentaciòn.BtControles
                         break;
 
                     case "hijos":
-                       
-                            TablaHijocs formHijo = new TablaHijocs();
-                            formHijo.Show();
-                            formHijo.TituloTabla = "Editar Hijo";
-                            formHijo.NumeroDocumento = dataGridView1.SelectedRows[0].Cells["numero_documento"].Value.ToString();
-                            formHijo.NombreCompleto = dataGridView1.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
-                            formHijo.FechaNacimiento = (DateTime)dataGridView1.SelectedRows[0].Cells["fecha_nacimiento"].Value;
-                            formHijo.Edad = dataGridView1.SelectedRows[0].Cells["edad"].Value.ToString();
-                            formHijo.Genero = dataGridView1.SelectedRows[0].Cells["genero"].Value.ToString();
-                            formHijo.SegúnInec = dataGridView1.SelectedRows[0].Cells["segun_inec"].Value.ToString();
-                            formHijo.Subsidio = dataGridView1.SelectedRows[0].Cells["subsidio"].Value.ToString();
-                            formHijo.PadreId = (int)dataGridView1.SelectedRows[0].Cells["padre_id"].Value;
-                       
-                   
+
+                        TablaHijocs formHijo = new TablaHijocs();
+                        formHijo.Show();
+                        formHijo.TituloTabla = "Editar Hijo";
+                        formHijo.NumeroDocumento = dataGridView1.SelectedRows[0].Cells["numero_documento"].Value.ToString();
+                        formHijo.NombreCompleto = dataGridView1.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
+                        formHijo.FechaNacimiento = (DateTime)dataGridView1.SelectedRows[0].Cells["fecha_nacimiento"].Value;
+                        formHijo.Edad = dataGridView1.SelectedRows[0].Cells["edad"].Value.ToString();
+                        formHijo.Genero = dataGridView1.SelectedRows[0].Cells["genero"].Value.ToString();
+                        formHijo.SegúnInec = dataGridView1.SelectedRows[0].Cells["segun_inec"].Value.ToString();
+                        formHijo.Subsidio = dataGridView1.SelectedRows[0].Cells["subsidio"].Value.ToString();
+                        formHijo.PadreId = (int)dataGridView1.SelectedRows[0].Cells["padre_id"].Value;
+
+
                         break;
 
                     case "grupos":
@@ -213,7 +213,7 @@ namespace CapaPresentaciòn.BtControles
                         formAsistente.NumDocumento = dataGridView1.SelectedRows[0].Cells["numero_documento"].Value.ToString();
                         formAsistente.Nombre = dataGridView1.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
                         formAsistente.IdDocente = dataGridView1.SelectedRows[0].Cells["docente_id"].Value.ToString();
-                     
+
 
                         break;
 
@@ -284,7 +284,7 @@ namespace CapaPresentaciòn.BtControles
                                 tablasNegocio.CargarDatosTabla(cmbTablas.SelectedItem.ToString(), dataGridView1);
                             }
 
-                           
+
 
                         }
                         break;
@@ -304,7 +304,7 @@ namespace CapaPresentaciòn.BtControles
                             }
                         }
                         break;
-         
+
                     case "asistentes":
                         // Código para eliminar en la tabla asistentes
 
@@ -403,7 +403,7 @@ namespace CapaPresentaciòn.BtControles
 
         private void buttonPagar_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void NumNacional_Click(object sender, EventArgs e)

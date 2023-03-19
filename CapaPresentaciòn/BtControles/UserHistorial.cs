@@ -19,7 +19,7 @@ namespace CapaPresentaciòn.BtControles
         private CNHistorial cnPagos;
 
 
-      
+
         public UserHistorial()
         {
             InitializeComponent();
@@ -68,7 +68,7 @@ namespace CapaPresentaciòn.BtControles
             }
         }
 
-      
+
 
 
         private void UserHistorial_Load(object sender, EventArgs e)

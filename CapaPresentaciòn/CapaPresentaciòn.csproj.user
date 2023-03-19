@@ -19,6 +19,9 @@
     <Compile Update="BtControles\UserPagos.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="BtViewTablas\GuardarAistente.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="BtViewTablas\TablaAbono.cs">
       <SubType>Form</SubType>
     </Compile>

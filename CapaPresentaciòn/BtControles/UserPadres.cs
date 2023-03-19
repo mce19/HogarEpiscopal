@@ -76,7 +76,7 @@ namespace CapaPresentaciòn.BtControles
         {
             CNGrupos cDGrupos = new CNGrupos();
             DataTable dtNombresGrupos = cDGrupos.ListarNombresGrupos();
-           
+
 
             comboBoxGrupos.DataSource = dtNombresGrupos;
             comboBoxGrupos.DisplayMember = "nombre";
@@ -140,15 +140,17 @@ namespace CapaPresentaciòn.BtControles
                 string docente = dtGrupoDetalle.Rows[0]["Docente"].ToString();
                 string asistente = dtGrupoDetalle.Rows[0]["Asistente"].ToString();
                 labelNameDocente.Text = docente;
-                labelNameAsistente.Text =  asistente;
+                labelNameAsistente.Text = asistente;
+                anno.Text = DateTime.Now.Year.ToString();
+
             }
-           
+
 
         }
 
 
-       
-            private void buttonPdf_Click(object sender, EventArgs e)
+
+        private void buttonPdf_Click(object sender, EventArgs e)
         {
             SaveFileDialog guardar = new SaveFileDialog();
             guardar.FileName = DateTime.Now.ToString("dd-MM-yyyy-HH-mm-ss") + ".pdf";
@@ -243,7 +245,7 @@ namespace CapaPresentaciòn.BtControles
 
 
 
-                    
+
                     pdfDoc.Close();
                     stream.Close();
                 }

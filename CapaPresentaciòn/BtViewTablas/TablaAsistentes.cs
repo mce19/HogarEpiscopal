@@ -39,6 +39,13 @@ namespace CapaPresentaciòn.BtViewTablas
             set { _Id = value; textId.Text = _Id; }
         }
 
+        private string _label;
+        public string Label
+        {
+            get { return _label; }
+            set { _label = value; label3.Text = _label; }
+        }
+
 
 
         private string _Nombre;
@@ -63,7 +70,9 @@ namespace CapaPresentaciòn.BtViewTablas
         {
 
             // Obtener los valores de los controles de la interfaz de usuario
-            int id = int.Parse(textId.Text);
+
+            int id = int.Parse(textId.Text ?? "0");
+
             int numerodocumento = int.Parse(textBoxNumAsistente.Text);
             string nombreCompleto = textBoxNombreAsistente.Text;
             int docenteId = 0;
@@ -82,11 +91,6 @@ namespace CapaPresentaciòn.BtViewTablas
             {
                 gestorAsistentes.ActualizarAsistente(id, numerodocumento, nombreCompleto, docenteId);
                 MessageBox.Show("El asistente se ha actualizado correctamente.", "Actualización exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                gestorAsistentes.AgregarAsistente(numerodocumento, nombreCompleto, docenteId);
-                MessageBox.Show("El asistente se ha guardado correctamente.", "Guardado exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             // Cerrar el formulario
@@ -125,7 +129,7 @@ namespace CapaPresentaciòn.BtViewTablas
 
         }
 
-      
+
 
         private void label3_Click(object sender, EventArgs e)
         {

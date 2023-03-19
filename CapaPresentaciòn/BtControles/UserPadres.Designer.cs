@@ -28,349 +28,374 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.labelnNameGrupo = new System.Windows.Forms.Label();
-            this.dataGridViewGrupos = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.NumMujeres = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.NumHombres = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.NumPani = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.NumImas = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.NumPrivados = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.comboBoxGrupos = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.anno = new System.Windows.Forms.Label();
-            this.labelNameDocente = new System.Windows.Forms.Label();
-            this.labelNameAsistente = new System.Windows.Forms.Label();
-            this.buttonPdf = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGrupos)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            labelnNameGrupo = new Label();
+            dataGridViewGrupos = new DataGridView();
+            panel1 = new Panel();
+            NumMujeres = new Label();
+            label1 = new Label();
+            panel2 = new Panel();
+            NumHombres = new Label();
+            label3 = new Label();
+            panel3 = new Panel();
+            NumPani = new Label();
+            label5 = new Label();
+            panel4 = new Panel();
+            NumImas = new Label();
+            label7 = new Label();
+            panel5 = new Panel();
+            NumPrivados = new Label();
+            label9 = new Label();
+            comboBoxGrupos = new ComboBox();
+            label2 = new Label();
+            label4 = new Label();
+            label6 = new Label();
+            anno = new Label();
+            labelNameDocente = new Label();
+            labelNameAsistente = new Label();
+            buttonPdf = new Button();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewGrupos).BeginInit();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
+            panel4.SuspendLayout();
+            panel5.SuspendLayout();
+            SuspendLayout();
             // 
             // labelnNameGrupo
             // 
-            this.labelnNameGrupo.AutoSize = true;
-            this.labelnNameGrupo.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelnNameGrupo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.labelnNameGrupo.Location = new System.Drawing.Point(664, 18);
-            this.labelnNameGrupo.Name = "labelnNameGrupo";
-            this.labelnNameGrupo.Size = new System.Drawing.Size(171, 56);
-            this.labelnNameGrupo.TabIndex = 4;
-            this.labelnNameGrupo.Text = "Grupo";
-            this.labelnNameGrupo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            labelnNameGrupo.Anchor = AnchorStyles.Top;
+            labelnNameGrupo.AutoSize = true;
+            labelnNameGrupo.Font = new Font("Century Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point);
+            labelnNameGrupo.ForeColor = SystemColors.ActiveCaptionText;
+            labelnNameGrupo.Location = new Point(664, 18);
+            labelnNameGrupo.Name = "labelnNameGrupo";
+            labelnNameGrupo.Size = new Size(171, 56);
+            labelnNameGrupo.TabIndex = 4;
+            labelnNameGrupo.Text = "Grupo";
+            labelnNameGrupo.TextAlign = ContentAlignment.TopCenter;
             // 
             // dataGridViewGrupos
             // 
-            this.dataGridViewGrupos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewGrupos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridViewGrupos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewGrupos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewGrupos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewGrupos.Location = new System.Drawing.Point(17, 140);
-            this.dataGridViewGrupos.Name = "dataGridViewGrupos";
-            this.dataGridViewGrupos.RowTemplate.Height = 25;
-            this.dataGridViewGrupos.Size = new System.Drawing.Size(1459, 384);
-            this.dataGridViewGrupos.TabIndex = 5;
-            this.dataGridViewGrupos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewGrupos_CellContentClick);
+            dataGridViewGrupos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridViewGrupos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewGrupos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewGrupos.BackgroundColor = SystemColors.ButtonHighlight;
+            dataGridViewGrupos.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewGrupos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridViewGrupos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewGrupos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewGrupos.Location = new Point(17, 140);
+            dataGridViewGrupos.Name = "dataGridViewGrupos";
+            dataGridViewGrupos.RowTemplate.Height = 25;
+            dataGridViewGrupos.Size = new Size(1459, 384);
+            dataGridViewGrupos.TabIndex = 5;
+            dataGridViewGrupos.CellContentClick += dataGridViewGrupos_CellContentClick;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.Controls.Add(this.NumMujeres);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(429, 540);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(178, 92);
-            this.panel1.TabIndex = 6;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            panel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            panel1.BackColor = SystemColors.ButtonHighlight;
+            panel1.Controls.Add(NumMujeres);
+            panel1.Controls.Add(label1);
+            panel1.Location = new Point(429, 540);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(178, 92);
+            panel1.TabIndex = 6;
+            panel1.Paint += panel1_Paint;
             // 
             // NumMujeres
             // 
-            this.NumMujeres.AutoSize = true;
-            this.NumMujeres.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.NumMujeres.Location = new System.Drawing.Point(61, 50);
-            this.NumMujeres.Name = "NumMujeres";
-            this.NumMujeres.Size = new System.Drawing.Size(34, 25);
-            this.NumMujeres.TabIndex = 1;
-            this.NumMujeres.Text = "00";
-            this.NumMujeres.Click += new System.EventHandler(this.NumMujeres_Click);
+            NumMujeres.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            NumMujeres.AutoSize = true;
+            NumMujeres.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            NumMujeres.Location = new Point(61, 50);
+            NumMujeres.Name = "NumMujeres";
+            NumMujeres.Size = new Size(34, 25);
+            NumMujeres.TabIndex = 1;
+            NumMujeres.Text = "00";
+            NumMujeres.Click += NumMujeres_Click;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(38, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 28);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mujeres";
+            label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(38, 13);
+            label1.Name = "label1";
+            label1.Size = new Size(103, 28);
+            label1.TabIndex = 0;
+            label1.Text = "Mujeres";
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel2.Controls.Add(this.NumHombres);
-            this.panel2.Controls.Add(this.label3);
-            this.panel2.Location = new System.Drawing.Point(647, 540);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(178, 92);
-            this.panel2.TabIndex = 7;
+            panel2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            panel2.BackColor = SystemColors.ButtonHighlight;
+            panel2.Controls.Add(NumHombres);
+            panel2.Controls.Add(label3);
+            panel2.Location = new Point(647, 540);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(178, 92);
+            panel2.TabIndex = 7;
             // 
             // NumHombres
             // 
-            this.NumHombres.AutoSize = true;
-            this.NumHombres.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.NumHombres.Location = new System.Drawing.Point(67, 50);
-            this.NumHombres.Name = "NumHombres";
-            this.NumHombres.Size = new System.Drawing.Size(34, 25);
-            this.NumHombres.TabIndex = 1;
-            this.NumHombres.Text = "00";
-            this.NumHombres.Click += new System.EventHandler(this.NumHombres_Click);
+            NumHombres.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            NumHombres.AutoSize = true;
+            NumHombres.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            NumHombres.Location = new Point(67, 50);
+            NumHombres.Name = "NumHombres";
+            NumHombres.Size = new Size(34, 25);
+            NumHombres.TabIndex = 1;
+            NumHombres.Text = "00";
+            NumHombres.Click += NumHombres_Click;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(30, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 28);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Hombres";
+            label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label3.AutoSize = true;
+            label3.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(30, 13);
+            label3.Name = "label3";
+            label3.Size = new Size(116, 28);
+            label3.TabIndex = 0;
+            label3.Text = "Hombres";
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel3.Controls.Add(this.NumPani);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Location = new System.Drawing.Point(866, 540);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(178, 92);
-            this.panel3.TabIndex = 8;
+            panel3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            panel3.BackColor = SystemColors.ButtonHighlight;
+            panel3.Controls.Add(NumPani);
+            panel3.Controls.Add(label5);
+            panel3.Location = new Point(866, 540);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(178, 92);
+            panel3.TabIndex = 8;
             // 
             // NumPani
             // 
-            this.NumPani.AutoSize = true;
-            this.NumPani.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.NumPani.Location = new System.Drawing.Point(69, 50);
-            this.NumPani.Name = "NumPani";
-            this.NumPani.Size = new System.Drawing.Size(34, 25);
-            this.NumPani.TabIndex = 1;
-            this.NumPani.Text = "00";
-            this.NumPani.Click += new System.EventHandler(this.NumPani_Click);
+            NumPani.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            NumPani.AutoSize = true;
+            NumPani.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            NumPani.Location = new Point(69, 50);
+            NumPani.Name = "NumPani";
+            NumPani.Size = new Size(34, 25);
+            NumPani.TabIndex = 1;
+            NumPani.Text = "00";
+            NumPani.Click += NumPani_Click;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(57, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 28);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "PANI";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            label5.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label5.AutoSize = true;
+            label5.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(57, 13);
+            label5.Name = "label5";
+            label5.Size = new Size(68, 28);
+            label5.TabIndex = 0;
+            label5.Text = "PANI";
+            label5.Click += label5_Click;
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel4.Controls.Add(this.NumImas);
-            this.panel4.Controls.Add(this.label7);
-            this.panel4.Location = new System.Drawing.Point(1082, 540);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(178, 92);
-            this.panel4.TabIndex = 9;
+            panel4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            panel4.BackColor = SystemColors.ButtonHighlight;
+            panel4.Controls.Add(NumImas);
+            panel4.Controls.Add(label7);
+            panel4.Location = new Point(1082, 540);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(178, 92);
+            panel4.TabIndex = 9;
             // 
             // NumImas
             // 
-            this.NumImas.AutoSize = true;
-            this.NumImas.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.NumImas.Location = new System.Drawing.Point(69, 50);
-            this.NumImas.Name = "NumImas";
-            this.NumImas.Size = new System.Drawing.Size(34, 25);
-            this.NumImas.TabIndex = 1;
-            this.NumImas.Text = "00";
-            this.NumImas.Click += new System.EventHandler(this.label8_Click);
+            NumImas.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            NumImas.AutoSize = true;
+            NumImas.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            NumImas.Location = new Point(69, 50);
+            NumImas.Name = "NumImas";
+            NumImas.Size = new Size(34, 25);
+            NumImas.TabIndex = 1;
+            NumImas.Text = "00";
+            NumImas.Click += label8_Click;
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(47, 13);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 28);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "IMAS";
+            label7.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label7.AutoSize = true;
+            label7.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(47, 13);
+            label7.Name = "label7";
+            label7.Size = new Size(71, 28);
+            label7.TabIndex = 0;
+            label7.Text = "IMAS";
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel5.Controls.Add(this.NumPrivados);
-            this.panel5.Controls.Add(this.label9);
-            this.panel5.Location = new System.Drawing.Point(1298, 540);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(178, 92);
-            this.panel5.TabIndex = 10;
+            panel5.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            panel5.BackColor = SystemColors.ButtonHighlight;
+            panel5.Controls.Add(NumPrivados);
+            panel5.Controls.Add(label9);
+            panel5.Location = new Point(1298, 540);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(178, 92);
+            panel5.TabIndex = 10;
             // 
             // NumPrivados
             // 
-            this.NumPrivados.AutoSize = true;
-            this.NumPrivados.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.NumPrivados.Location = new System.Drawing.Point(74, 50);
-            this.NumPrivados.Name = "NumPrivados";
-            this.NumPrivados.Size = new System.Drawing.Size(34, 25);
-            this.NumPrivados.TabIndex = 1;
-            this.NumPrivados.Text = "00";
+            NumPrivados.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            NumPrivados.AutoSize = true;
+            NumPrivados.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            NumPrivados.Location = new Point(74, 50);
+            NumPrivados.Name = "NumPrivados";
+            NumPrivados.Size = new Size(34, 25);
+            NumPrivados.TabIndex = 1;
+            NumPrivados.Text = "00";
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label9.Location = new System.Drawing.Point(25, 13);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(130, 28);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "PRIVADOS";
+            label9.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label9.AutoSize = true;
+            label9.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Location = new Point(25, 13);
+            label9.Name = "label9";
+            label9.Size = new Size(130, 28);
+            label9.TabIndex = 0;
+            label9.Text = "PRIVADOS";
             // 
             // comboBoxGrupos
             // 
-            this.comboBoxGrupos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxGrupos.FormattingEnabled = true;
-            this.comboBoxGrupos.Location = new System.Drawing.Point(17, 98);
-            this.comboBoxGrupos.Name = "comboBoxGrupos";
-            this.comboBoxGrupos.Size = new System.Drawing.Size(208, 23);
-            this.comboBoxGrupos.TabIndex = 11;
-            this.comboBoxGrupos.SelectedIndexChanged += new System.EventHandler(this.comboBoxGrupos_SelectedIndexChanged);
+            comboBoxGrupos.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxGrupos.FormattingEnabled = true;
+            comboBoxGrupos.Location = new Point(17, 98);
+            comboBoxGrupos.Name = "comboBoxGrupos";
+            comboBoxGrupos.Size = new Size(208, 23);
+            comboBoxGrupos.TabIndex = 11;
+            comboBoxGrupos.SelectedIndexChanged += comboBoxGrupos_SelectedIndexChanged;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 539);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 15);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Año :";
+            label2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label2.AutoSize = true;
+            label2.Location = new Point(17, 539);
+            label2.Name = "label2";
+            label2.Size = new Size(35, 15);
+            label2.TabIndex = 12;
+            label2.Text = "Año :";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(17, 580);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 15);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Maestra :";
+            label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label4.AutoSize = true;
+            label4.Location = new Point(17, 580);
+            label4.Name = "label4";
+            label4.Size = new Size(55, 15);
+            label4.TabIndex = 13;
+            label4.Text = "Maestra :";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 616);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(61, 15);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Asistente :";
+            label6.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            label6.AutoSize = true;
+            label6.Location = new Point(17, 616);
+            label6.Name = "label6";
+            label6.Size = new Size(61, 15);
+            label6.TabIndex = 14;
+            label6.Text = "Asistente :";
             // 
             // anno
             // 
-            this.anno.AutoSize = true;
-            this.anno.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.anno.Location = new System.Drawing.Point(84, 539);
-            this.anno.Name = "anno";
-            this.anno.Size = new System.Drawing.Size(45, 19);
-            this.anno.TabIndex = 15;
-            this.anno.Text = "0000";
-            this.anno.Click += new System.EventHandler(this.anno_Click);
+            anno.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            anno.AutoSize = true;
+            anno.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            anno.Location = new Point(84, 539);
+            anno.Name = "anno";
+            anno.Size = new Size(45, 19);
+            anno.TabIndex = 15;
+            anno.Text = "0000";
+            anno.Click += anno_Click;
             // 
             // labelNameDocente
             // 
-            this.labelNameDocente.AutoSize = true;
-            this.labelNameDocente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelNameDocente.Location = new System.Drawing.Point(84, 580);
-            this.labelNameDocente.Name = "labelNameDocente";
-            this.labelNameDocente.Size = new System.Drawing.Size(154, 19);
-            this.labelNameDocente.TabIndex = 16;
-            this.labelNameDocente.Text = "Nombre Completo";
-            this.labelNameDocente.Click += new System.EventHandler(this.labelNameDocente_Click);
+            labelNameDocente.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            labelNameDocente.AutoSize = true;
+            labelNameDocente.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            labelNameDocente.Location = new Point(84, 580);
+            labelNameDocente.Name = "labelNameDocente";
+            labelNameDocente.Size = new Size(154, 19);
+            labelNameDocente.TabIndex = 16;
+            labelNameDocente.Text = "Nombre Completo";
+            labelNameDocente.Click += labelNameDocente_Click;
             // 
             // labelNameAsistente
             // 
-            this.labelNameAsistente.AutoSize = true;
-            this.labelNameAsistente.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelNameAsistente.Location = new System.Drawing.Point(84, 617);
-            this.labelNameAsistente.Name = "labelNameAsistente";
-            this.labelNameAsistente.Size = new System.Drawing.Size(154, 19);
-            this.labelNameAsistente.TabIndex = 17;
-            this.labelNameAsistente.Text = "Nombre Completo";
-            this.labelNameAsistente.Click += new System.EventHandler(this.labelNameAsistente_Click);
+            labelNameAsistente.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            labelNameAsistente.AutoSize = true;
+            labelNameAsistente.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            labelNameAsistente.Location = new Point(84, 617);
+            labelNameAsistente.Name = "labelNameAsistente";
+            labelNameAsistente.Size = new Size(154, 19);
+            labelNameAsistente.TabIndex = 17;
+            labelNameAsistente.Text = "Nombre Completo";
+            labelNameAsistente.Click += labelNameAsistente_Click;
             // 
             // buttonPdf
             // 
-            this.buttonPdf.BackColor = System.Drawing.Color.IndianRed;
-            this.buttonPdf.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonPdf.Location = new System.Drawing.Point(1340, 90);
-            this.buttonPdf.Name = "buttonPdf";
-            this.buttonPdf.Size = new System.Drawing.Size(136, 36);
-            this.buttonPdf.TabIndex = 18;
-            this.buttonPdf.Text = "PDF";
-            this.buttonPdf.UseVisualStyleBackColor = false;
-            this.buttonPdf.Click += new System.EventHandler(this.buttonPdf_Click);
+            buttonPdf.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            buttonPdf.BackColor = Color.IndianRed;
+            buttonPdf.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonPdf.Location = new Point(1340, 90);
+            buttonPdf.Name = "buttonPdf";
+            buttonPdf.Size = new Size(136, 36);
+            buttonPdf.TabIndex = 18;
+            buttonPdf.Text = "PDF";
+            buttonPdf.UseVisualStyleBackColor = false;
+            buttonPdf.Click += buttonPdf_Click;
             // 
             // UserPadres
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.Controls.Add(this.buttonPdf);
-            this.Controls.Add(this.labelNameAsistente);
-            this.Controls.Add(this.labelNameDocente);
-            this.Controls.Add(this.anno);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBoxGrupos);
-            this.Controls.Add(this.panel5);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridViewGrupos);
-            this.Controls.Add(this.labelnNameGrupo);
-            this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Name = "UserPadres";
-            this.Size = new System.Drawing.Size(1491, 646);
-            this.Load += new System.EventHandler(this.UserPadres_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewGrupos)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.GradientInactiveCaption;
+            Controls.Add(buttonPdf);
+            Controls.Add(labelNameAsistente);
+            Controls.Add(labelNameDocente);
+            Controls.Add(anno);
+            Controls.Add(label6);
+            Controls.Add(label4);
+            Controls.Add(label2);
+            Controls.Add(comboBoxGrupos);
+            Controls.Add(panel5);
+            Controls.Add(panel4);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            Controls.Add(dataGridViewGrupos);
+            Controls.Add(labelnNameGrupo);
+            Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            Name = "UserPadres";
+            Size = new Size(1491, 646);
+            Load += UserPadres_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridViewGrupos).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
