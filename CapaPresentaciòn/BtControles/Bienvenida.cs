@@ -31,40 +31,45 @@ namespace CapaPresentaciòn.BtControles
         private TablaAbono formPadre; //instancia para evitar multiples ventanas
         private void buttonNewAbono_Click(object sender, EventArgs e)
         {
-
-
             if (formPadre == null || formPadre.IsDisposed)
             {
                 formPadre = new TablaAbono();
                 formPadre.FormClosed += (s, args) => formPadre = null; // establecer formPadre en null cuando se cierre el formulario
             }
 
-            if (dataGridViewPágos.SelectedRows.Count > 0)
+            if (dataGridViewPágos.SelectedRows.Count == 1)
             {
-                try
+                if (!dataGridViewPágos.SelectedRows[0].IsNewRow && dataGridViewPágos.SelectedRows[0].Cells["Id"].Value != null)
                 {
 
-                    formPadre.nombrepadre = dataGridViewPágos.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
-                    formPadre.Id = dataGridViewPágos.SelectedRows[0].Cells["Id"].Value.ToString();
-                    formPadre.padreId = dataGridViewPágos.SelectedRows[0].Cells["padre_id"].Value.ToString();
-                    formPadre.nombre = dataGridViewPágos.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
-                    formPadre.montoMensual = dataGridViewPágos.SelectedRows[0].Cells["monto_mensual"].Value.ToString();
-                    formPadre.saldoActual = dataGridViewPágos.SelectedRows[0].Cells["saldo_actual"].Value.ToString();
-                    formPadre.fecha = dataGridViewPágos.SelectedRows[0].Cells["fecha"].Value.ToString();
-                    formPadre.concepto = dataGridViewPágos.SelectedRows[0].Cells["concepto"].Value.ToString();
-                    formPadre.Show();
+                    try
+                    {
+                        formPadre.nombrepadre = dataGridViewPágos.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
+                        formPadre.Id = dataGridViewPágos.SelectedRows[0].Cells["Id"].Value.ToString();
+                        formPadre.padreId = dataGridViewPágos.SelectedRows[0].Cells["padre_id"].Value.ToString();
+                        formPadre.nombre = dataGridViewPágos.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
+                        formPadre.montoMensual = dataGridViewPágos.SelectedRows[0].Cells["monto_mensual"].Value.ToString();
+                        formPadre.saldoActual = dataGridViewPágos.SelectedRows[0].Cells["saldo_actual"].Value.ToString();
+                        formPadre.fecha = dataGridViewPágos.SelectedRows[0].Cells["fecha"].Value.ToString();
+                        formPadre.concepto = dataGridViewPágos.SelectedRows[0].Cells["concepto"].Value.ToString();
+                        formPadre.Show();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error al asignar valores de fila seleccionada: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                catch (Exception ex)
+                else
                 {
-                    MessageBox.Show($"Error al asignar valores de fila seleccionada: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Por favor seleccione una fila con datos antes de continuar con el proceso de edición");
                 }
             }
             else
             {
                 MessageBox.Show("Por favor seleccione una fila antes de continuar con el proceso de edición");
             }
-
         }
+
 
 
         private void CargarTablaPagos()

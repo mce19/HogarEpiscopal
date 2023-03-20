@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             label1 = new Label();
             dataGridViewPágos = new DataGridView();
             buttonNewAbono = new Button();
@@ -67,8 +69,23 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridViewPágos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewPágos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewPágos.Location = new Point(49, 135);
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Window;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dataGridViewPágos.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewPágos.GridColor = Color.FromArgb(255, 128, 0);
+            dataGridViewPágos.Location = new Point(29, 135);
             dataGridViewPágos.Name = "dataGridViewPágos";
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = Color.Goldenrod;
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewPágos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             dataGridViewPágos.RowTemplate.Height = 25;
             dataGridViewPágos.Size = new Size(1439, 378);
             dataGridViewPágos.TabIndex = 4;

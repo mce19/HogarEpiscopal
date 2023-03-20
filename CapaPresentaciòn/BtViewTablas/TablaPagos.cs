@@ -171,7 +171,7 @@ namespace CapaPresentaciòn.BtViewTablas
                     bool insertarPagoEnHistorial = cnPagos.InsertarPagoEnHistorial( padreId, montoMensual, fecha);
             if (!insertarPagoEnHistorial)
             {
-                MessageBox.Show("Error al ingresar el pago en la tabla Historial_Pagos.");
+                MessageBox.Show("Error al ingresar el pago en el Historial.");
                 return;
             }
 

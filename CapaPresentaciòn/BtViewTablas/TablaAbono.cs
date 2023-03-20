@@ -214,9 +214,9 @@ namespace CapaPresentaciòn.BtViewTablas
               
                 this.Close();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Error al actualizar el pago: " + ex.Message);
+                MessageBox.Show("Debes verificar que hayas ingresado todos los datos necesarios para realizar el abono. Si falta algún dato, por favor complétalo antes de continuar.");
             }
         }
 

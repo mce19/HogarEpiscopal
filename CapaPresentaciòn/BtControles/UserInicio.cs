@@ -252,6 +252,11 @@ namespace CapaPresentaciòn.BtControles
                 {
                     case "padres":
 
+                        if (dataGridView1.SelectedRows.Count != 1 || dataGridView1.SelectedRows[0].IsNewRow)
+                        {
+                            MessageBox.Show("Seleccione una fila válida para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
                         string nombrePadre = dataGridView1.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
                         if (MessageBox.Show("¿Está seguro que desea eliminar a" + nombrePadre + "?" + "si lo elimina se eliminar el registro de su hijo tambien.", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
@@ -308,8 +313,8 @@ namespace CapaPresentaciòn.BtControles
                     case "asistentes":
                         // Código para eliminar en la tabla asistentes
 
-                        string nombreAsistente = dataGridView1.SelectedRows[0].Cells["nombre"].Value.ToString();
-                        if (MessageBox.Show("¿Está seguro que desea eliminar a" + nombreAsistente + "?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        string nombreAsistente = dataGridView1.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
+                        if (MessageBox.Show("¿Está seguro que desea eliminar a " + nombreAsistente + "?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
                             using (SqlCommand command = new SqlCommand("DELETE FROM asistentes WHERE id = @idAsistente", connection))
                             {
@@ -324,15 +329,19 @@ namespace CapaPresentaciòn.BtControles
 
                     case "grupos":
                         // Código para eliminar en la tabla asistentes
-                        using (SqlCommand command = new SqlCommand("DELETE FROM grupos WHERE id = @idGrupos", connection))
+                        string nombreGrupo = dataGridView1.SelectedRows[0].Cells["nombre"].Value.ToString();
+                        if (MessageBox.Show("¿Está seguro que desea eliminar a" + nombreGrupo + "?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            command.Parameters.AddWithValue("@idGrupos", dataGridView1.SelectedRows[0].Cells["id"].Value);
-                            command.ExecuteNonQuery();
-                            connection.Close();
-                            tablasNegocio.CargarDatosTabla(cmbTablas.SelectedItem.ToString(), dataGridView1);
-                            MessageBox.Show("Grupo eliminado con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
+                            using (SqlCommand command = new SqlCommand("DELETE FROM grupos WHERE id = @idGrupos", connection))
+                            {
+                                command.Parameters.AddWithValue("@idGrupos", dataGridView1.SelectedRows[0].Cells["id"].Value);
+                                command.ExecuteNonQuery();
+                                connection.Close();
+                                tablasNegocio.CargarDatosTabla(cmbTablas.SelectedItem.ToString(), dataGridView1);
+                                MessageBox.Show("Grupo eliminado con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
 
+                        }
                         break;
 
                     case "matricula":
