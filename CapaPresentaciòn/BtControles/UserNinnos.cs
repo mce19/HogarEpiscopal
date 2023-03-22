@@ -92,6 +92,11 @@ namespace CapaPresentaciòn.BtControles
 
         private void buttonMatricular_Click(object sender, EventArgs e)
         {
+            if (dataGridViewPadresMatricula.SelectedRows.Count != 1 || dataGridViewPadresMatricula.SelectedRows[0].IsNewRow)
+            {
+                MessageBox.Show("Seleccione una fila válida para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             // Verificar que se haya seleccionado una fila en el dataGridView
             if (dataGridViewPadresMatricula.SelectedRows.Count == 1)
             {

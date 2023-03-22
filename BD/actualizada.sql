@@ -80,36 +80,30 @@ CREATE TABLE historial_pagos (
     FOREIGN KEY (padre_id) REFERENCES padres(numero_documento)
 );
 
-CREATE PROCEDURE Historial
-AS
-BEGIN
-    SELECT 
-        hp.id, 
-		p.numero_documento AS Documento, 
-        p.nombre_completo AS Nombre, 
-        hp.monto_cancelado, 
-        hp.fecha_cancelacion 
-    FROM 
-        historial_pagos hp 
-        INNER JOIN padres p ON hp.padre_id = p.numero_documento 
-END
 
-CREATE PROCEDURE BuscarNombreHistorial
-    @nombre VARCHAR(50)
+
+EXEC HistorialPorMes @mes = 1
+
+exec  Historial
+drop procedure HistorialPorMes
+
+CREATE PROCEDURE HistorialPorMes
+    @mes INT
 AS
 BEGIN
     SELECT 
         hp.id, 
-		p.numero_documento AS Documento, 
+        p.numero_documento AS Documento, 
         p.nombre_completo AS Nombre, 
         hp.monto_cancelado, 
-        hp.fecha_cancelacion 
+        hp.fecha_cancelacion
     FROM 
         historial_pagos hp 
         INNER JOIN padres p ON hp.padre_id = p.numero_documento 
     WHERE 
-        p.nombre_completo LIKE '%' + @nombre + '%'
+        MONTH(hp.fecha_cancelacion) = @mes 
 END
+
 
 CREATE PROCEDURE Adsistente
     @numero_documento INT,

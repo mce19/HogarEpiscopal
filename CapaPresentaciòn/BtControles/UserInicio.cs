@@ -134,6 +134,12 @@ namespace CapaPresentaciòn.BtControles
                 switch (cmbTablas.SelectedItem.ToString())
                 {
                     case "padres":
+
+                        if (dataGridView1.SelectedRows.Count != 1 || dataGridView1.SelectedRows[0].IsNewRow)
+                        {
+                            MessageBox.Show("Seleccione una fila válida para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
                         if (dataGridView1.SelectedRows.Count > 0)
                         {
                             TablaPadre formPadre = new TablaPadre();
@@ -153,6 +159,11 @@ namespace CapaPresentaciòn.BtControles
 
                     case "hijos":
 
+                        if (dataGridView1.SelectedRows.Count != 1 || dataGridView1.SelectedRows[0].IsNewRow)
+                        {
+                            MessageBox.Show("Seleccione una fila válida para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
                         TablaHijocs formHijo = new TablaHijocs();
                         formHijo.Show();
                         formHijo.TituloTabla = "Editar Hijo";
@@ -170,6 +181,11 @@ namespace CapaPresentaciòn.BtControles
 
                     case "grupos":
 
+                        if (dataGridView1.SelectedRows.Count != 1 || dataGridView1.SelectedRows[0].IsNewRow)
+                        {
+                            MessageBox.Show("Seleccione una fila válida para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
                         TablaGrupos formGrupo = new TablaGrupos();
                         formGrupo.Titulo = "Editar Grupo";
                         formGrupo.Id = dataGridView1.SelectedRows[0].Cells["id"].Value.ToString();
@@ -179,6 +195,11 @@ namespace CapaPresentaciòn.BtControles
 
                     case "docentes":
 
+                        if (dataGridView1.SelectedRows.Count != 1 || dataGridView1.SelectedRows[0].IsNewRow)
+                        {
+                            MessageBox.Show("Seleccione una fila válida para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
                         TablaDocentes formDocent = new TablaDocentes();
                         formDocent.Titulo = "Editar docente";
                         formDocent.Id = dataGridView1.SelectedRows[0].Cells["numero_documento"].Value.ToString();
@@ -192,6 +213,11 @@ namespace CapaPresentaciòn.BtControles
 
                     case "matricula":
 
+                        if (dataGridView1.SelectedRows.Count != 1 || dataGridView1.SelectedRows[0].IsNewRow)
+                        {
+                            MessageBox.Show("Seleccione una fila válida para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
                         TablaMatriculas formMatricula = new TablaMatriculas();
                         formMatricula.Show();
                         formMatricula.Titulo = "Editar matricula";
@@ -206,6 +232,11 @@ namespace CapaPresentaciòn.BtControles
 
                     case "asistentes":
 
+                        if (dataGridView1.SelectedRows.Count != 1 || dataGridView1.SelectedRows[0].IsNewRow)
+                        {
+                            MessageBox.Show("Seleccione una fila válida para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
                         TablaAsistentes formAsistente = new TablaAsistentes();
                         formAsistente.Show();
                         formAsistente.Titulo = "Editar asistente";
@@ -276,6 +307,12 @@ namespace CapaPresentaciòn.BtControles
                         // Código para eliminar en la tabla hijos
                         using (SqlConnection connections = new SqlConnection(tablasDatos.connectionString))
                         {
+
+                            if (dataGridView1.SelectedRows.Count != 1 || dataGridView1.SelectedRows[0].IsNewRow)
+                            {
+                                MessageBox.Show("Seleccione una fila válida para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
                             string nombreHijo = dataGridView1.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
                             if (MessageBox.Show("No se puede eliminar a " + nombreHijo + ", debe eliminar a su padre o persona acargo de su matricula para que se elimine del registro.", "Confirmar eliminación", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
                             {
@@ -295,6 +332,11 @@ namespace CapaPresentaciòn.BtControles
                         break;
                     case "docentes":
 
+                        if (dataGridView1.SelectedRows.Count != 1 || dataGridView1.SelectedRows[0].IsNewRow)
+                        {
+                            MessageBox.Show("Seleccione una fila válida para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
 
                         string nombreDocente = dataGridView1.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
                         if (MessageBox.Show("¿Está seguro que desea eliminar al docente " + nombreDocente + "?" + "Si lo decea eliminar asegurece que no este asignado a ningun grupo, asistente o matricula ya que si esta asignado dicho docente, tambien se eliminarán esos registros, lo adecuado seria que les asigne otro docente", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -312,6 +354,11 @@ namespace CapaPresentaciòn.BtControles
 
                     case "asistentes":
                         // Código para eliminar en la tabla asistentes
+                        if (dataGridView1.SelectedRows.Count != 1 || dataGridView1.SelectedRows[0].IsNewRow)
+                        {
+                            MessageBox.Show("Seleccione una fila válida para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
 
                         string nombreAsistente = dataGridView1.SelectedRows[0].Cells["nombre_completo"].Value.ToString();
                         if (MessageBox.Show("¿Está seguro que desea eliminar a " + nombreAsistente + "?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -328,6 +375,12 @@ namespace CapaPresentaciòn.BtControles
                         break;
 
                     case "grupos":
+
+                        if (dataGridView1.SelectedRows.Count != 1 || dataGridView1.SelectedRows[0].IsNewRow)
+                        {
+                            MessageBox.Show("Seleccione una fila válida para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
                         // Código para eliminar en la tabla asistentes
                         string nombreGrupo = dataGridView1.SelectedRows[0].Cells["nombre"].Value.ToString();
                         if (MessageBox.Show("¿Está seguro que desea eliminar a" + nombreGrupo + "?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
@@ -345,6 +398,12 @@ namespace CapaPresentaciòn.BtControles
                         break;
 
                     case "matricula":
+
+                        if (dataGridView1.SelectedRows.Count != 1 || dataGridView1.SelectedRows[0].IsNewRow)
+                        {
+                            MessageBox.Show("Seleccione una fila válida para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
                         // Código para eliminar en la tabla asistentes
                         using (SqlCommand command = new SqlCommand("DELETE FROM matricula WHERE id = @idMatricula", connection))
                         {
@@ -359,6 +418,12 @@ namespace CapaPresentaciòn.BtControles
 
 
                     case "pagos":
+
+                        if (dataGridView1.SelectedRows.Count != 1 || dataGridView1.SelectedRows[0].IsNewRow)
+                        {
+                            MessageBox.Show("Seleccione una fila válida para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
                         // Código para eliminar en la tabla asistentes
                         using (SqlCommand command = new SqlCommand("DELETE FROM pagos WHERE id = @idPagos", connection))
                         {
@@ -373,6 +438,12 @@ namespace CapaPresentaciòn.BtControles
 
 
                     case "historial_pagos":
+
+                        if (dataGridView1.SelectedRows.Count != 1 || dataGridView1.SelectedRows[0].IsNewRow)
+                        {
+                            MessageBox.Show("Seleccione una fila válida para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
                         // Código para eliminar en la tabla asistentes
                         using (SqlCommand command = new SqlCommand("DELETE FROM historial_pagos WHERE id = @idHistorial", connection))
                         {

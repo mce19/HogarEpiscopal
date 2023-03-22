@@ -34,7 +34,12 @@
             buttonFactura = new Button();
             textBoxBuscador = new TextBox();
             label2 = new Label();
+            panelE = new Panel();
+            NumExtranjero = new Label();
+            SumaHistorial = new Label();
+            BoxMes = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridViewHistorial).BeginInit();
+            panelE.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridViewHistorial
@@ -43,6 +48,7 @@
             dataGridViewHistorial.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewHistorial.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridViewHistorial.BackgroundColor = SystemColors.ButtonHighlight;
+            dataGridViewHistorial.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = SystemColors.Control;
             dataGridViewCellStyle1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
@@ -82,7 +88,7 @@
             buttonFactura.Name = "buttonFactura";
             buttonFactura.Size = new Size(162, 44);
             buttonFactura.TabIndex = 7;
-            buttonFactura.Text = "Imprimir Factura";
+            buttonFactura.Text = "boton";
             buttonFactura.UseVisualStyleBackColor = false;
             buttonFactura.Click += buttonFactura_Click;
             // 
@@ -105,10 +111,58 @@
             label2.TabIndex = 12;
             label2.Text = "Buscar por nombre";
             // 
+            // panelE
+            // 
+            panelE.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            panelE.BackColor = SystemColors.GradientActiveCaption;
+            panelE.Controls.Add(NumExtranjero);
+            panelE.Controls.Add(SumaHistorial);
+            panelE.Location = new Point(33, 522);
+            panelE.Name = "panelE";
+            panelE.Size = new Size(186, 92);
+            panelE.TabIndex = 13;
+            // 
+            // NumExtranjero
+            // 
+            NumExtranjero.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            NumExtranjero.AutoSize = true;
+            NumExtranjero.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            NumExtranjero.ForeColor = SystemColors.ButtonHighlight;
+            NumExtranjero.Location = new Point(11, 48);
+            NumExtranjero.Name = "NumExtranjero";
+            NumExtranjero.Size = new Size(34, 25);
+            NumExtranjero.TabIndex = 1;
+            NumExtranjero.Text = "00";
+            NumExtranjero.Click += NumExtranjero_Click;
+            // 
+            // SumaHistorial
+            // 
+            SumaHistorial.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            SumaHistorial.AutoSize = true;
+            SumaHistorial.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            SumaHistorial.ForeColor = SystemColors.Highlight;
+            SumaHistorial.Location = new Point(11, 14);
+            SumaHistorial.Name = "SumaHistorial";
+            SumaHistorial.Size = new Size(164, 28);
+            SumaHistorial.TabIndex = 0;
+            SumaHistorial.Text = "Mensualidad";
+            // 
+            // BoxMes
+            // 
+            BoxMes.DropDownStyle = ComboBoxStyle.DropDownList;
+            BoxMes.FormattingEnabled = true;
+            BoxMes.Location = new Point(843, 88);
+            BoxMes.Name = "BoxMes";
+            BoxMes.Size = new Size(189, 23);
+            BoxMes.TabIndex = 14;
+            BoxMes.SelectedIndexChanged += BoxMes_SelectedIndexChanged;
+            // 
             // UserHistorial
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(BoxMes);
+            Controls.Add(panelE);
             Controls.Add(label2);
             Controls.Add(textBoxBuscador);
             Controls.Add(buttonFactura);
@@ -118,6 +172,8 @@
             Size = new Size(1491, 646);
             Load += UserHistorial_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridViewHistorial).EndInit();
+            panelE.ResumeLayout(false);
+            panelE.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -129,5 +185,9 @@
         private Button buttonFactura;
         private TextBox textBoxBuscador;
         private Label label2;
+        private Panel panelE;
+        private Label NumExtranjero;
+        private Label SumaHistorial;
+        private ComboBox BoxMes;
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             labelnNameGrupo = new Label();
             dataGridViewGrupos = new DataGridView();
             panel1 = new Panel();
@@ -92,8 +93,15 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridViewGrupos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewGrupos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewGrupos.GridColor = Color.FromArgb(255, 128, 0);
             dataGridViewGrupos.Location = new Point(17, 140);
             dataGridViewGrupos.Name = "dataGridViewGrupos";
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 128, 0);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewGrupos.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewGrupos.RowTemplate.Height = 25;
             dataGridViewGrupos.Size = new Size(1459, 384);
             dataGridViewGrupos.TabIndex = 5;

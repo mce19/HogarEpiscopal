@@ -15,21 +15,28 @@ namespace CapaNegocio
         {
             cdPagos = new CDHistorial();
         }
-        public DataTable ObtenerHistorial()
+        //public DataTable ObtenerHistorial()
+        //{
+        //    try
+        //    {
+        //        return cdPagos.ObtenerHistorial();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw new Exception("Error al obtener el hostorial.", ex);
+        //    }
+        //}
+
+        //public DataTable BuscarPorNombre(string nombre)
+        //{
+        //    return cdPagos.BuscarPorNombre(nombre);
+        //}
+
+        public DataTable ObtenerHistorialPorMes(int mes)
         {
-            try
-            {
-                return cdPagos.ObtenerHistorial();
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Error al obtener el hostorial.", ex);
-            }
+        
+            return cdPagos.ObtenerHistorialPorMes(mes);
         }
 
-        public DataTable BuscarPorNombre(string nombre)
-        {
-            return cdPagos.BuscarPorNombre(nombre);
-        }
     }
 }

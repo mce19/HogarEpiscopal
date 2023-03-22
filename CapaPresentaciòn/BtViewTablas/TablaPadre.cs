@@ -148,14 +148,28 @@ namespace CapaPresentaciòn.BtViewTablas
                 if (TxtTitTablaPadre.Text == "Editar Padre")
                 {
                     objeto.EditarPadre(padre);
+                    MessageBox.Show("El padre a sido actualizado con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    objeto.AgregarPadre(padre);
-                }
 
-                // Mensaje de éxito
-                MessageBox.Show("Padre guardado con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    objeto.AgregarPadre(padre);
+
+                    // Mensaje de éxito
+                    MessageBox.Show("Padre guardado con éxito", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Preguntar si desea agregar un hijo
+                    DialogResult result = MessageBox.Show("¿Desea agregar un hijo?", "Agregar hijo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    // Si el usuario hace clic en "Sí"
+                    if (result == DialogResult.Yes)
+                    {
+                        TablaHijocs formHijos = new TablaHijocs();
+                        formHijos.Show();
+                        formHijos.PadreId = numeroDocumento;
+                        formHijos.TituloTabla = "Agregar un nuevo hijo";
+                    }
+
+                }
 
                 // Cerrar formulario
                 this.Close();
