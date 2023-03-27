@@ -15,6 +15,13 @@ namespace CapaPresentaciòn.BtViewTablas
 {
     public partial class TablaPadre : Form
     {
+
+        List<string> meses = new List<string>
+       {
+    "Nacional", "Extranjero"
+         };
+
+
         private string _tituloTabla;
         public string TituloTabla
         {
@@ -64,6 +71,7 @@ namespace CapaPresentaciòn.BtViewTablas
         public TablaPadre()
         {
             InitializeComponent();
+            textBoxTipoDucumento.DataSource = meses;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -182,7 +190,7 @@ namespace CapaPresentaciòn.BtViewTablas
 
         }
 
-                public void textBoxTelefono_TextChanged(object sender, EventArgs e)
+        public void textBoxTelefono_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -205,6 +213,11 @@ namespace CapaPresentaciòn.BtViewTablas
         private void buttonCancelarPago_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void textBoxTipoDucumento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

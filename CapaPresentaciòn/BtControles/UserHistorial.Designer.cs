@@ -31,7 +31,6 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             dataGridViewHistorial = new DataGridView();
             label1 = new Label();
-            buttonFactura = new Button();
             textBoxBuscador = new TextBox();
             label2 = new Label();
             panelE = new Panel();
@@ -77,20 +76,6 @@
             label1.TabIndex = 6;
             label1.Text = "Historial de pagos ";
             label1.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // buttonFactura
-            // 
-            buttonFactura.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            buttonFactura.BackColor = Color.FromArgb(0, 192, 0);
-            buttonFactura.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonFactura.ForeColor = Color.White;
-            buttonFactura.Location = new Point(1310, 551);
-            buttonFactura.Name = "buttonFactura";
-            buttonFactura.Size = new Size(162, 44);
-            buttonFactura.TabIndex = 7;
-            buttonFactura.Text = "boton";
-            buttonFactura.UseVisualStyleBackColor = false;
-            buttonFactura.Click += buttonFactura_Click;
             // 
             // textBoxBuscador
             // 
@@ -149,6 +134,7 @@
             // 
             // BoxMes
             // 
+            BoxMes.BackColor = SystemColors.Info;
             BoxMes.DropDownStyle = ComboBoxStyle.DropDownList;
             BoxMes.FormattingEnabled = true;
             BoxMes.Location = new Point(843, 88);
@@ -165,7 +151,6 @@
             Controls.Add(panelE);
             Controls.Add(label2);
             Controls.Add(textBoxBuscador);
-            Controls.Add(buttonFactura);
             Controls.Add(label1);
             Controls.Add(dataGridViewHistorial);
             Name = "UserHistorial";
@@ -182,7 +167,6 @@
 
         private DataGridView dataGridViewHistorial;
         private Label label1;
-        private Button buttonFactura;
         private TextBox textBoxBuscador;
         private Label label2;
         private Panel panelE;

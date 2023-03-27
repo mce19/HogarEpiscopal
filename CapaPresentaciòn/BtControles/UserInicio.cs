@@ -46,12 +46,11 @@ namespace CapaPresentaciòn.BtControles
 
         }
 
+     
         private void cmbTablas_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-
-            //cambie esta funcion por el de buscador necesito arrelarlo ya que funciona pero cuando seleciono otra tabla y busco se cae 
-            busquedaEnCurso = false;
+                //cambie esta funcion por el de buscador necesito arrelarlo ya que funciona pero cuando seleciono otra tabla y busco se cae 
+                busquedaEnCurso = false;
             lblTablaSeleccionada.Text = cmbTablas.SelectedItem.ToString().ToUpper();
             tablasNegocio.CargarDatosTabla(cmbTablas.SelectedItem.ToString(), dataGridView1);
             string[] titulos = tablasNegocio.ObtenerDiccionario(cmbTablas.SelectedItem.ToString());
@@ -59,6 +58,21 @@ namespace CapaPresentaciòn.BtControles
             {
                 dataGridView1.Columns[i].HeaderText = titulos[i];
             }
+
+            // Aquí se cuenta la columna "tipo_documento"
+            int count = 0;
+            if (cmbTablas.SelectedItem.ToString() == "padres")
+            {
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (row.Cells["tipo_documento"].Value != null && row.Cells["tipo_documento"].Value.ToString() == "Extranjero")
+                    {
+                        count++;
+                    }
+                }
+                NumExtranjero.Text = count.ToString();
+            }
+
 
             if (cmbTablas.SelectedItem.ToString() == "pagos")
             {
@@ -137,7 +151,7 @@ namespace CapaPresentaciòn.BtControles
 
                         if (dataGridView1.SelectedRows.Count != 1 || dataGridView1.SelectedRows[0].IsNewRow)
                         {
-                            MessageBox.Show("Seleccione una fila válida para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Seleccione una fila válida para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
                         if (dataGridView1.SelectedRows.Count > 0)
@@ -161,7 +175,7 @@ namespace CapaPresentaciòn.BtControles
 
                         if (dataGridView1.SelectedRows.Count != 1 || dataGridView1.SelectedRows[0].IsNewRow)
                         {
-                            MessageBox.Show("Seleccione una fila válida para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Seleccione una fila válida para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
                         TablaHijocs formHijo = new TablaHijocs();
@@ -183,7 +197,7 @@ namespace CapaPresentaciòn.BtControles
 
                         if (dataGridView1.SelectedRows.Count != 1 || dataGridView1.SelectedRows[0].IsNewRow)
                         {
-                            MessageBox.Show("Seleccione una fila válida para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Seleccione una fila válida para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
                         TablaGrupos formGrupo = new TablaGrupos();
@@ -197,7 +211,7 @@ namespace CapaPresentaciòn.BtControles
 
                         if (dataGridView1.SelectedRows.Count != 1 || dataGridView1.SelectedRows[0].IsNewRow)
                         {
-                            MessageBox.Show("Seleccione una fila válida para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Seleccione una fila válida para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
                         TablaDocentes formDocent = new TablaDocentes();
@@ -215,7 +229,7 @@ namespace CapaPresentaciòn.BtControles
 
                         if (dataGridView1.SelectedRows.Count != 1 || dataGridView1.SelectedRows[0].IsNewRow)
                         {
-                            MessageBox.Show("Seleccione una fila válida para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Seleccione una fila válida para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
                         TablaMatriculas formMatricula = new TablaMatriculas();
@@ -234,7 +248,7 @@ namespace CapaPresentaciòn.BtControles
 
                         if (dataGridView1.SelectedRows.Count != 1 || dataGridView1.SelectedRows[0].IsNewRow)
                         {
-                            MessageBox.Show("Seleccione una fila válida para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Seleccione una fila válida para editar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
                         }
                         TablaAsistentes formAsistente = new TablaAsistentes();

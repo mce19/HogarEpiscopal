@@ -7,6 +7,11 @@ namespace capaPresentación
         public frPadres()
         {
             InitializeComponent();
+            int year = DateTime.Now.Year;
+
+
+            // Mostrar el año actual en un control de texto
+            fecha.Text = year.ToString();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -72,6 +77,11 @@ namespace capaPresentación
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void fecha_Click(object sender, EventArgs e)
+        {
+        
         }
     }
 }

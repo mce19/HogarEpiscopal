@@ -324,25 +324,27 @@
             // buttonCargarDatos
             // 
             buttonCargarDatos.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            buttonCargarDatos.BackColor = Color.Lime;
             buttonCargarDatos.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             buttonCargarDatos.Location = new Point(744, 584);
             buttonCargarDatos.Name = "buttonCargarDatos";
             buttonCargarDatos.Size = new Size(136, 44);
             buttonCargarDatos.TabIndex = 6;
             buttonCargarDatos.Text = "Cargar datos";
-            buttonCargarDatos.UseVisualStyleBackColor = true;
+            buttonCargarDatos.UseVisualStyleBackColor = false;
             buttonCargarDatos.Click += buttonCargarDatos_Click;
             // 
             // buttonMatricular
             // 
             buttonMatricular.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            buttonMatricular.BackColor = Color.FromArgb(255, 128, 0);
             buttonMatricular.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
             buttonMatricular.Location = new Point(896, 584);
             buttonMatricular.Name = "buttonMatricular";
             buttonMatricular.Size = new Size(136, 44);
             buttonMatricular.TabIndex = 7;
             buttonMatricular.Text = "Asignar";
-            buttonMatricular.UseVisualStyleBackColor = true;
+            buttonMatricular.UseVisualStyleBackColor = false;
             buttonMatricular.Click += buttonMatricular_Click;
             // 
             // dataGridViewGrupos

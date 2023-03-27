@@ -18,6 +18,11 @@ namespace CapaPresentaciòn.BtViewTablas
     public partial class TablaHijocs : Form
     {
 
+        List<string> meses = new List<string>
+       {
+    "F", "M"
+         };
+
         private string _labelnombreHijos;
         public string TituloTabla
         {
@@ -88,6 +93,7 @@ namespace CapaPresentaciòn.BtViewTablas
         {
             InitializeComponent();
             dateTimePickerHijo.ValueChanged += new EventHandler(dateTimePickerHijo_ValueChanged);
+            textBoxGeneroHijo.DataSource = meses;
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -246,6 +252,11 @@ namespace CapaPresentaciòn.BtViewTablas
         private void buttonCancelarPago_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void textBoxGeneroHijo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

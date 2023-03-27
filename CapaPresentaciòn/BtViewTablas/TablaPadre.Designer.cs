@@ -28,183 +28,185 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxNunDocumento = new System.Windows.Forms.TextBox();
-            this.textBoxNombre = new System.Windows.Forms.TextBox();
-            this.textBoxTelefono = new System.Windows.Forms.TextBox();
-            this.TxtTitTablaPadre = new System.Windows.Forms.Label();
-            this.maskedTextBoxDireccion = new System.Windows.Forms.MaskedTextBox();
-            this.buttonGuardarPadre = new System.Windows.Forms.Button();
-            this.textBoxTipoDucumento = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.buttonCancelarPago = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            textBoxNunDocumento = new TextBox();
+            textBoxNombre = new TextBox();
+            textBoxTelefono = new TextBox();
+            TxtTitTablaPadre = new Label();
+            maskedTextBoxDireccion = new MaskedTextBox();
+            buttonGuardarPadre = new Button();
+            label5 = new Label();
+            buttonCancelarPago = new Button();
+            textBoxTipoDucumento = new ComboBox();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(39, 196);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Numero Documento";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(39, 196);
+            label1.Name = "label1";
+            label1.Size = new Size(167, 19);
+            label1.TabIndex = 0;
+            label1.Text = "Numero Documento";
+            label1.Click += label1_Click;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(39, 281);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(152, 19);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Nombre completo";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            label2.AutoSize = true;
+            label2.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(39, 281);
+            label2.Name = "label2";
+            label2.Size = new Size(152, 19);
+            label2.TabIndex = 1;
+            label2.Text = "Nombre completo";
+            label2.Click += label2_Click;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(392, 196);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 19);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Direcciòn";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            label3.AutoSize = true;
+            label3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(392, 196);
+            label3.Name = "label3";
+            label3.Size = new Size(83, 19);
+            label3.TabIndex = 2;
+            label3.Text = "Direcciòn";
+            label3.Click += label3_Click;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(392, 110);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 19);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Tèlefono";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            label4.AutoSize = true;
+            label4.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(392, 110);
+            label4.Name = "label4";
+            label4.Size = new Size(74, 19);
+            label4.TabIndex = 3;
+            label4.Text = "Tèlefono";
+            label4.Click += label4_Click;
             // 
             // textBoxNunDocumento
             // 
-            this.textBoxNunDocumento.Location = new System.Drawing.Point(39, 218);
-            this.textBoxNunDocumento.Name = "textBoxNunDocumento";
-            this.textBoxNunDocumento.Size = new System.Drawing.Size(309, 23);
-            this.textBoxNunDocumento.TabIndex = 4;
-            this.textBoxNunDocumento.TextChanged += new System.EventHandler(this.textBoxNunDocumento_TextChanged);
+            textBoxNunDocumento.Location = new Point(39, 218);
+            textBoxNunDocumento.Name = "textBoxNunDocumento";
+            textBoxNunDocumento.Size = new Size(309, 23);
+            textBoxNunDocumento.TabIndex = 4;
+            textBoxNunDocumento.TextChanged += textBoxNunDocumento_TextChanged;
             // 
             // textBoxNombre
             // 
-            this.textBoxNombre.Location = new System.Drawing.Point(39, 303);
-            this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(309, 23);
-            this.textBoxNombre.TabIndex = 5;
-            this.textBoxNombre.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            textBoxNombre.Location = new Point(39, 303);
+            textBoxNombre.Name = "textBoxNombre";
+            textBoxNombre.Size = new Size(309, 23);
+            textBoxNombre.TabIndex = 5;
+            textBoxNombre.TextChanged += textBox2_TextChanged;
             // 
             // textBoxTelefono
             // 
-            this.textBoxTelefono.Location = new System.Drawing.Point(392, 132);
-            this.textBoxTelefono.Name = "textBoxTelefono";
-            this.textBoxTelefono.Size = new System.Drawing.Size(309, 23);
-            this.textBoxTelefono.TabIndex = 6;
-            this.textBoxTelefono.TextChanged += new System.EventHandler(this.textBoxTelefono_TextChanged);
+            textBoxTelefono.Location = new Point(392, 132);
+            textBoxTelefono.Name = "textBoxTelefono";
+            textBoxTelefono.Size = new Size(309, 23);
+            textBoxTelefono.TabIndex = 6;
+            textBoxTelefono.TextChanged += textBoxTelefono_TextChanged;
             // 
             // TxtTitTablaPadre
             // 
-            this.TxtTitTablaPadre.AutoSize = true;
-            this.TxtTitTablaPadre.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.TxtTitTablaPadre.Location = new System.Drawing.Point(291, 33);
-            this.TxtTitTablaPadre.Name = "TxtTitTablaPadre";
-            this.TxtTitTablaPadre.Size = new System.Drawing.Size(175, 28);
-            this.TxtTitTablaPadre.TabIndex = 8;
-            this.TxtTitTablaPadre.Text = "Nombre tabla";
-            this.TxtTitTablaPadre.Click += new System.EventHandler(this.TxtTitTablaPadre_Click);
+            TxtTitTablaPadre.AutoSize = true;
+            TxtTitTablaPadre.Font = new Font("Century Gothic", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            TxtTitTablaPadre.Location = new Point(291, 33);
+            TxtTitTablaPadre.Name = "TxtTitTablaPadre";
+            TxtTitTablaPadre.Size = new Size(175, 28);
+            TxtTitTablaPadre.TabIndex = 8;
+            TxtTitTablaPadre.Text = "Nombre tabla";
+            TxtTitTablaPadre.Click += TxtTitTablaPadre_Click;
             // 
             // maskedTextBoxDireccion
             // 
-            this.maskedTextBoxDireccion.Location = new System.Drawing.Point(392, 218);
-            this.maskedTextBoxDireccion.Name = "maskedTextBoxDireccion";
-            this.maskedTextBoxDireccion.Size = new System.Drawing.Size(309, 23);
-            this.maskedTextBoxDireccion.TabIndex = 9;
-            this.maskedTextBoxDireccion.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBoxDireccion_MaskInputRejected);
+            maskedTextBoxDireccion.Location = new Point(392, 218);
+            maskedTextBoxDireccion.Name = "maskedTextBoxDireccion";
+            maskedTextBoxDireccion.Size = new Size(309, 23);
+            maskedTextBoxDireccion.TabIndex = 9;
+            maskedTextBoxDireccion.MaskInputRejected += maskedTextBoxDireccion_MaskInputRejected;
             // 
             // buttonGuardarPadre
             // 
-            this.buttonGuardarPadre.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.buttonGuardarPadre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonGuardarPadre.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.buttonGuardarPadre.Location = new System.Drawing.Point(588, 438);
-            this.buttonGuardarPadre.Name = "buttonGuardarPadre";
-            this.buttonGuardarPadre.Size = new System.Drawing.Size(126, 47);
-            this.buttonGuardarPadre.TabIndex = 10;
-            this.buttonGuardarPadre.Text = "Guardar";
-            this.buttonGuardarPadre.UseVisualStyleBackColor = false;
-            this.buttonGuardarPadre.Click += new System.EventHandler(this.buttonGuardarPadre_Click);
-            // 
-            // textBoxTipoDucumento
-            // 
-            this.textBoxTipoDucumento.Location = new System.Drawing.Point(39, 132);
-            this.textBoxTipoDucumento.Name = "textBoxTipoDucumento";
-            this.textBoxTipoDucumento.Size = new System.Drawing.Size(309, 23);
-            this.textBoxTipoDucumento.TabIndex = 11;
+            buttonGuardarPadre.BackColor = SystemColors.ActiveCaption;
+            buttonGuardarPadre.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonGuardarPadre.ForeColor = SystemColors.ControlLightLight;
+            buttonGuardarPadre.Location = new Point(588, 438);
+            buttonGuardarPadre.Name = "buttonGuardarPadre";
+            buttonGuardarPadre.Size = new Size(126, 47);
+            buttonGuardarPadre.TabIndex = 10;
+            buttonGuardarPadre.Text = "Guardar";
+            buttonGuardarPadre.UseVisualStyleBackColor = false;
+            buttonGuardarPadre.Click += buttonGuardarPadre_Click;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(39, 110);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(161, 19);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Tipo de documento";
+            label5.AutoSize = true;
+            label5.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(39, 110);
+            label5.Name = "label5";
+            label5.Size = new Size(161, 19);
+            label5.TabIndex = 12;
+            label5.Text = "Tipo de documento";
             // 
             // buttonCancelarPago
             // 
-            this.buttonCancelarPago.BackColor = System.Drawing.Color.Red;
-            this.buttonCancelarPago.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.buttonCancelarPago.ForeColor = System.Drawing.Color.White;
-            this.buttonCancelarPago.Location = new System.Drawing.Point(462, 438);
-            this.buttonCancelarPago.Name = "buttonCancelarPago";
-            this.buttonCancelarPago.Size = new System.Drawing.Size(120, 47);
-            this.buttonCancelarPago.TabIndex = 51;
-            this.buttonCancelarPago.Text = "Cancelar";
-            this.buttonCancelarPago.UseVisualStyleBackColor = false;
-            this.buttonCancelarPago.Click += new System.EventHandler(this.buttonCancelarPago_Click);
+            buttonCancelarPago.BackColor = Color.Red;
+            buttonCancelarPago.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonCancelarPago.ForeColor = Color.White;
+            buttonCancelarPago.Location = new Point(462, 438);
+            buttonCancelarPago.Name = "buttonCancelarPago";
+            buttonCancelarPago.Size = new Size(120, 47);
+            buttonCancelarPago.TabIndex = 51;
+            buttonCancelarPago.Text = "Cancelar";
+            buttonCancelarPago.UseVisualStyleBackColor = false;
+            buttonCancelarPago.Click += buttonCancelarPago_Click;
+            // 
+            // textBoxTipoDucumento
+            // 
+            textBoxTipoDucumento.DropDownStyle = ComboBoxStyle.DropDownList;
+            textBoxTipoDucumento.FormattingEnabled = true;
+            textBoxTipoDucumento.Location = new Point(39, 132);
+            textBoxTipoDucumento.Name = "textBoxTipoDucumento";
+            textBoxTipoDucumento.Size = new Size(190, 23);
+            textBoxTipoDucumento.TabIndex = 52;
+            textBoxTipoDucumento.SelectedIndexChanged += textBoxTipoDucumento_SelectedIndexChanged;
             // 
             // TablaPadre
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(726, 497);
-            this.ControlBox = false;
-            this.Controls.Add(this.buttonCancelarPago);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBoxTipoDucumento);
-            this.Controls.Add(this.buttonGuardarPadre);
-            this.Controls.Add(this.maskedTextBoxDireccion);
-            this.Controls.Add(this.TxtTitTablaPadre);
-            this.Controls.Add(this.textBoxTelefono);
-            this.Controls.Add(this.textBoxNombre);
-            this.Controls.Add(this.textBoxNunDocumento);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MdiChildrenMinimizedAnchorBottom = false;
-            this.Name = "TablaPadre";
-            this.ShowIcon = false;
-            this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TablaPadre";
-            this.TopMost = true;
-            this.Load += new System.EventHandler(this.TablaPadre_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(718, 489);
+            ControlBox = false;
+            Controls.Add(textBoxTipoDucumento);
+            Controls.Add(buttonCancelarPago);
+            Controls.Add(label5);
+            Controls.Add(buttonGuardarPadre);
+            Controls.Add(maskedTextBoxDireccion);
+            Controls.Add(TxtTitTablaPadre);
+            Controls.Add(textBoxTelefono);
+            Controls.Add(textBoxNombre);
+            Controls.Add(textBoxNunDocumento);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MdiChildrenMinimizedAnchorBottom = false;
+            Name = "TablaPadre";
+            ShowIcon = false;
+            ShowInTaskbar = false;
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "TablaPadre";
+            TopMost = true;
+            Load += TablaPadre_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -219,8 +221,8 @@
         private Label TxtTitTablaPadre;
         private MaskedTextBox maskedTextBoxDireccion;
         private Button buttonGuardarPadre;
-        private TextBox textBoxTipoDucumento;
         private Label label5;
         private Button buttonCancelarPago;
+        private ComboBox textBoxTipoDucumento;
     }
 }

@@ -40,7 +40,7 @@
             guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button7 = new Guna.UI2.WinForms.Guna2Button();
             panelContainer = new Panel();
-            label2 = new Label();
+            fecha = new Label();
             label3 = new Label();
             guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(components);
             panel1.SuspendLayout();
@@ -63,13 +63,13 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Font = new Font("Century Gothic", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(85, 22);
+            label1.Location = new Point(85, 18);
             label1.Name = "label1";
-            label1.Size = new Size(136, 19);
+            label1.Size = new Size(336, 32);
             label1.TabIndex = 1;
-            label1.Text = "Hogar Episcopal";
+            label1.Text = "Hogar Escuela Episcopal";
             label1.Click += label1_Click;
             // 
             // pictureBox1
@@ -242,8 +242,8 @@
             // 
             // panelContainer
             // 
-            panelContainer.BackColor = SystemColors.GradientInactiveCaption;
-            panelContainer.Controls.Add(label2);
+            panelContainer.BackColor = Color.Cyan;
+            panelContainer.Controls.Add(fecha);
             panelContainer.Controls.Add(label3);
             panelContainer.Dock = DockStyle.Fill;
             panelContainer.Location = new Point(0, 125);
@@ -252,27 +252,31 @@
             panelContainer.TabIndex = 3;
             panelContainer.Paint += panelContainer_Paint;
             // 
-            // label2
+            // fecha
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(545, 220);
-            label2.Name = "label2";
-            label2.Size = new Size(405, 19);
-            label2.TabIndex = 4;
-            label2.Text = "Use el menu de arriba para moverte entre pestañas";
+            fecha.Anchor = AnchorStyles.Bottom;
+            fecha.AutoSize = true;
+            fecha.Font = new Font("Century", 27.75F, FontStyle.Bold, GraphicsUnit.Point);
+            fecha.ForeColor = Color.White;
+            fecha.Location = new Point(679, 248);
+            fecha.Name = "fecha";
+            fecha.Size = new Size(128, 44);
+            fecha.TabIndex = 4;
+            fecha.Text = "Fecha";
+            fecha.Click += fecha_Click;
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.Top;
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Century Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = SystemColors.ActiveCaptionText;
-            label3.Location = new Point(614, 141);
+            label3.Font = new Font("Century", 48F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(324, 128);
             label3.Name = "label3";
-            label3.Size = new Size(287, 56);
+            label3.Size = new Size(792, 77);
             label3.TabIndex = 3;
-            label3.Text = "Bienvenida";
+            label3.Text = "Hogar Escuela Episcopal";
             label3.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // guna2DragControl1
@@ -315,6 +319,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button8;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Label label3;
-        private Label label2;
+        private Label fecha;
     }
 }
