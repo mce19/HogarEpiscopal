@@ -10,7 +10,7 @@ namespace CapaDatos
 {
     public class CDPagos
     {
-        private string connectionString;
+        public string connectionString;
 
         public CDPagos()
         {

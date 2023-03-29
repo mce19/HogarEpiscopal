@@ -61,6 +61,8 @@ namespace CapaPresentaciòn.BtControles
 
             // Aquí se cuenta la columna "tipo_documento"
             int count = 0;
+            int nac = 0;
+
             if (cmbTablas.SelectedItem.ToString() == "padres")
             {
                 foreach (DataGridViewRow row in dataGridView1.Rows)
@@ -69,8 +71,13 @@ namespace CapaPresentaciòn.BtControles
                     {
                         count++;
                     }
+                    else if (row.Cells["tipo_documento"].Value != null && row.Cells["tipo_documento"].Value.ToString() == "Nacional")
+                    {
+                        nac++;
+                    }
                 }
                 NumExtranjero.Text = count.ToString();
+                NumNacional.Text = nac.ToString();
             }
 
 
