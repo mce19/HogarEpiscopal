@@ -81,7 +81,6 @@ CREATE TABLE historial_pagos (
 );
 
 
-
 EXEC HistorialPorMes @mes = 1
 
 exec  Historial

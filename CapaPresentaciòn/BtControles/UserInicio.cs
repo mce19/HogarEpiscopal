@@ -99,6 +99,15 @@ namespace CapaPresentaciòn.BtControles
                 buttonNuevo.Visible = true;
             }
 
+            if (cmbTablas.SelectedItem.ToString() == "matricula")
+            {
+                textBoxBuscador.Visible = false;
+            }
+            else
+            {
+                textBoxBuscador.Visible = true;
+            }
+
         }
 
         private void buttonNuevo_Click(object sender, EventArgs e)

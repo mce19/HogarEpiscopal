@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             labelnNameGrupo = new Label();
             dataGridViewGrupos = new DataGridView();
             panel1 = new Panel();
@@ -84,24 +84,24 @@
             dataGridViewGrupos.BackgroundColor = SystemColors.ButtonHighlight;
             dataGridViewGrupos.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewGrupos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dataGridViewGrupos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridViewGrupos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridViewGrupos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewGrupos.GridColor = Color.FromArgb(255, 128, 0);
             dataGridViewGrupos.Location = new Point(17, 140);
             dataGridViewGrupos.Name = "dataGridViewGrupos";
-            dataGridViewCellStyle2.BackColor = Color.White;
-            dataGridViewCellStyle2.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(255, 128, 0);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            dataGridViewGrupos.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Arial", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(255, 128, 0);
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            dataGridViewGrupos.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridViewGrupos.RowTemplate.Height = 25;
             dataGridViewGrupos.Size = new Size(1459, 384);
             dataGridViewGrupos.TabIndex = 5;
@@ -358,7 +358,11 @@
             // 
             buttonPdf.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonPdf.BackColor = Color.IndianRed;
+            buttonPdf.FlatAppearance.BorderColor = Color.IndianRed;
+            buttonPdf.FlatAppearance.BorderSize = 0;
+            buttonPdf.FlatStyle = FlatStyle.Popup;
             buttonPdf.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonPdf.ForeColor = SystemColors.ControlLightLight;
             buttonPdf.Location = new Point(1340, 90);
             buttonPdf.Name = "buttonPdf";
             buttonPdf.Size = new Size(136, 36);

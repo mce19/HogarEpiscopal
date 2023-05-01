@@ -52,6 +52,7 @@ namespace CapaPresentaciòn.BtControles
 
         }
 
+
         private void BoxMes_SelectedIndexChanged(object sender, EventArgs e)
         {
             try

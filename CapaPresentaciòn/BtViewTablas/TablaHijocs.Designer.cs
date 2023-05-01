@@ -227,6 +227,7 @@
             // 
             // textBoxGeneroHijo
             // 
+            textBoxGeneroHijo.DropDownStyle = ComboBoxStyle.DropDownList;
             textBoxGeneroHijo.FormattingEnabled = true;
             textBoxGeneroHijo.Location = new Point(426, 123);
             textBoxGeneroHijo.Name = "textBoxGeneroHijo";

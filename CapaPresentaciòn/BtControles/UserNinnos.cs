@@ -220,16 +220,17 @@ namespace CapaPresentaciòn.BtControles
             capaDatos.AgregarMatricula(matricula);
             MessageBox.Show("La matrícula se guardó con éxito");
             LimpiarTextBox();
-            //Abrir formulario TablaPagos
-            if (MessageBox.Show("¿Desea asignar un monto de pago para esta matrícula?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                TablaPagos frmPagos = new TablaPagos();
-                frmPagos.Id = idMatricula.ToString();
-                frmPagos.idPadre = numPadre.ToString();
-                frmPagos.Familiar = nombrepadre;
-                frmPagos.Show();
 
-            }
+            //Abrir formulario TablaPagos pero falta realizar que facture si abona por eso mejor se desactiva y que se realize la factura cuando valla a pagar que es en el forms de pagos
+            //if (MessageBox.Show("¿Desea asignar un monto de pago para esta matrícula?", "Confirmar", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            //{
+            //    TablaPagos frmPagos = new TablaPagos();
+            //    frmPagos.Id = idMatricula.ToString();
+            //    frmPagos.idPadre = numPadre.ToString();
+            //    frmPagos.Familiar = nombrepadre;
+            //    frmPagos.Show();
+
+            //}
 
         }
 

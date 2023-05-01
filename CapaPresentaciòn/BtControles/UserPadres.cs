@@ -152,12 +152,13 @@ namespace CapaPresentaciòn.BtControles
 
         private void buttonPdf_Click(object sender, EventArgs e)
         {
-            SaveFileDialog guardar = new SaveFileDialog();
-            guardar.FileName = DateTime.Now.ToString("dd-MM-yyyy-HH-mm-ss") + ".pdf";
-            guardar.ShowDialog();
 
             // Obtener el nombre del grupo seleccionado
             string nombreGrupo = comboBoxGrupos.Text;
+
+            SaveFileDialog guardar = new SaveFileDialog();
+            guardar.FileName = nombreGrupo + ".pdf";
+            guardar.ShowDialog();
 
             if (guardar.ShowDialog() == DialogResult.OK)
             {

@@ -31,12 +31,11 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             dataGridViewHistorial = new DataGridView();
             label1 = new Label();
-            textBoxBuscador = new TextBox();
-            label2 = new Label();
             panelE = new Panel();
             NumExtranjero = new Label();
             SumaHistorial = new Label();
             BoxMes = new ComboBox();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridViewHistorial).BeginInit();
             panelE.SuspendLayout();
             SuspendLayout();
@@ -58,7 +57,7 @@
             dataGridViewHistorial.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewHistorial.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewHistorial.GridColor = Color.FromArgb(255, 128, 0);
-            dataGridViewHistorial.Location = new Point(33, 126);
+            dataGridViewHistorial.Location = new Point(33, 138);
             dataGridViewHistorial.Name = "dataGridViewHistorial";
             dataGridViewHistorial.RowTemplate.Height = 25;
             dataGridViewHistorial.Size = new Size(1439, 378);
@@ -76,25 +75,6 @@
             label1.TabIndex = 6;
             label1.Text = "Historial de pagos ";
             label1.TextAlign = ContentAlignment.TopCenter;
-            // 
-            // textBoxBuscador
-            // 
-            textBoxBuscador.BackColor = SystemColors.InactiveBorder;
-            textBoxBuscador.Location = new Point(195, 88);
-            textBoxBuscador.Name = "textBoxBuscador";
-            textBoxBuscador.Size = new Size(629, 23);
-            textBoxBuscador.TabIndex = 9;
-            textBoxBuscador.TextChanged += textBoxBuscador_TextChanged;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(33, 87);
-            label2.Name = "label2";
-            label2.Size = new Size(156, 19);
-            label2.TabIndex = 12;
-            label2.Text = "Buscar por nombre";
             // 
             // panelE
             // 
@@ -137,11 +117,21 @@
             BoxMes.BackColor = SystemColors.Info;
             BoxMes.DropDownStyle = ComboBoxStyle.DropDownList;
             BoxMes.FormattingEnabled = true;
-            BoxMes.Location = new Point(843, 88);
+            BoxMes.Location = new Point(165, 87);
             BoxMes.Name = "BoxMes";
             BoxMes.Size = new Size(189, 23);
             BoxMes.TabIndex = 14;
             BoxMes.SelectedIndexChanged += BoxMes_SelectedIndexChanged;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Century Gothic", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(33, 87);
+            label2.Name = "label2";
+            label2.Size = new Size(126, 19);
+            label2.TabIndex = 12;
+            label2.Text = "Buscar por mes";
             // 
             // UserHistorial
             // 
@@ -150,7 +140,6 @@
             Controls.Add(BoxMes);
             Controls.Add(panelE);
             Controls.Add(label2);
-            Controls.Add(textBoxBuscador);
             Controls.Add(label1);
             Controls.Add(dataGridViewHistorial);
             Name = "UserHistorial";
@@ -167,11 +156,10 @@
 
         private DataGridView dataGridViewHistorial;
         private Label label1;
-        private TextBox textBoxBuscador;
-        private Label label2;
         private Panel panelE;
         private Label NumExtranjero;
         private Label SumaHistorial;
         private ComboBox BoxMes;
+        private Label label2;
     }
 }
